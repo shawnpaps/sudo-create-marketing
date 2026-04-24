@@ -1,0 +1,77 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import SolutionsModule from "../ui/SolutionsModule.tsx";
+import SolutionTypesModule from "../ui/SolutionTypesModule.tsx";
+---
+
+<BaseLayout>
+	<section class="min-h-screen w-full bg-pitch-black relative">
+		{/* Prismatic Aurora Burst - Multi-layered Gradient */}
+		<div
+			class="absolute inset-0 z-0"
+			style={{
+				background: `
+          radial-gradient(ellipse 120% 80% at 70% 20%, rgba(255, 20, 147, 0.15), transparent 50%),
+          radial-gradient(ellipse 100% 60% at 30% 10%, rgba(0, 255, 255, 0.12), transparent 60%),
+          radial-gradient(ellipse 90% 70% at 50% 0%, rgba(138, 43, 226, 0.18), transparent 65%),
+          radial-gradient(ellipse 110% 50% at 80% 30%, rgba(255, 215, 0, 0.08), transparent 40%),
+          #000000
+        `,
+			}}
+		>
+			<div
+				class="max-w-2xl mx-auto px-4 relative min-h-screen flex flex-col items-center justify-center"
+			>
+				<span class="font-light mr-auto block -mb-2">sudo create</span>
+
+				<div class="text-6xl font-light">
+					<h1 class="text-6xl font-light">web development</h1>
+					<h2 class="text-6xl font-light">
+						that innovates. web design
+					</h2>
+					<h3 class="text-6xl font-light text-right">
+						that inspires.
+					</h3>
+				</div>
+				<div class="mt-16 max-w-sm text-sm ml-auto w-full">
+					<p class="">
+						Sudo Create is a web design studio that is redefining
+						what it means to build on the internet.
+					</p>
+				</div>
+
+				<a
+					class="mt-8 inline-block bg-beige/40 text-pitch-black px-4 py-2 rounded-full ml-auto hover:bg-coral-glow hover:text-white transition-all ease-in-out hover:-translate-y-1"
+					href="/schedule">schedule a call</a
+				>
+			</div>
+		</div>
+	</section>
+	<section class="min-h-screen">
+		<div class="max-w-md">
+			<span>what we build</span>
+			<h2 class="text-6xl font-light">Work Smarter. <br />Not Harder.</h2>
+			<p class="text-sm mt-2">
+				We get it. The web is moving faster than ever. You as an
+				entrepreneur don’t have the time to keep up with the latest and
+				greatest on the web. <br /><br /> That’s why Sudo Create exists. To
+				empower creative entrepreneurs with modern technology that solves
+				real problems & pushes the bounds of what is possible on the web..
+			</p>
+		</div>
+		<article>
+			<SolutionsModule client:load />
+		</article>
+	</section>
+	<section class="min-h-screen">
+		<div class="max-w-3xl mx-auto">
+			<span>how we solve problems</span>
+			<h2 class="text-6xl font-light">"modern problems require</h2>
+			<h3 class="text-6xl font-light text-right">modern solutions"</h3>
+			<p class="text-sm mt-2 text-right">-dave chappelle</p>
+		</div>
+		<div class="mt-8">
+			<SolutionTypesModule client:load />
+		</div>
+	</section>
+</BaseLayout>
