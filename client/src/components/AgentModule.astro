@@ -1,0 +1,120 @@
+---
+---
+
+<dialog
+	id="agent-module"
+	class="fixed inset-0 w-screen h-screen m-0 p-0 bg-black/10 backdrop-blur-lg border-none max-w-full max-h-full"
+>
+	<div 
+		id="agent-content"
+		class="w-full h-full flex flex-col items-center justify-center p-4 opacity-0 scale-95"
+	>
+		<h1 class="text-2xl text-beige">Welcome to Sudo Agent</h1>
+		<p class="text-sm text-white/50 mb-4">
+			I'm here to answer any questions you have about Sudo Create
+		</p>
+		<div
+			class="bg-white/10 backdrop-blur-lg w-full max-w-xl rounded-full text-white"
+		>
+			<form
+				class="flex w-full items-center flex-row justify-between rounded-full"
+			>
+				<input
+					type="text"
+					placeholder="Ask the Sudo Agent"
+					class="w-full p-5 rounded-l-full outline-none"
+				/>
+				<button
+					type="submit"
+					class="bg-none hover:bg-coral-glow hover:text-black transition-all ease-in-out min-w-32 text-white p-5 rounded-r-full"
+					>Ask</button
+				>
+			</form>
+		</div>
+		<button
+			id="close-agent"
+			class="mt-16 text-white/50 hover:text-white transition-all ease-in-out hover:-translate-y-1"
+			>Close Agent</button
+		>
+	</div>
+</dialog>
+
+<style>
+	#agent-module[open] {
+		animation: fadeIn 0.3s ease-out;
+	}
+
+	#agent-module[open] #agent-content {
+		animation: scaleUp 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+	}
+
+	#agent-module.closing {
+		animation: fadeOut 0.2s ease-out forwards;
+	}
+
+	#agent-module.closing #agent-content {
+		animation: scaleDown 0.2s ease-out forwards;
+	}
+
+	@keyframes fadeIn {
+		from { opacity: 0; }
+		to { opacity: 1; }
+	}
+
+	@keyframes fadeOut {
+		from { opacity: 1; }
+		to { opacity: 0; }
+	}
+
+	@keyframes scaleUp {
+		from { 
+			opacity: 0;
+			transform: scale(0.95) translateY(20px); 
+		}
+		to { 
+			opacity: 1;
+			transform: scale(1) translateY(0); 
+		}
+	}
+
+	@keyframes scaleDown {
+		from { 
+			opacity: 1;
+			transform: scale(1) translateY(0); 
+		}
+		to { 
+			opacity: 0;
+			transform: scale(0.95) translateY(20px); 
+		}
+	}
+</style>
+
+<script>
+	const agentModule = document.getElementById("agent-module");
+	const closeAgent = document.getElementById("close-agent");
+	const agentContent = document.getElementById("agent-content");
+
+	closeAgent.addEventListener("click", () => {
+		agentModule.classList.add("closing");
+		setTimeout(() => {
+			agentModule.close();
+			agentModule.classList.remove("closing");
+		}, 200);
+	});
+
+	// Close when clicking outside the content
+	agentModule.addEventListener("click", (e) => {
+		if (e.target === agentModule) {
+			agentModule.classList.add("closing");
+			setTimeout(() => {
+				agentModule.close();
+				agentModule.classList.remove("closing");
+			}, 200);
+		}
+	});
+
+	// Reset animations when dialog closes
+	agentModule.addEventListener("close", () => {
+		agentModule.classList.remove("closing");
+	});
+</script>

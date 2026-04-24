@@ -59,6 +59,13 @@ const Navigation = () => {
 		}
 	};
 
+	const handleAgentModuleClick = () => {
+		const agent = document.getElementById("agent-module");
+		if (agent) {
+			agent.showModal();
+		}
+	};
+
 	return (
 		<nav
 			onClick={handleClick}
@@ -86,7 +93,7 @@ const Navigation = () => {
 							<a href="/about">client stories</a>
 						</li>
 						<li className="hover:bg-pitch-black hover:text-white p-2 transition-all ease-in-out min-w-20">
-							<a href="/about">ask our agent</a>
+							<button onClick={handleAgentModuleClick}>ask our agent</button>
 						</li>
 					</ul>
 					<a
