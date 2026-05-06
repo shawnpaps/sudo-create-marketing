@@ -1,0 +1,72 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+---
+
+<BaseLayout>
+	<section class="min-h-screen w-full bg-pitch-black relative flex items-center">
+		<div
+			class="absolute inset-0 z-0"
+			style={{
+				background: `
+          radial-gradient(ellipse 120% 80% at 60% 30%, rgba(0, 255, 255, 0.10), transparent 50%),
+          radial-gradient(ellipse 100% 60% at 40% 80%, rgba(138, 43, 226, 0.12), transparent 60%),
+          #000000
+        `,
+			}}
+		>
+			<div class="max-w-3xl mx-auto px-4 relative py-24">
+				<span class="font-light block -mb-2">client stories</span>
+				<h1 class="text-6xl font-light mt-8">real people. real results.</h1>
+				<p class="text-sm mt-6 max-w-xl">
+					Don't take our word for it. Here's what happens when creative entrepreneurs
+					partner with developers who actually give a damn.
+				</p>
+			</div>
+		</div>
+	</section>
+
+	<section class="min-h-screen py-24">
+		<div class="max-w-4xl mx-auto">
+			<div class="space-y-16">
+				<div class="max-w-2xl ml-auto">
+					<blockquote class="text-2xl font-light italic">
+						"Working with Sudo Create completely transformed our online presence.
+						They didn't just build a website—they built a business tool."
+					</blockquote>
+					<cite class="block mt-4 text-sm text-white/50 not-italic">
+						— someone awesome
+					</cite>
+				</div>
+				<div class="max-w-2xl">
+					<blockquote class="text-2xl font-light italic">
+						"I've worked with dozens of agencies. These guys are different. They actually
+						listen and deliver beyond what you thought was possible."
+					</blockquote>
+					<cite class="block mt-4 text-sm text-white/50 not-italic">
+						— another happy client
+					</cite>
+				</div>
+				<div class="max-w-2xl ml-auto">
+					<blockquote class="text-2xl font-light italic">
+						"Our conversion rate doubled within a month of launch. The ROI speaks for itself."
+					</blockquote>
+					<cite class="block mt-4 text-sm text-white/50 not-italic">
+						— a results-driven founder
+					</cite>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="min-h-screen flex items-center justify-center py-24">
+		<div class="text-center max-w-xl">
+			<h2 class="text-5xl font-light">ready to be our next success story?</h2>
+			<a
+				class="mt-8 inline-block bg-beige/40 text-pitch-black px-6 py-3 rounded-full hover:bg-coral-glow hover:text-white transition-all ease-in-out hover:-translate-y-1"
+				href="/schedule"
+			>
+				schedule a call
+			</a>
+		</div>
+	</section>
+</BaseLayout>

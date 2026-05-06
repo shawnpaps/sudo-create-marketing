@@ -1,0 +1,70 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+---
+
+<BaseLayout>
+	<section class="min-h-screen w-full bg-pitch-black relative flex items-center">
+		<div
+			class="absolute inset-0 z-0"
+			style={{
+				background: `
+          radial-gradient(ellipse 120% 80% at 50% 50%, rgba(255, 20, 147, 0.15), transparent 50%),
+          radial-gradient(ellipse 100% 60% at 50% 50%, rgba(255, 215, 0, 0.08), transparent 60%),
+          #000000
+        `,
+			}}
+		>
+			<div class="max-w-2xl mx-auto px-4 relative py-24 text-center">
+				<span class="font-light block -mb-2">schedule a call</span>
+				<h1 class="text-6xl font-light mt-8">let's build something together.</h1>
+				<p class="text-sm mt-6 max-w-lg mx-auto">
+					Tell us about your project. We'll tell you how we can help.
+					No pressure, no bullshit—just a conversation about what's possible.
+				</p>
+			</div>
+		</div>
+	</section>
+
+	<section class="min-h-screen py-24 flex items-center">
+		<div class="max-w-xl mx-auto w-full">
+			<form class="space-y-6">
+				<div>
+					<label for="name" class="block text-sm mb-2">your name</label>
+					<input
+						type="text"
+						id="name"
+						name="name"
+						class="w-full bg-white/5 border border-white/10 rounded-full px-6 py-3 text-white placeholder-white/30 focus:outline-none focus:border-coral-glow transition-all"
+						placeholder="what should we call you?"
+					/>
+				</div>
+				<div>
+					<label for="email" class="block text-sm mb-2">email</label>
+					<input
+						type="email"
+						id="email"
+						name="email"
+						class="w-full bg-white/5 border border-white/10 rounded-full px-6 py-3 text-white placeholder-white/30 focus:outline-none focus:border-coral-glow transition-all"
+						placeholder="where can we reach you?"
+					/>
+				</div>
+				<div>
+					<label for="project" class="block text-sm mb-2">tell us about your project</label>
+					<textarea
+						id="project"
+						name="project"
+						rows="5"
+						class="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 text-white placeholder-white/30 focus:outline-none focus:border-coral-glow transition-all resize-none"
+						placeholder="what are you building? what problems are you solving?"
+					></textarea>
+				</div>
+				<button
+					type="submit"
+					class="w-full bg-beige/40 text-pitch-black px-6 py-3 rounded-full hover:bg-coral-glow hover:text-white transition-all ease-in-out hover:-translate-y-1 font-medium"
+				>
+					send it
+				</button>
+			</form>
+		</div>
+	</section>
+</BaseLayout>

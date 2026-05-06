@@ -1,0 +1,48 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+---
+
+<BaseLayout>
+	<section class="min-h-screen w-full bg-pitch-black relative flex items-center">
+		<div
+			class="absolute inset-0 z-0"
+			style={{
+				background: `
+          radial-gradient(ellipse 120% 80% at 50% 50%, rgba(138, 43, 226, 0.12), transparent 60%),
+          radial-gradient(ellipse 100% 60% at 20% 80%, rgba(0, 255, 255, 0.08), transparent 50%),
+          #000000
+        `,
+			}}
+		>
+			<div class="max-w-3xl mx-auto px-4 relative py-24">
+				<span class="font-light block -mb-2">what we've built</span>
+				<h1 class="text-6xl font-light mt-8">projects that speak for themselves.</h1>
+				<p class="text-sm mt-6 max-w-xl">
+					Every line of code, every pixel pushed, every late night debugging session.
+					This is the work that matters.
+				</p>
+			</div>
+		</div>
+	</section>
+
+	<section class="min-h-screen py-24">
+		<div class="max-w-4xl mx-auto">
+			<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+				<div class="border border-white/10 rounded-2xl p-6 hover:border-white/30 transition-all ease-in-out">
+					<span class="text-xs text-white/50">project 01</span>
+					<h3 class="text-2xl font-light mt-2">coming soon</h3>
+					<p class="text-sm mt-4 text-white/60">
+						Your next project could be here. Let's build something incredible together.
+					</p>
+				</div>
+				<div class="border border-white/10 rounded-2xl p-6 hover:border-white/30 transition-all ease-in-out">
+					<span class="text-xs text-white/50">project 02</span>
+					<h3 class="text-2xl font-light mt-2">coming soon</h3>
+					<p class="text-sm mt-4 text-white/60">
+						The best projects start with a conversation. Reach out and let's talk.
+					</p>
+				</div>
+			</div>
+		</div>
+	</section>
+</BaseLayout>

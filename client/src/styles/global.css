@@ -1,12 +1,13 @@
+@import url("https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap");
+
 @import "tailwindcss";
-@import url('https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap');
 
 @theme {
-  --color-coral-glow: #FF8360;
-  --color-beige: #EAF2D7;
-  --color-light-blue: #B3DEE2;
-  --color-iron-grey: #404E4D;
-  --color-pitch-black: #000000;
-  
-  --font-sans: "Instrument Sans", ui-sans-serif, system-ui, sans-serif;
+	--color-coral-glow: #ff8360;
+	--color-beige: #eaf2d7;
+	--color-light-blue: #b3dee2;
+	--color-iron-grey: #404e4d;
+	--color-pitch-black: #000000;
+
+	--font-sans: "Instrument Sans", ui-sans-serif, system-ui, sans-serif;
 }
