@@ -1,26 +1,85 @@
 ---
-import Navigation from "../components/Navigation.tsx";
-import "../styles/global.css";
-import AgentModule from "../components/AgentModule.astro";
+import '../styles/global.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const { title = 'Sudo Create', description = 'Design & development studio' } = Astro.props;
+const nav = [
+  { label: '[01] WORK',     href: '/work' },
+  { label: '[02] PHOTOS',   href: '/photos' },
+  { label: '[03] SERVICES', href: '/services' },
+  { label: '[04] PRICING',  href: '/pricing' },
+  { label: '[05] TECH',     href: '/tech' },
+];
+const currentPath = Astro.url.pathname;
 ---
 
+<!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body class="bg-pitch-black font-sans tracking-tighter text-white">
-		<header></header>
-		<main
-			class="max-w-screen-xl mx-auto px-4 relative min-h-screen w-screen"
-		>
-			<slot />
-			<Navigation client:load />
-		</main>
-		<AgentModule />
-	</body>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400&family=Special+Elite&family=IBM+Plex+Serif:ital,wght@0,400;0,500;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <title>{title} — Sudo Create</title>
+  </head>
+  <body class="min-h-screen flex flex-col bg-phosphor-dim text-paper">
+
+    <!-- NAV -->
+    <header class="border-b border-phosphor-amber/30 px-6 py-4">
+      <nav class="max-w-6xl mx-auto flex items-center justify-between gap-8">
+        <a
+          href="/"
+          class="font-mono text-phosphor-amber glow-amber text-sm tracking-widest uppercase"
+        >
+          SUDO CREATE<span class="cursor-blink">_</span>
+        </a>
+        <ul class="hidden md:flex items-center gap-6">
+          {nav.map(({ label, href }) => (
+            <li>
+              <a
+                href={href}
+                class:list={[
+                  'font-mono text-xs tracking-wider uppercase transition-colors',
+                  currentPath.startsWith(href)
+                    ? 'text-phosphor-amber glow-amber'
+                    : 'text-paper/60 hover:text-phosphor-amber',
+                ]}
+              >
+                {label}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </nav>
+    </header>
+
+    <!-- CONTENT -->
+    <main class="flex-1">
+      <slot />
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="border-t border-phosphor-amber/30 px-6 py-6 mt-16">
+      <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+        <p class="font-mono text-xs text-paper/40 tracking-wider">
+          &copy; {new Date().getFullYear()} SUDO CREATE — ALL SYSTEMS OPERATIONAL
+        </p>
+        <p class="font-mono text-xs text-paper/30 tracking-wider">
+          v1.0.0 // READY<span class="cursor-blink">_</span>
+        </p>
+      </div>
+    </footer>
+
+  </body>
 </html>

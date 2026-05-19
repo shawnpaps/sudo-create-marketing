@@ -1,111 +1,31 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
-import SolutionsModule from "../components/SolutionsModule.tsx";
-import SolutionTypesModule from "../components/SolutionTypesModule.tsx";
-import TestimonialsModule from "../components/TestimonialsModule.tsx";
+import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
-<BaseLayout>
-	<section class="min-h-screen w-full bg-pitch-black relative">
-		{/* Prismatic Aurora Burst - Multi-layered Gradient */}
-		<div
-			class="absolute inset-0 z-0"
-			style={{
-				background: `
-          radial-gradient(ellipse 120% 80% at 70% 20%, rgba(255, 20, 147, 0.15), transparent 50%),
-          radial-gradient(ellipse 100% 60% at 30% 10%, rgba(0, 255, 255, 0.12), transparent 60%),
-          radial-gradient(ellipse 90% 70% at 50% 0%, rgba(138, 43, 226, 0.18), transparent 65%),
-          radial-gradient(ellipse 110% 50% at 80% 30%, rgba(255, 215, 0, 0.08), transparent 40%),
-          #000000
-        `,
-			}}
-		>
-			<div
-				class="max-w-2xl mx-auto px-4 relative min-h-screen flex flex-col items-center justify-center"
-			>
-				<span class="font-light mr-auto block -mb-2">sudo create</span>
-
-				<div class="text-6xl font-light">
-					<h1 class="text-6xl font-light">software development</h1>
-					<h2 class="text-6xl font-light">that innovates.</h2>
-					<h3 class="text-6xl font-light text-left">
-						design that inspires.
-					</h3>
-				</div>
-				<div class="mt-16 max-w-sm text-sm ml-auto w-full">
-					<p class="">
-						Sudo Create is a web design studio that is redefining
-						what it means to build on the internet.
-					</p>
-				</div>
-
-				<a
-					class="mt-8 inline-block bg-beige/40 text-pitch-black px-4 py-2 rounded-full ml-auto hover:bg-coral-glow hover:text-white transition-all ease-in-out hover:-translate-y-1"
-					href="/schedule">schedule a call</a
-				>
-			</div>
-		</div>
-	</section>
-	<section class="min-h-screen">
-		<div class="max-w-md">
-			<span>what we build</span>
-			<h2 class="text-6xl font-light">Work Smarter. <br />Not Harder.</h2>
-			<p class="text-sm mt-2">
-				We get it. The web is moving faster than ever. You as an
-				entrepreneur don’t have the time to keep up with the latest and
-				greatest on the web. <br /><br /> That’s why Sudo Create exists. To
-				empower creative entrepreneurs with modern technology that solves
-				real problems & pushes the bounds of what is possible on the web..
-			</p>
-		</div>
-		<article>
-			<SolutionsModule client:load />
-		</article>
-	</section>
-	<section class="min-h-screen">
-		<div class="max-w-3xl mx-auto">
-			<span>how we solve problems</span>
-			<h2 class="text-6xl font-light">our philosophy:</h2>
-			<h3 class="text-6xl font-light text-right">
-				technology that feels human
-			</h3>
-			<p class="text-sm mt-2 text-right"></p>
-		</div>
-		<div class="mt-8">
-			<SolutionTypesModule client:load />
-		</div>
-	</section>
-	<section class="min-h-screen flex items-center justify-center">
-		<div
-			class="flex flex-col items-center justify-center max-w-4xl text-center"
-		>
-			<h2 class="text-6xl font-light">
-				you can trust us. these people did.
-			</h2>
-			<h3 class="text-2xl font-light">
-				be the next success story so we can tell the internet how
-				awesome you are.
-			</h3>
-			<h4 class="text-sm mt-4">
-				also that we actually know what we’re doing.
-			</h4>
-		</div>
-	</section>
-	<section class="min-h-screen">
-		<div class="max-w-xl text-right ml-auto">
-			<span>testimonials aka subtle flex</span>
-			<h2 class="text-6xl font-light">
-				kind words about nerds from cool people.
-			</h2>
-		</div>
-		<div class="mt-4">
-			<blockquote>
-				<p>some awesome quote about sudo create being awesome.</p>
-				<cite>- some random person</cite>
-			</blockquote>
-		</div>
-		<div class="mt-8">
-			<TestimonialsModule client:load />
-		</div>
-	</section>
+<BaseLayout title="Home">
+  <section class="max-w-6xl mx-auto px-6 py-24 dot-grid scanlines">
+    <p class="font-mono text-phosphor-amber text-sm tracking-widest mb-4">
+      &gt; SUDO CREATE // PORTFOLIO
+    </p>
+    <h1 class="font-display text-5xl md:text-7xl text-paper leading-tight mb-6">
+      Design.<br />Build.<br />Ship.
+    </h1>
+    <p class="font-body text-paper/70 text-xl max-w-xl mb-10">
+      Independent studio for brands that want work that actually does something.
+    </p>
+    <div class="flex flex-wrap gap-4">
+      <a
+        href="/work"
+        class="font-mono text-sm px-6 py-3 border border-phosphor-amber text-phosphor-amber hover:bg-phosphor-amber hover:text-ink transition-colors tracking-wider"
+      >
+        VIEW WORK →
+      </a>
+      <a
+        href="/services"
+        class="font-mono text-sm px-6 py-3 border border-paper/30 text-paper/60 hover:border-paper hover:text-paper transition-colors tracking-wider"
+      >
+        SERVICES
+      </a>
+    </div>
+  </section>
 </BaseLayout>
