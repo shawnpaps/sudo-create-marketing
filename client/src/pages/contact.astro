@@ -1,0 +1,15 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import ContactPage from "../components/react/ContactPage.tsx";
+---
+
+<style is:global>
+	body { background-color: #000; }
+</style>
+
+<BaseLayout
+	title="Contact"
+	description="Get in touch with Sudo Create — tell us about your project and we'll get back to you within one business day."
+>
+	<ContactPage client:load />
+</BaseLayout>

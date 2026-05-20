@@ -1,0 +1,19 @@
+---
+import LandingPage from "../../components/LandingPage.astro";
+import { CITIES } from "../../data/cities";
+
+export function getStaticPaths() {
+	return Object.keys(CITIES).map((city) => ({ params: { city } }));
+}
+
+const { city } = Astro.params;
+const cityData = CITIES[city];
+---
+
+<LandingPage
+	title={cityData.title}
+	description={cityData.description}
+	heroHeading={cityData.heroHeading}
+	heroSubtext={cityData.heroSubtext}
+	location={cityData.location}
+/>
