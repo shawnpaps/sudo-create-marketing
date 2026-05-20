@@ -20,8 +20,11 @@ const { title = "Sudo Create", description = "Design & development studio" } =
 	<title>{title} — Sudo Create</title>
 </head>
 
-<body class="min-h-screen flex flex-col">
+<body class="min-h-screen flex flex-col tracking-tight">
 	<Navigation />
+	<a href="/" class="fixed top-5 left-5 z-40 opacity-30 hover:opacity-80 transition-opacity duration-300" aria-label="Home">
+		<img src="/sudo_white.png" alt="Sudo Create" class="h-12 w-auto" />
+	</a>
 	<main class="flex-1 relative">
 		<slot />
 	</main>

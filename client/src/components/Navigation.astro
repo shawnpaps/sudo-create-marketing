@@ -1,6 +1,9 @@
 ---
+import DesktopNavigation from "./react/DesktopNavigation";
+import MobileNavigation from "./react/MobileNavigation";
+
 const navItems = [
-	{ label: "stuff we've built", href: "/" },
+	{ label: "stuff we've built", href: "/works" },
 	{ label: "sh*t we're building", href: "/about" },
 	{ label: "who we're working with", href: "/services" },
 	{ label: "get in touch", href: "/contact" },
@@ -8,15 +11,10 @@ const navItems = [
 ---
 
 <nav class="fixed bottom-0 w-full p-5 z-50 text-white">
-	<ul
-		class="backdrop-blur-lg p-6 rounded-2xl flex items-center justify-between max-w-6xl mx-auto"
-	>
-		{
-			navItems.map((item) => (
-				<li class="h-full text-sm flex items-center hover:bg-white hover:text-black p-2 rounded-md transition-all duration-300">
-					<a href={item.href}>{item.label}</a>
-				</li>
-			))
-		}
-	</ul>
+	<div class="hidden md:block">
+		<DesktopNavigation client:load items={navItems} />
+	</div>
+	<div class="md:hidden">
+		<MobileNavigation client:load items={navItems} />
+	</div>
 </nav>

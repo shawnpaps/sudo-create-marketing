@@ -1,21 +1,10 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
-import WebAppModule from "../components/react/WebAppModule.tsx";
-const bgImage = {
-	src: "/lens-background.jpg",
-	alt: "lens",
-};
+import LandingPage from "../components/LandingPage.astro";
 ---
 
-<BaseLayout title="Home">
-	<div class="fixed top-0 left-0 w-full h-full -z-10">
-		<img src={bgImage.src} alt={bgImage.alt} />
-	</div>
-	<section class="max-w-6xl mx-auto px-6 pt-24 text-white">
-		<h1 class="text-6xl font-bold">Hero Header</h1>
-		<p class="text-xl">Hero subtitle</p>
-	</section>
-	<section class="max-w-6xl mx-auto px-6 pt-12 text-white">
-		<WebAppModule client:load />
-	</section>
-</BaseLayout>
+<LandingPage
+	title="Home"
+	description="Sudo Create is a creative technology studio building websites, apps, and media systems for ambitious brands."
+	heroHeading="Command Creativity."
+	heroSubtext="We build outstanding media technology solutions that tell your story & revolutionize how your brand shows up online."
+/>
