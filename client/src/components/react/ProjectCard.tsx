@@ -72,8 +72,11 @@ const ProjectCard = ({ project }: { project: Project }) => {
 				)}
 			</div>
 
-			{/* Large project name */}
-			<div className="absolute inset-0 flex items-end justify-start px-7 pb-5">
+			{/* Description + large project name */}
+			<div className="absolute inset-0 flex flex-col items-start justify-end px-7 pb-5 gap-1.5">
+				<p className="text-white/60 text-sm leading-snug max-w-lg line-clamp-2">
+					{project.description}
+				</p>
 				<h3 className="text-white/20 font-bold leading-none select-none"
 					style={{ fontSize: "clamp(3rem, 6vw, 5.5rem)" }}>
 					{project.title}

@@ -7,6 +7,7 @@ export type FeaturedWorkProps = {
 	href: string;
 	playbackId: string;
 	hasCaseStudy?: boolean;
+	thumbnail?: string;
 };
 
 const FeaturedWork = ({
@@ -16,16 +17,21 @@ const FeaturedWork = ({
 	href,
 	playbackId,
 	hasCaseStudy,
+	thumbnail,
 }: FeaturedWorkProps) => {
 	return (
 		<div className="flex flex-col md:flex-row items-center w-full gap-10 md:gap-20 relative p-6 md:p-10">
-			<div className="absolute top-0 left-0 w-full h-full -z-10 blur-sm rounded-3xl overflow-hidden">
-				<img
-					className="object-cover w-full h-full"
-					src={"/tourpass.png"}
-					alt=""
-				/>
-			</div>
+			{thumbnail ? (
+				<div className="absolute top-0 left-0 w-full h-full -z-10 blur-sm rounded-3xl overflow-hidden">
+					<img
+						className="object-cover w-full h-full"
+						src={thumbnail}
+						alt=""
+					/>
+				</div>
+			) : (
+				<div className="absolute top-0 left-0 w-full h-full -z-10 rounded-3xl overflow-hidden backdrop-blur-xl bg-white/5 border border-white/10" />
+			)}
 			<div className="flex-1 flex flex-col gap-6">
 				<span className="text-sm uppercase tracking-widest text-white/40">
 					{label}

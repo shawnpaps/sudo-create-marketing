@@ -5,19 +5,70 @@ import Navigation from "../components/Navigation.astro";
 interface Props {
 	title?: string;
 	description?: string;
+	ogImage?: string;
+	structuredData?: Record<string, unknown>;
+	noIndex?: boolean;
 }
 
-const { title = "Sudo Create", description = "Design & development studio" } =
-	Astro.props;
+const {
+	title = "Sudo Create | Digital Media & Technology Studio · Tampa, FL",
+	description = "Media technology studio building unified digital presences for experience-driven brands in music, hospitality, and lifestyle. Where media meets technology.",
+	ogImage = "/lens-background.jpg",
+	structuredData,
+	noIndex = false,
+} = Astro.props;
+
+const SITE_URL = "https://sudocreate.studio";
+const canonical = `${SITE_URL}${Astro.url.pathname}`;
+const ogImageAbsolute = `${SITE_URL}${ogImage}`;
 ---
 
+<!DOCTYPE html>
+<html lang="en">
 <head>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta name="description" content={description} />
+	<meta name="theme-color" content="#000000" />
+
+	{noIndex && <meta name="robots" content="noindex, nofollow" />}
+
+	<!-- Canonical -->
+	<link rel="canonical" href={canonical} />
+
+	<!-- Favicons -->
 	<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 	<link rel="icon" href="/favicon.ico" />
-	<title>{title} — Sudo Create</title>
+
+	<!-- Open Graph -->
+	<meta property="og:type" content="website" />
+	<meta property="og:site_name" content="Sudo Create" />
+	<meta property="og:title" content={title} />
+	<meta property="og:description" content={description} />
+	<meta property="og:url" content={canonical} />
+	<meta property="og:image" content={ogImageAbsolute} />
+	<meta property="og:image:width" content="1200" />
+	<meta property="og:image:height" content="630" />
+	<meta property="og:image:alt" content="Sudo Create — Where media meets technology." />
+	<meta property="og:locale" content="en_US" />
+
+	<!-- Twitter / X Card -->
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:title" content={title} />
+	<meta name="twitter:description" content={description} />
+	<meta name="twitter:image" content={ogImageAbsolute} />
+	<meta name="twitter:image:alt" content="Sudo Create — Where media meets technology." />
+
+	<!-- Preconnect for Mux video -->
+	<link rel="preconnect" href="https://stream.mux.com" />
+	<link rel="dns-prefetch" href="https://stream.mux.com" />
+
+	<title>{title}</title>
+
+	<!-- Structured Data -->
+	{structuredData && (
+		<script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
+	)}
 </head>
 
 <body class="min-h-screen flex flex-col tracking-tight font-sans">
@@ -39,3 +90,4 @@ const { title = "Sudo Create", description = "Design & development studio" } =
 		</div>
 	</footer>
 </body>
+</html>

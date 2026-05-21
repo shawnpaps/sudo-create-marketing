@@ -9,11 +9,22 @@ import sharp from 'sharp'
 import { Users } from './collections/Users'
 import { Media } from './collections/Media'
 import { Works } from './collections/Works'
+import { Products } from './collections/Products'
+import { Testimonials } from './collections/Testimonials'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
 
+const serverURL = process.env.SERVER_URL ?? 'http://localhost:3000'
+
+const allowedOrigins = (process.env.CORS_ORIGINS ?? 'http://localhost:4321')
+  .split(',')
+  .map((o) => o.trim())
+
 export default buildConfig({
+  serverURL,
+  cors: allowedOrigins,
+  csrf: [serverURL, ...allowedOrigins],
   admin: {
     user: Users.slug,
     importMap: {
@@ -47,7 +58,7 @@ export default buildConfig({
       },
     }),
   ],
-  collections: [Users, Media, Works],
+  collections: [Users, Media, Works, Products, Testimonials],
   editor: lexicalEditor(),
   secret: process.env.PAYLOAD_SECRET || '',
   typescript: {
@@ -59,5 +70,4 @@ export default buildConfig({
     },
   }),
   sharp,
-  plugins: [],
 })

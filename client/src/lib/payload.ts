@@ -1,4 +1,4 @@
-const BASE_URL = import.meta.env.PAYLOAD_URL ?? 'http://localhost:3001';
+const BASE_URL = import.meta.env.PUBLIC_PAYLOAD_URL ?? 'http://localhost:3001';
 
 async function fetchAPI<T>(path: string, params?: Record<string, string>): Promise<T> {
   const url = new URL(`/api${path}`, BASE_URL);
@@ -19,34 +19,66 @@ export type PaginatedResponse<T> = {
   hasPrevPage: boolean;
 };
 
-// --- Collections ---
+export type MediaDoc = {
+  id: string;
+  url: string;
+  alt: string;
+};
 
-export const getCaseStudies = (params?: Record<string, string>) =>
-  fetchAPI<PaginatedResponse<Record<string, unknown>>>('/case-studies', params);
+export type Work = {
+  id: string;
+  label: string;
+  title: string;
+  category: string;
+  description: string;
+  thumbnail?: MediaDoc | null;
+  tags?: { id: string; tag: string }[];
+  playbackId?: string | null;
+  siteHref?: string | null;
+  hasCaseStudy: boolean;
+  caseStudyHref?: string | null;
+  isFeatured: boolean;
+  order: number;
+};
 
-export const getCaseStudy = (slug: string) =>
-  fetchAPI<PaginatedResponse<Record<string, unknown>>>('/case-studies', {
-    'where[slug][equals]': slug,
-    limit: '1',
+export type Product = {
+  id: string;
+  name: string;
+  category: string;
+  description: string;
+  status: 'live' | 'in-lab' | 'open-call';
+  tags?: { id: string; tag: string }[];
+  playbackId?: string | null;
+  thumbnail?: MediaDoc | null;
+  caseStudyHref?: string | null;
+  siteHref?: string | null;
+  order: number;
+};
+
+// Works
+export const getWorks = (params?: Record<string, string>) =>
+  fetchAPI<PaginatedResponse<Work>>('/works', params);
+
+export const getFeaturedWorks = () =>
+  fetchAPI<PaginatedResponse<Work>>('/works', {
+    'where[isFeatured][equals]': 'true',
+    sort: 'order',
+    limit: '20',
   });
 
-export const getProjects = (params?: Record<string, string>) =>
-  fetchAPI<PaginatedResponse<Record<string, unknown>>>('/projects', params);
+// Products
+export const getProducts = (params?: Record<string, string>) =>
+  fetchAPI<PaginatedResponse<Product>>('/products', params);
 
-export const getProject = (slug: string) =>
-  fetchAPI<PaginatedResponse<Record<string, unknown>>>('/projects', {
-    'where[slug][equals]': slug,
-    limit: '1',
-  });
+// Testimonials
+export type Testimonial = {
+  id: string;
+  quote: string;
+  name: string;
+  title: string;
+  company: string;
+  order: number;
+};
 
-export const getPhotos = (params?: Record<string, string>) =>
-  fetchAPI<PaginatedResponse<Record<string, unknown>>>('/photos', params);
-
-export const getServices = (params?: Record<string, string>) =>
-  fetchAPI<PaginatedResponse<Record<string, unknown>>>('/services', params);
-
-export const getPricing = (params?: Record<string, string>) =>
-  fetchAPI<PaginatedResponse<Record<string, unknown>>>('/pricing', params);
-
-export const getTech = (params?: Record<string, string>) =>
-  fetchAPI<PaginatedResponse<Record<string, unknown>>>('/tech', params);
+export const getTestimonials = () =>
+  fetchAPI<PaginatedResponse<Testimonial>>('/testimonials', { sort: 'order', limit: '100' });
