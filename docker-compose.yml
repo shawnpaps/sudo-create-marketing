@@ -1,26 +1,11 @@
 services:
-  postgres:
-    image: postgres:16-alpine
-    restart: unless-stopped
-    environment:
-      POSTGRES_DB: ${POSTGRES_DB:-sudocreate}
-      POSTGRES_USER: ${POSTGRES_USER:-payload}
-      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
-    volumes:
-      - pgdata:/var/lib/postgresql/data
-    healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-payload} -d ${POSTGRES_DB:-sudocreate}"]
-      interval: 10s
-      timeout: 5s
-      retries: 5
-
   cms:
     build:
       context: ./cms
       dockerfile: Dockerfile
     restart: unless-stopped
     environment:
-      DATABASE_URL: postgres://${POSTGRES_USER:-payload}:${POSTGRES_PASSWORD}@postgres:5432/${POSTGRES_DB:-sudocreate}
+      DATABASE_URL: ${DATABASE_URL}
       PAYLOAD_SECRET: ${PAYLOAD_SECRET}
       SERVER_URL: ${CMS_URL}
       CORS_ORIGINS: ${CLIENT_URL}
@@ -34,9 +19,9 @@ services:
       - "traefik.http.routers.cms.entrypoints=websecure"
       - "traefik.http.routers.cms.tls.certresolver=${TRAEFIK_CERTRESOLVER}"
       - "traefik.http.services.cms.loadbalancer.server.port=3000"
-    depends_on:
-      postgres:
-        condition: service_healthy
+    networks:
+      - default
+      - postgres
 
   client:
     build:
@@ -54,5 +39,7 @@ services:
     depends_on:
       - cms
 
-volumes:
-  pgdata:
+networks:
+  postgres:
+    name: postgresql-byxy_default
+    external: true
