@@ -8,57 +8,57 @@ export type CityData = {
 
 export const CITIES: Record<string, CityData> = {
 	tampa: {
-		title: "Digital Media & Technology Studio in Tampa, FL | Sudo Create",
+		title: "Media Technology Studio in Tampa, FL | Sudo Create",
 		description:
-			"Sudo Create is a Tampa-based media technology studio building unified digital presences for experience-driven brands in music, hospitality, and lifestyle — where websites, apps, and visual media work as one.",
-		heroHeading: "Where Media Meets Technology.",
+			"Sudo Create is a Tampa-based media technology studio building websites, streaming infrastructure, and custom software for media-driven brands that publish, create, and perform.",
+		heroHeading: "Media-first engineering.",
 		heroSubtext:
-			"Tampa's studio for brands worth experiencing. We build the digital presence — websites, apps, and visual storytelling — for music, hospitality, and lifestyle brands that demand more than a template.",
+			"Tampa's media technology studio. We build websites, streaming infrastructure, and custom software for media-driven brands that publish, create, and perform.",
 		location: "Tampa, FL",
 	},
 	"st-petersburg": {
-		title: "Digital Media & Technology Studio in St. Petersburg, FL | Sudo Create",
+		title: "Media Technology Studio in St. Petersburg, FL | Sudo Create",
 		description:
-			"Sudo Create partners with St. Pete experience-driven brands to build unified digital presences that blend visual storytelling with technology. Music, hospitality, and lifestyle brands across the 727.",
-		heroHeading: "Where Media Meets Technology.",
+			"Sudo Create partners with St. Pete media-driven brands — building websites, streaming infrastructure, and custom software for venues, festivals, and creative businesses across the 727.",
+		heroHeading: "Media-first engineering.",
 		heroSubtext:
-			"St. Pete has the culture. We build the digital presence. From visual media to custom platforms, we serve music, hospitality, and lifestyle brands across the 727 that are serious about their identity.",
+			"St. Pete has the culture. We build the infrastructure behind it — websites, streaming systems, and custom software for media-driven brands across the 727.",
 		location: "St. Petersburg, FL",
 	},
 	valrico: {
-		title: "Digital Media & Technology Studio in Valrico, FL | Sudo Create",
+		title: "Media Technology Studio in Valrico, FL | Sudo Create",
 		description:
-			"Sudo Create builds unified digital presences for Valrico and Hillsborough County brands — websites, apps, and visual media systems engineered to work as one cohesive creative system.",
-		heroHeading: "Where Media Meets Technology.",
+			"Sudo Create builds websites, streaming infrastructure, and content systems for media-driven brands in Valrico and greater Hillsborough County.",
+		heroHeading: "Media-first engineering.",
 		heroSubtext:
-			"Serving Valrico and greater Hillsborough County. We build unified digital presences — web, media, and content systems — for experience-driven brands ready to make a real impression.",
+			"Serving Valrico and greater Hillsborough County. We build websites, streaming infrastructure, and content systems for media-driven brands built to perform.",
 		location: "Valrico, FL",
 	},
 	riverview: {
-		title: "Digital Media & Technology Studio in Riverview, FL | Sudo Create",
+		title: "Media Technology Studio in Riverview, FL | Sudo Create",
 		description:
-			"Sudo Create builds unified digital presences for Riverview and Tampa Bay experience-driven brands — where websites, apps, and visual media work together as one cohesive system.",
-		heroHeading: "Where Media Meets Technology.",
+			"Sudo Create builds websites, streaming infrastructure, and custom software for media-driven brands in Riverview and the greater Tampa Bay area.",
+		heroHeading: "Media-first engineering.",
 		heroSubtext:
-			"Riverview's partner for brand-defining digital work. We build the websites, apps, and visual media for experience-driven brands in music, hospitality, and lifestyle that refuse to be ignored.",
+			"Riverview's media technology partner. We build websites, streaming infrastructure, and custom software for brands that publish, create, and perform.",
 		location: "Riverview, FL",
 	},
 	brandon: {
-		title: "Digital Media & Technology Studio in Brandon, FL | Sudo Create",
+		title: "Media Technology Studio in Brandon, FL | Sudo Create",
 		description:
-			"Sudo Create builds cohesive digital presences for Brandon and greater Tampa Bay brands in music, hospitality, and lifestyle — websites, apps, and visual media that work as one system.",
-		heroHeading: "Where Media Meets Technology.",
+			"Sudo Create builds websites, streaming infrastructure, and content systems for media-driven brands in Brandon and greater Tampa Bay.",
+		heroHeading: "Media-first engineering.",
 		heroSubtext:
-			"Brandon's home for serious digital work. We craft unified digital presences — web, mobile, and visual media — for hospitality, music, and lifestyle brands that trust us with their vision.",
+			"Brandon's home for serious media technology work. We build websites, streaming systems, and custom software for brands that run on media.",
 		location: "Brandon, FL",
 	},
 	lakeland: {
-		title: "Digital Media & Technology Studio in Lakeland, FL | Sudo Create",
+		title: "Media Technology Studio in Lakeland, FL | Sudo Create",
 		description:
-			"Sudo Create builds unified digital presences for Lakeland and Polk County experience-driven brands — websites, apps, and visual media systems that tell the right story at every touchpoint.",
-		heroHeading: "Where Media Meets Technology.",
+			"Sudo Create builds websites, streaming infrastructure, and content systems for media-driven brands in Lakeland and Polk County.",
+		heroHeading: "Media-first engineering.",
 		heroSubtext:
-			"Lakeland brands, premium digital presence. We build the websites, apps, and content systems for music, hospitality, and lifestyle brands across Polk County worth experiencing.",
+			"Lakeland and Polk County's media technology studio. We build websites, streaming infrastructure, and content systems for brands that publish, create, and perform.",
 		location: "Lakeland, FL",
 	},
 };
