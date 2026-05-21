@@ -87,12 +87,12 @@ const ProjectCard = ({ project }: { project: Project }) => {
 			>
 				<motion.div
 					variants={contentVariants}
-					className="flex items-center gap-5 text-black"
+					className="flex items-center gap-3 md:gap-5 text-black"
 				>
-					<span className="font-bold leading-none" style={{ fontSize: "5rem" }}>
+					<span className="font-bold leading-none text-5xl md:text-[5rem]">
 						→
 					</span>
-					<span className="text-3xl font-bold tracking-tight">
+					<span className="text-xl md:text-3xl font-bold tracking-tight">
 						{project.hasCaseStudy ? "see the case study" : "see the project"}
 					</span>
 				</motion.div>

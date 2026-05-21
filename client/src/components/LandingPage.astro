@@ -20,7 +20,11 @@ const { title, description, heroHeading, heroSubtext, location } = Astro.props;
 
 <BaseLayout title={title} description={description}>
 	<div class="fixed top-0 left-0 w-full h-full -z-10">
-		<img src="/lens-background.jpg" alt="" />
+		<img
+			class="object-cover w-full h-full"
+			src="/lens-background.jpg"
+			alt=""
+		/>
 	</div>
 
 	<Hero
@@ -30,13 +34,21 @@ const { title, description, heroHeading, heroSubtext, location } = Astro.props;
 		location={location}
 	/>
 
-	<section class="max-w-6xl mx-auto px-6 py-24 text-white">
-		<h2 class="border-b-2 w-full mb-16 text-4xl font-bold">Featured Works</h2>
+	<section class="max-w-6xl mx-auto px-6 py-16 md:py-24 text-white">
+		<h2
+			class="border-b-2 w-full mb-10 md:mb-16 text-3xl md:text-4xl font-bold"
+		>
+			Featured Works
+		</h2>
 		<FeaturedWorkCarousel client:load />
 	</section>
 
-	<section class="max-w-6xl mx-auto px-6 py-24 text-white">
-		<h2 class="border-b-2 w-full mb-16 text-4xl font-bold">What We Do</h2>
+	<section class="max-w-6xl mx-auto px-6 py-16 md:py-24 text-white">
+		<h2
+			class="border-b-2 w-full mb-10 md:mb-16 text-3xl md:text-4xl font-bold"
+		>
+			What We Do
+		</h2>
 		<ServicesSection client:load />
 	</section>
 

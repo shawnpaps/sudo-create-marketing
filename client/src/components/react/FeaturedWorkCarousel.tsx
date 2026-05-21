@@ -4,7 +4,7 @@ import FeaturedWork, { type FeaturedWorkProps } from "./FeaturedWork";
 
 const PROJECTS: FeaturedWorkProps[] = [
 	{
-		label: "Music Tech",
+		label: "Product",
 		title: "Tourpass",
 		description:
 			"A revolutionary platform designed to help music industry professionals network like never before.",
@@ -13,18 +13,18 @@ const PROJECTS: FeaturedWorkProps[] = [
 		hasCaseStudy: true,
 	},
 	{
-		label: "Brand Identity",
-		title: "Project Two",
+		label: "Website + Media",
+		title: "Dark Horse Massage",
 		description: "Placeholder — swap in your second project's copy here.",
 		href: "#",
-		playbackId: "a4nOgmxGWg6gULfcBbAa00gXyfcwPnAFldF8RdsNyk8M",
+		playbackId: "xu8JfwYg23p9Z61C02Ps2FoYQtRSymtvwL1BsUpbmsFE",
 	},
 	{
-		label: "Digital Experience",
-		title: "Project Three",
+		label: "Website + Media",
+		title: "Evolutionary Blades",
 		description: "Placeholder — swap in your third project's copy here.",
 		href: "#",
-		playbackId: "a4nOgmxGWg6gULfcBbAa00gXyfcwPnAFldF8RdsNyk8M",
+		playbackId: "w6j9TpALM54AS3QlkGHZI3ZnMk97BVOdMav3IE00mo3o",
 	},
 ];
 

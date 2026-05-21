@@ -16,7 +16,13 @@ const SERVICES: Service[] = [
 		title: "Website Development",
 		description:
 			"Custom websites engineered for performance and conversion — from marketing sites to complex web applications built to scale.",
-		deliverables: ["Next.js", "Astro", "CMS Integration", "SEO Optimization"],
+		deliverables: [
+			"Astro",
+			"Content Management",
+			"Webflow",
+			"Framer",
+			"CMS Integration",
+		],
 	},
 	{
 		id: "design",
@@ -40,15 +46,28 @@ const SERVICES: Service[] = [
 		title: "Integrations",
 		description:
 			"Seamlessly connect your tools, platforms, and data streams into one unified ecosystem that just works.",
-		deliverables: ["REST & GraphQL APIs", "Webhooks", "Automation", "Third-party Services"],
+		deliverables: [
+			"REST & GraphQL APIs",
+			"Webhooks",
+			"Automation",
+			"AI-Integrations",
+			"Third-party Services",
+		],
 	},
 	{
 		id: "content",
 		number: "05",
-		title: "Content Media Systems",
+		title: "Content Media & Management",
 		description:
-			"Custom media pipelines and content systems that power how your brand shows up — consistently, at scale, across every channel.",
-		deliverables: ["Video Infrastructure", "CMS", "Streaming", "Content Strategy"],
+			"From custom media pipelines to on-site production — we capture and manage the content that makes your brand feel real. Photography, video, and the systems to distribute it all.",
+		deliverables: [
+			"Photography",
+			"Videography",
+			"Video Infrastructure",
+			"Streaming Technology",
+			"CMS",
+			"Content Strategy",
+		],
 	},
 ];
 
@@ -62,7 +81,7 @@ const ServicesSection = () => {
 	const [active, setActive] = useState(0);
 
 	return (
-		<div className="flex gap-24 items-start">
+		<div className="flex flex-col gap-16 lg:flex-row lg:gap-24 items-start">
 			{/* Left — service list */}
 			<div className="flex-1 flex flex-col">
 				{SERVICES.map((service, i) => {
@@ -78,17 +97,23 @@ const ServicesSection = () => {
 						>
 							<div className="flex items-baseline gap-5">
 								<motion.span
-									animate={{ color: isActive ? "rgba(255,255,255,0.35)" : "rgba(255,255,255,0.2)" }}
+									animate={{
+										color: isActive
+											? "rgba(255,255,255,0.35)"
+											: "rgba(255,255,255,0.2)",
+									}}
 									className="text-xs font-mono tabular-nums"
 								>
 									{service.number}
 								</motion.span>
 								<motion.span
 									animate={{
-										color: isActive ? "rgba(255,255,255,1)" : "rgba(255,255,255,0.4)",
+										color: isActive
+											? "rgba(255,255,255,1)"
+											: "rgba(255,255,255,0.4)",
 									}}
 									transition={{ duration: 0.2 }}
-									className="text-2xl font-bold leading-tight"
+									className="text-xl lg:text-2xl font-bold leading-tight"
 								>
 									{service.title}
 								</motion.span>
@@ -110,7 +135,7 @@ const ServicesSection = () => {
 			</div>
 
 			{/* Right — detail panel */}
-			<div className="w-[45%] flex-shrink-0 sticky top-32">
+			<div className="w-full lg:w-[45%] lg:flex-shrink-0 lg:sticky lg:top-32">
 				<AnimatePresence mode="wait">
 					<motion.div
 						key={active}
@@ -121,15 +146,15 @@ const ServicesSection = () => {
 						transition={{ duration: 0.4, ease: [0.25, 0.46, 0.45, 0.94] }}
 						className="flex flex-col gap-6"
 					>
-						<span className="text-[120px] font-bold leading-none text-white/5 select-none -mb-4">
+						<span className="text-[80px] lg:text-[120px] font-bold leading-none text-white/5 select-none -mb-4">
 							{SERVICES[active].number}
 						</span>
 
-						<h3 className="text-4xl font-bold text-white leading-tight">
+						<h3 className="text-2xl lg:text-4xl font-bold text-white leading-tight">
 							{SERVICES[active].title}
 						</h3>
 
-						<p className="text-white/60 text-lg leading-relaxed">
+						<p className="text-white/60 text-base lg:text-lg leading-relaxed">
 							{SERVICES[active].description}
 						</p>
 

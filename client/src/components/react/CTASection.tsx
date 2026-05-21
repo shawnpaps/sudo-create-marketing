@@ -1,5 +1,5 @@
 import React, { useRef, useState } from "react";
-import { motion, AnimatePresence, useMotionValue, useSpring, useScroll, useTransform } from "motion/react";
+import { motion, AnimatePresence, useMotionValue, useSpring } from "motion/react";
 
 const HEADLINE = ["What are", "we building", "next?"];
 const BUDGET_OPTIONS = ["Under $5k", "$5k – $15k", "$15k – $50k", "$50k+", "Let's talk"];
@@ -67,13 +67,6 @@ const CTASection = () => {
 	const [budget, setBudget] = useState("");
 	const [formData, setFormData] = useState({ name: "", email: "", description: "" });
 
-	const sectionRef = useRef<HTMLElement>(null);
-	const { scrollYProgress } = useScroll({
-		target: sectionRef,
-		offset: ["start end", "start 0.35"],
-	});
-	const bgOpacity = useTransform(scrollYProgress, [0, 1], [0, 1]);
-
 	const handleSubmit = (e: React.FormEvent) => {
 		e.preventDefault();
 		// TODO: wire to backend / form service
@@ -85,15 +78,8 @@ const CTASection = () => {
 
 	return (
 		<section
-			ref={sectionRef}
-			className="relative min-h-screen flex flex-col items-center justify-center text-black overflow-hidden px-6 py-32"
+			className="relative min-h-screen flex flex-col items-center justify-center text-black overflow-hidden px-6 py-32 bg-white"
 		>
-			{/* Scroll-driven white wash */}
-			<motion.div
-				className="absolute inset-0 bg-white pointer-events-none"
-				style={{ opacity: bgOpacity }}
-			/>
-
 			{/* All content sits above the wash */}
 			<div className="relative z-10 flex flex-col items-center w-full">
 

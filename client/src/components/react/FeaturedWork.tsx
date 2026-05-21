@@ -18,7 +18,7 @@ const FeaturedWork = ({
 	hasCaseStudy,
 }: FeaturedWorkProps) => {
 	return (
-		<div className="flex flex-row items-center w-full gap-20 relative p-10">
+		<div className="flex flex-col md:flex-row items-center w-full gap-10 md:gap-20 relative p-6 md:p-10">
 			<div className="absolute top-0 left-0 w-full h-full -z-10 blur-sm rounded-3xl overflow-hidden">
 				<img
 					className="object-cover w-full h-full"
@@ -30,7 +30,7 @@ const FeaturedWork = ({
 				<span className="text-sm uppercase tracking-widest text-white/40">
 					{label}
 				</span>
-				<h2 className="text-5xl font-bold leading-tight">{title}</h2>
+				<h2 className="text-3xl md:text-5xl font-bold leading-tight">{title}</h2>
 				<p className="text-white/60 text-lg max-w-md leading-relaxed">
 					{description}
 				</p>
@@ -51,7 +51,7 @@ const FeaturedWork = ({
 
 			<div className="relative flex-shrink-0">
 				<div className="absolute inset-0 bg-white/10 blur-3xl rounded-full -z-10" />
-				<div className="h-[780px] aspect-[9/16]">
+				<div className="h-[500px] md:h-[780px] aspect-[9/16]">
 					<VerticalVideoPlayer playbackId={playbackId} />
 				</div>
 			</div>

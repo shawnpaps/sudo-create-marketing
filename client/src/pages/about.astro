@@ -1,0 +1,19 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import BuildingPage from "../components/react/BuildingPage.tsx";
+---
+
+<BaseLayout
+	title="What We're Building"
+	description="Products, tools, and experiments built by Sudo Create."
+>
+	<div class="fixed top-0 left-0 w-full h-full -z-10">
+		<img
+			class="object-cover w-full h-full"
+			src="/lens-background.jpg"
+			alt=""
+		/>
+	</div>
+
+	<BuildingPage client:load />
+</BaseLayout>

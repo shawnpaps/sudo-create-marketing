@@ -54,24 +54,35 @@ const Hero = ({ heading, subtext, location }: HeroProps) => {
 
 			{/* Headline — vertically centered in remaining space */}
 			<div className="flex-1 flex items-center">
-				<div className="flex flex-col" style={{ gap: "0.05em" }}>
-					{words.map((word, i) => (
-						<div key={i} className="overflow-hidden">
-							<motion.h1
-								initial={{ y: "110%" }}
-								animate={{ y: 0 }}
-								transition={{
-									duration: 0.9,
-									delay: 0.12 + i * 0.13,
-									ease: [0.22, 1, 0.36, 1],
-								}}
-								className="font-bold leading-[0.88]"
-								style={{ fontSize: "clamp(4.5rem, 10.5vw, 9.5rem)" }}
-							>
-								{word}
-							</motion.h1>
-						</div>
-					))}
+				<div className="flex flex-col">
+					<div className="flex flex-col" style={{ gap: "0.05em" }}>
+						{words.map((word, i) => (
+							<div key={i} className="overflow-hidden">
+								<motion.h1
+									initial={{ y: "110%" }}
+									animate={{ y: 0 }}
+									transition={{
+										duration: 0.9,
+										delay: 0.12 + i * 0.13,
+										ease: [0.22, 1, 0.36, 1],
+									}}
+									className="font-bold leading-[0.88] p-4"
+									style={{ fontSize: "clamp(2.5rem, 11vw, 9.5rem)" }}
+								>
+									{word}
+								</motion.h1>
+							</div>
+						))}
+					</div>
+
+					<motion.p
+						initial={{ opacity: 0, y: 6 }}
+						animate={{ opacity: 1, y: 0 }}
+						transition={{ duration: 0.5, delay: 0.55, ease: "easeOut" }}
+						className="text-white/30 text-xs font-mono mt-5 tracking-wide"
+					>
+						// sudo [su·do] — superuser do. elevated access, unlimited output.
+					</motion.p>
 				</div>
 			</div>
 
