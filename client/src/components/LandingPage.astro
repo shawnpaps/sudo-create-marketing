@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Hero from "./react/Hero.tsx";
+import BackgroundVideo from "./react/BackgroundVideo.tsx";
 import FeaturedWorkCarousel from "./react/FeaturedWorkCarousel.tsx";
 import ServicesSection from "./react/ServicesSection.tsx";
 import TestimonialsSection from "./react/TestimonialsSection.tsx";
@@ -31,7 +32,7 @@ const baseOrganization = {
 		url: `${SITE_URL}/sudo_white.png`,
 	},
 	description:
-		"Media technology studio building unified digital presences for experience-driven brands in music, hospitality, and lifestyle.",
+		"Media technology studio building content-driven websites, streaming infrastructure, and custom software for brands where media is the product.",
 	address: {
 		"@type": "PostalAddress",
 		addressLocality: "Tampa",
@@ -56,13 +57,13 @@ const homeStructuredData: Record<string, unknown> = {
 
 const offerCatalog = {
 	"@type": "OfferCatalog",
-	name: "Digital Presence Services",
+	name: "Media Technology Services",
 	itemListElement: [
-		{ "@type": "Offer", itemOffered: { "@type": "Service", name: "Digital Experiences" } },
-		{ "@type": "Offer", itemOffered: { "@type": "Service", name: "Visual Storytelling" } },
-		{ "@type": "Offer", itemOffered: { "@type": "Service", name: "Content Infrastructure" } },
-		{ "@type": "Offer", itemOffered: { "@type": "Service", name: "App Development" } },
-		{ "@type": "Offer", itemOffered: { "@type": "Service", name: "Product Design" } },
+		{ "@type": "Offer", itemOffered: { "@type": "Service", name: "Content-Driven Websites" } },
+		{ "@type": "Offer", itemOffered: { "@type": "Service", name: "Media Infrastructure" } },
+		{ "@type": "Offer", itemOffered: { "@type": "Service", name: "Apps & Software" } },
+		{ "@type": "Offer", itemOffered: { "@type": "Service", name: "Content Systems" } },
+		{ "@type": "Offer", itemOffered: { "@type": "Service", name: "Visual Production" } },
 	],
 };
 
@@ -92,13 +93,10 @@ const structuredData = localBusinessStructuredData ?? homeStructuredData;
 ---
 
 <BaseLayout title={title} description={description} structuredData={structuredData}>
-	<div class="fixed top-0 left-0 w-full h-full -z-10">
-		<img
-			class="object-cover w-full h-full"
-			src="/lens-background.jpg"
-			alt=""
-		/>
-	</div>
+	<BackgroundVideo
+		client:load
+		playbackId="aSAZ60167YcF01oASekPZJ1eNBPgF6dtoeJ79tYrqHlxU"
+	/>
 
 	<Hero
 		client:load
