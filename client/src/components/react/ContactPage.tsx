@@ -218,11 +218,13 @@ const BudgetStep = ({
 	value,
 	onChange,
 	onNext,
+	submitting = false,
 }: {
 	direction: number;
 	value: string;
 	onChange: (v: string) => void;
 	onNext: () => void;
+	submitting?: boolean;
 }) => (
 	<StepShell direction={direction}>
 		<StepQuestion question="What's your budget range?" subtext="04 — Investment" />
@@ -252,8 +254,8 @@ const BudgetStep = ({
 		</motion.div>
 		<ContinueRow
 			onNext={onNext}
-			disabled={!value}
-			label="Send message →"
+			disabled={!value || submitting}
+			label={submitting ? "Sending…" : "Send message →"}
 			hint="Select one to continue"
 		/>
 	</StepShell>
@@ -265,6 +267,7 @@ const ContactPage = () => {
 	const [step, setStep] = useState<Step>("intro");
 	const [direction, setDirection] = useState(1);
 	const [formData, setFormData] = useState({ name: "", email: "", project: "", budget: "" });
+	const [submitting, setSubmitting] = useState(false);
 
 	const cursorX = useMotionValue(typeof window !== "undefined" ? window.innerWidth / 2 : 0);
 	const cursorY = useMotionValue(typeof window !== "undefined" ? window.innerHeight / 2 : 0);
@@ -282,9 +285,26 @@ const ContactPage = () => {
 		else if (idx > 0) go(FORM_STEPS[idx - 1], -1);
 	};
 
-	const handleSubmit = () => {
-		// TODO: wire to backend / form service
-		go("success");
+	const handleSubmit = async () => {
+		setSubmitting(true);
+		try {
+			await fetch("https://formsubmit.co/ajax/hello@sudocreate.studio", {
+				method: "POST",
+				headers: { "Content-Type": "application/json", Accept: "application/json" },
+				body: JSON.stringify({
+					name: formData.name,
+					email: formData.email,
+					message: formData.project,
+					budget: formData.budget,
+					_subject: `New inquiry from ${formData.name}`,
+					_template: "table",
+					_captcha: "false",
+				}),
+			});
+		} finally {
+			setSubmitting(false);
+			go("success");
+		}
 	};
 
 	const progressIndex = FORM_STEPS.indexOf(step as typeof FORM_STEPS[number]);
@@ -484,6 +504,7 @@ const ContactPage = () => {
 							value={formData.budget}
 							onChange={(v) => setFormData((p) => ({ ...p, budget: v }))}
 							onNext={handleSubmit}
+							submitting={submitting}
 						/>
 					)}
 

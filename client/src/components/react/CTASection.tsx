@@ -66,11 +66,29 @@ const CTASection = () => {
 	const [formState, setFormState] = useState<FormState>("idle");
 	const [budget, setBudget] = useState("");
 	const [formData, setFormData] = useState({ name: "", email: "", description: "" });
+	const [submitting, setSubmitting] = useState(false);
 
-	const handleSubmit = (e: React.FormEvent) => {
+	const handleSubmit = async (e: React.FormEvent) => {
 		e.preventDefault();
-		// TODO: wire to backend / form service
-		setFormState("submitted");
+		setSubmitting(true);
+		try {
+			await fetch("https://formsubmit.co/ajax/hello@sudocreate.studio", {
+				method: "POST",
+				headers: { "Content-Type": "application/json", Accept: "application/json" },
+				body: JSON.stringify({
+					name: formData.name,
+					email: formData.email,
+					message: formData.description,
+					budget,
+					_subject: `New inquiry from ${formData.name}`,
+					_template: "table",
+					_captcha: "false",
+				}),
+			});
+		} finally {
+			setSubmitting(false);
+			setFormState("submitted");
+		}
 	};
 
 	const inputClass =
@@ -292,11 +310,12 @@ const CTASection = () => {
 							<Field index={4}>
 								<motion.button
 									type="submit"
+									disabled={submitting}
 									whileHover={{ scale: 1.02 }}
 									whileTap={{ scale: 0.97 }}
-									className="w-full bg-white text-black font-semibold py-4 rounded-full text-sm mt-2 hover:bg-white/90 transition-colors duration-200"
+									className="w-full bg-white text-black font-semibold py-4 rounded-full text-sm mt-2 hover:bg-white/90 transition-colors duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
 								>
-									Send message →
+									{submitting ? "Sending…" : "Send message →"}
 								</motion.button>
 							</Field>
 						</form>
