@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "@astrojs/react": "^5.0.5",
+    "@astrojs/sitemap": "^3.7.2",
     "@fontsource-variable/bricolage-grotesque": "^5.2.10",
     "@fontsource-variable/instrument-sans": "^5.2.8",
     "@mux/mux-player": "^3.13.0",

@@ -1,7 +1,7 @@
 import React, { useRef, useState } from "react";
 import { motion, AnimatePresence, useMotionValue, useSpring } from "motion/react";
 
-const HEADLINE = ["What are", "we building", "next?"];
+const HEADLINE = ["Let's build", "something worth", "experiencing."];
 const BUDGET_OPTIONS = ["Under $5k", "$5k – $15k", "$15k – $50k", "$50k+", "Let's talk"];
 
 type FormState = "idle" | "open" | "submitted";
@@ -134,7 +134,7 @@ const CTASection = () => {
 				transition={{ duration: 0.6, delay: 0.5, ease: "easeOut" }}
 				className="text-black/40 text-lg text-center max-w-md leading-relaxed mb-14"
 			>
-				Tell us about your project. We'll get back to you within one business day.
+				Tell us about your brand. If it's the right fit, we'll tell you exactly how we'd approach it.
 			</motion.p>
 
 			{/* Interactive area — button → form → success */}
@@ -206,7 +206,7 @@ const CTASection = () => {
 								className="flex items-center justify-between mb-2"
 							>
 								<div>
-									<h3 className="text-white font-bold text-xl">Start a project</h3>
+									<h3 className="text-white font-bold text-xl">Start a conversation</h3>
 									<p className="text-white/40 text-sm mt-0.5">We'll follow up within one business day.</p>
 								</div>
 								<button

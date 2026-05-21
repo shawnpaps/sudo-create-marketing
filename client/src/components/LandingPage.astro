@@ -16,9 +16,82 @@ interface Props {
 }
 
 const { title, description, heroHeading, heroSubtext, location } = Astro.props;
+
+const SITE_URL = "https://sudocreate.studio";
+
+const organizationId = `${SITE_URL}/#organization`;
+
+const baseOrganization = {
+	"@type": ["Organization", "ProfessionalService"],
+	"@id": organizationId,
+	name: "Sudo Create",
+	url: SITE_URL,
+	logo: {
+		"@type": "ImageObject",
+		url: `${SITE_URL}/sudo_white.png`,
+	},
+	description:
+		"Media technology studio building unified digital presences for experience-driven brands in music, hospitality, and lifestyle.",
+	address: {
+		"@type": "PostalAddress",
+		addressLocality: "Tampa",
+		addressRegion: "FL",
+		addressCountry: "US",
+	},
+};
+
+const homeStructuredData: Record<string, unknown> = {
+	"@context": "https://schema.org",
+	"@graph": [
+		baseOrganization,
+		{
+			"@type": "WebSite",
+			"@id": `${SITE_URL}/#website`,
+			url: SITE_URL,
+			name: "Sudo Create",
+			publisher: { "@id": organizationId },
+		},
+	],
+};
+
+const offerCatalog = {
+	"@type": "OfferCatalog",
+	name: "Digital Presence Services",
+	itemListElement: [
+		{ "@type": "Offer", itemOffered: { "@type": "Service", name: "Digital Experiences" } },
+		{ "@type": "Offer", itemOffered: { "@type": "Service", name: "Visual Storytelling" } },
+		{ "@type": "Offer", itemOffered: { "@type": "Service", name: "Content Infrastructure" } },
+		{ "@type": "Offer", itemOffered: { "@type": "Service", name: "App Development" } },
+		{ "@type": "Offer", itemOffered: { "@type": "Service", name: "Product Design" } },
+	],
+};
+
+const [cityName, stateCode] = location ? location.split(", ") : [];
+
+const localBusinessStructuredData: Record<string, unknown> | null = location
+	? {
+			"@context": "https://schema.org",
+			"@type": "LocalBusiness",
+			"@id": organizationId,
+			name: "Sudo Create",
+			url: SITE_URL,
+			image: `${SITE_URL}/lens-background.jpg`,
+			description,
+			address: {
+				"@type": "PostalAddress",
+				addressLocality: cityName,
+				addressRegion: stateCode ?? "FL",
+				addressCountry: "US",
+			},
+			areaServed: { "@type": "City", name: cityName },
+			hasOfferCatalog: offerCatalog,
+		}
+	: null;
+
+const structuredData = localBusinessStructuredData ?? homeStructuredData;
 ---
 
-<BaseLayout title={title} description={description}>
+<BaseLayout title={title} description={description} structuredData={structuredData}>
 	<div class="fixed top-0 left-0 w-full h-full -z-10">
 		<img
 			class="object-cover w-full h-full"
@@ -38,7 +111,7 @@ const { title, description, heroHeading, heroSubtext, location } = Astro.props;
 		<h2
 			class="border-b-2 w-full mb-10 md:mb-16 text-3xl md:text-4xl font-bold"
 		>
-			Featured Works
+			Selected Work
 		</h2>
 		<FeaturedWorkCarousel client:load />
 	</section>
@@ -47,7 +120,7 @@ const { title, description, heroHeading, heroSubtext, location } = Astro.props;
 		<h2
 			class="border-b-2 w-full mb-10 md:mb-16 text-3xl md:text-4xl font-bold"
 		>
-			What We Do
+			What We Build
 		</h2>
 		<ServicesSection client:load />
 	</section>

@@ -1,51 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { AnimatePresence, motion } from "motion/react";
-
-type Testimonial = {
-	id: string;
-	quote: string;
-	name: string;
-	title: string;
-	company: string;
-};
-
-const TESTIMONIALS: Testimonial[] = [
-	{
-		id: "1",
-		quote: "Sudo Create didn't just build us a website — they built us a presence. Every decision they made showed they actually understood our brand at a level most agencies never get to.",
-		name: "Alex Rivera",
-		title: "CEO",
-		company: "Tourpass",
-	},
-	{
-		id: "2",
-		quote: "The attention to craft is unlike anything I've experienced from a digital studio. They treat every pixel like it matters — because to them, it genuinely does.",
-		name: "Jordan Lee",
-		title: "Creative Director",
-		company: "Studio Null",
-	},
-	{
-		id: "3",
-		quote: "We'd worked with three agencies before Sudo Create. None of them understood that technology and culture aren't separate things. These guys get it.",
-		name: "Marcus Webb",
-		title: "Founder",
-		company: "Redline Media",
-	},
-	{
-		id: "4",
-		quote: "From the first call it was clear they actually listened. They pushed back on our ideas when they should have, and the product is so much better because of it.",
-		name: "Priya Okafor",
-		title: "Head of Product",
-		company: "Fieldwork Labs",
-	},
-	{
-		id: "5",
-		quote: "Shipping with Sudo Create felt like working with a team that had just as much riding on the outcome as we did. That energy is rare and it shows in the work.",
-		name: "Dana Holt",
-		title: "Co-Founder",
-		company: "Wavefront Audio",
-	},
-];
+import { getTestimonials, type Testimonial } from "../../lib/payload";
 
 const SLIDE_DURATION_MS = 7000;
 
@@ -68,26 +23,35 @@ const quoteVariants = {
 };
 
 const TestimonialsSection = () => {
+	const [testimonials, setTestimonials] = useState<Testimonial[]>([]);
 	const [index, setIndex] = useState(0);
 	const [direction, setDirection] = useState(1);
 	const [paused, setPaused] = useState(false);
 	const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+	useEffect(() => {
+		getTestimonials()
+			.then(({ docs }) => { if (docs.length > 0) setTestimonials(docs); })
+			.catch(console.error);
+	}, []);
 
 	const go = (next: number, dir: number) => {
 		setDirection(dir);
 		setIndex(next);
 	};
 
-	const prev = () => go((index - 1 + TESTIMONIALS.length) % TESTIMONIALS.length, -1);
-	const next = () => go((index + 1) % TESTIMONIALS.length, 1);
+	const prev = () => go((index - 1 + testimonials.length) % testimonials.length, -1);
+	const next = () => go((index + 1) % testimonials.length, 1);
 
 	useEffect(() => {
-		if (paused) return;
+		if (paused || testimonials.length === 0) return;
 		timerRef.current = setTimeout(next, SLIDE_DURATION_MS);
 		return () => { if (timerRef.current) clearTimeout(timerRef.current); };
-	}, [index, paused]);
+	}, [index, paused, testimonials.length]);
 
-	const t = TESTIMONIALS[index];
+	if (testimonials.length === 0) return null;
+
+	const t = testimonials[index];
 	const initials = t.name.split(" ").map((w) => w[0]).join("");
 
 	return (
@@ -128,7 +92,7 @@ const TestimonialsSection = () => {
 					>
 						<blockquote
 							className="font-bold leading-snug text-white"
-							style={{ fontSize: "clamp(1.6rem, 3.2vw, 2.6rem)" }}
+							style={{ fontSize: "clamp(1rem, 1.6vw, 1.35rem)" }}
 						>
 							"{t.quote}"
 						</blockquote>
@@ -167,7 +131,7 @@ const TestimonialsSection = () => {
 
 					{/* Progress dots */}
 					<div className="flex items-center gap-2">
-						{TESTIMONIALS.map((_, i) => (
+						{testimonials.map((_, i) => (
 							<button
 								key={i}
 								onClick={() => go(i, i > index ? 1 : -1)}

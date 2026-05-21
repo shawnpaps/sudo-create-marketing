@@ -1,11 +1,23 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import WorksGrid from "../components/react/WorksGrid.tsx";
+
+const SITE_URL = "https://sudocreate.studio";
+
+const structuredData = {
+	"@context": "https://schema.org",
+	"@type": "CollectionPage",
+	name: "Work | Sudo Create",
+	description: "Work from the intersection of media and technology — experience-driven brands, built to last.",
+	url: `${SITE_URL}/works`,
+	publisher: { "@id": `${SITE_URL}/#organization` },
+};
 ---
 
 <BaseLayout
-	title="Works"
-	description="Client projects and case studies by Sudo Create."
+	title="Work | Sudo Create"
+	description="Work from the intersection of media and technology — experience-driven brands, built to last."
+	structuredData={structuredData}
 >
 	<div class="fixed top-0 left-0 w-full h-full -z-10">
 		<img

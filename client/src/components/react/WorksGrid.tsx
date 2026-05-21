@@ -1,91 +1,46 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { motion } from "motion/react";
 import ProjectCard, { type Project } from "./ProjectCard";
+import { getWorks, type Work } from "../../lib/payload";
 
-const PROJECTS: Project[] = [
-	{
-		id: "tourpass",
-		title: "Tourpass",
-		category: "Music Tech",
-		description:
-			"A revolutionary networking platform for music industry professionals — connecting artists, agents, and venues in a single seamless experience.",
-		thumbnail: "/tourpass.png",
-		tags: ["Product Design", "Web App", "React", "Node.js"],
-		hasCaseStudy: true,
-		caseStudyHref: "/works/tourpass",
-		siteHref: "#",
-	},
-	{
-		id: "project-2",
-		title: "Project Two",
-		category: "Brand Identity",
-		description: "Placeholder — add your project description here.",
-		thumbnail: "",
-		tags: ["Branding", "Web Design"],
-		hasCaseStudy: false,
-		siteHref: "#",
-	},
-	{
-		id: "project-3",
-		title: "Project Three",
-		category: "App Development",
-		description: "Placeholder — add your project description here.",
-		thumbnail: "",
-		tags: ["React Native", "iOS", "Android"],
-		hasCaseStudy: true,
-		caseStudyHref: "/works/project-three",
-		siteHref: "#",
-	},
-	{
-		id: "project-4",
-		title: "Project Four",
-		category: "Content Media Systems",
-		description: "Placeholder — add your project description here.",
-		thumbnail: "",
-		tags: ["Video Infrastructure", "CMS", "Streaming"],
-		hasCaseStudy: false,
-		siteHref: "#",
-	},
-	{
-		id: "project-5",
-		title: "Project Five",
-		category: "Website Development",
-		description: "Placeholder — add your project description here.",
-		thumbnail: "",
-		tags: ["Astro", "Tailwind", "CMS"],
-		hasCaseStudy: true,
-		caseStudyHref: "/works/project-five",
-		siteHref: "#",
-	},
-	{
-		id: "project-6",
-		title: "Project Six",
-		category: "Integrations",
-		description: "Placeholder — add your project description here.",
-		thumbnail: "",
-		tags: ["APIs", "Automation", "Webhooks"],
-		hasCaseStudy: false,
-		siteHref: "#",
-	},
-];
-
-const FILTERS = ["All", "Website Development", "Product Design", "App Development", "Integrations", "Content Media Systems", "Music Tech", "Brand Identity"];
+function workToProject(w: Work): Project {
+	return {
+		id: w.id,
+		title: w.title,
+		category: w.category,
+		description: w.description,
+		thumbnail: w.thumbnail?.url ?? "",
+		tags: w.tags?.map((t) => t.tag) ?? [],
+		hasCaseStudy: w.hasCaseStudy,
+		caseStudyHref: w.caseStudyHref ?? undefined,
+		siteHref: w.siteHref ?? undefined,
+	};
+}
 
 const WorksGrid = () => {
+	const [projects, setProjects] = useState<Project[]>([]);
 	const [activeFilter, setActiveFilter] = useState("All");
+
+	useEffect(() => {
+		getWorks({ sort: "order", limit: "100" })
+			.then(({ docs }) => setProjects(docs.map(workToProject)))
+			.catch(console.error);
+	}, []);
+
+	const categories = [
+		"All",
+		...Array.from(new Set(projects.map((p) => p.category))),
+	];
 
 	const filtered =
 		activeFilter === "All"
-			? PROJECTS
-			: PROJECTS.filter((p) => p.category === activeFilter);
-
-	const usedCategories = ["All", ...Array.from(new Set(PROJECTS.map((p) => p.category)))];
+			? projects
+			: projects.filter((p) => p.category === activeFilter);
 
 	return (
 		<div className="flex flex-col gap-10">
-			{/* Filter bar */}
 			<div className="flex flex-wrap gap-2">
-				{usedCategories.map((filter) => (
+				{categories.map((filter) => (
 					<button
 						key={filter}
 						onClick={() => setActiveFilter(filter)}
@@ -100,11 +55,7 @@ const WorksGrid = () => {
 				))}
 			</div>
 
-			{/* Cards */}
-			<motion.div
-				layout
-				className="flex flex-col gap-3"
-			>
+			<motion.div layout className="flex flex-col gap-3">
 				{filtered.map((project, i) => (
 					<motion.div
 						key={project.id}
@@ -119,8 +70,10 @@ const WorksGrid = () => {
 				))}
 			</motion.div>
 
-			{filtered.length === 0 && (
-				<p className="text-white/40 text-center py-16">No projects in this category yet.</p>
+			{filtered.length === 0 && projects.length > 0 && (
+				<p className="text-white/40 text-center py-16">
+					No projects in this category yet.
+				</p>
 			)}
 		</div>
 	);

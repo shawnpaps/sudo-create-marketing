@@ -1,32 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { AnimatePresence, motion } from "motion/react";
-import FeaturedWork, { type FeaturedWorkProps } from "./FeaturedWork";
-
-const PROJECTS: FeaturedWorkProps[] = [
-	{
-		label: "Product",
-		title: "Tourpass",
-		description:
-			"A revolutionary platform designed to help music industry professionals network like never before.",
-		href: "#",
-		playbackId: "JF3BNVZKDg2lNHEMUMveAwRtWuGO21zhXJAQvqgorls",
-		hasCaseStudy: true,
-	},
-	{
-		label: "Website + Media",
-		title: "Dark Horse Massage",
-		description: "Placeholder — swap in your second project's copy here.",
-		href: "#",
-		playbackId: "xu8JfwYg23p9Z61C02Ps2FoYQtRSymtvwL1BsUpbmsFE",
-	},
-	{
-		label: "Website + Media",
-		title: "Evolutionary Blades",
-		description: "Placeholder — swap in your third project's copy here.",
-		href: "#",
-		playbackId: "w6j9TpALM54AS3QlkGHZI3ZnMk97BVOdMav3IE00mo3o",
-	},
-];
+import FeaturedWork from "./FeaturedWork";
+import { getFeaturedWorks, type Work } from "../../lib/payload";
 
 const SLIDE_DURATION_MS = 6000;
 
@@ -36,11 +11,7 @@ const variants = {
 		opacity: 0,
 		scale: 0.97,
 	}),
-	center: {
-		x: 0,
-		opacity: 1,
-		scale: 1,
-	},
+	center: { x: 0, opacity: 1, scale: 1 },
 	exit: (dir: number) => ({
 		x: dir > 0 ? -120 : 120,
 		opacity: 0,
@@ -49,26 +20,37 @@ const variants = {
 };
 
 const FeaturedWorkCarousel = () => {
+	const [works, setWorks] = useState<Work[]>([]);
 	const [index, setIndex] = useState(0);
 	const [direction, setDirection] = useState(1);
 	const [paused, setPaused] = useState(false);
 	const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+	useEffect(() => {
+		getFeaturedWorks()
+			.then(({ docs }) => setWorks(docs))
+			.catch(console.error);
+	}, []);
 
 	const go = (nextIndex: number, dir: number) => {
 		setDirection(dir);
 		setIndex(nextIndex);
 	};
 
-	const next = () => go((index + 1) % PROJECTS.length, 1);
-	const prev = () => go((index - 1 + PROJECTS.length) % PROJECTS.length, -1);
+	const next = () => go((index + 1) % works.length, 1);
+	const prev = () => go((index - 1 + works.length) % works.length, -1);
 
 	useEffect(() => {
-		if (paused) return;
+		if (paused || works.length === 0) return;
 		timerRef.current = setTimeout(next, SLIDE_DURATION_MS);
 		return () => {
 			if (timerRef.current) clearTimeout(timerRef.current);
 		};
-	}, [index, paused]);
+	}, [index, paused, works.length]);
+
+	if (works.length === 0) return null;
+
+	const current = works[index];
 
 	return (
 		<div
@@ -87,7 +69,15 @@ const FeaturedWorkCarousel = () => {
 						exit="exit"
 						transition={{ duration: 0.65, ease: [0.25, 0.46, 0.45, 0.94] }}
 					>
-						<FeaturedWork {...PROJECTS[index]} />
+						<FeaturedWork
+							label={current.label}
+							title={current.title}
+							description={current.description}
+							href={current.caseStudyHref ?? current.siteHref ?? "#"}
+							playbackId={current.playbackId ?? ""}
+							hasCaseStudy={current.hasCaseStudy}
+							thumbnail={current.thumbnail?.url ?? undefined}
+						/>
 					</motion.div>
 				</AnimatePresence>
 			</div>
@@ -102,7 +92,7 @@ const FeaturedWorkCarousel = () => {
 				</button>
 
 				<div className="flex items-center gap-2">
-					{PROJECTS.map((_, i) => (
+					{works.map((_, i) => (
 						<button
 							key={i}
 							onClick={() => go(i, i > index ? 1 : -1)}

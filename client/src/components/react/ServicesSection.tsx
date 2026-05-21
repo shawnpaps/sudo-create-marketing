@@ -13,9 +13,9 @@ const SERVICES: Service[] = [
 	{
 		id: "web",
 		number: "01",
-		title: "Website Development",
+		title: "Digital Experiences",
 		description:
-			"Custom websites engineered for performance and conversion — from marketing sites to complex web applications built to scale.",
+			"Websites built to function as the front door to your entire brand — not just a page, but a presence. Designed for experience-driven brands that can't afford to look ordinary.",
 		deliverables: [
 			"Astro",
 			"Content Management",
@@ -29,7 +29,7 @@ const SERVICES: Service[] = [
 		number: "02",
 		title: "Product Design",
 		description:
-			"End-to-end product design that bridges user needs and business goals. We craft interfaces that feel inevitable.",
+			"Interfaces designed for the way your audience actually feels — not just how they navigate. We build products that carry your brand's sensibility into every interaction.",
 		deliverables: ["UI / UX", "Design Systems", "Figma", "Prototyping"],
 	},
 	{
@@ -37,29 +37,29 @@ const SERVICES: Service[] = [
 		number: "03",
 		title: "App Development",
 		description:
-			"Native and cross-platform mobile applications built with care — from concept through app store launch.",
+			"Mobile applications built with the same attention to detail as everything else we make. From concept to launch, nothing ships until it feels right.",
 		deliverables: ["React Native", "iOS", "Android", "API Integration"],
 	},
 	{
 		id: "integrations",
 		number: "04",
-		title: "Integrations",
+		title: "Content Infrastructure",
 		description:
-			"Seamlessly connect your tools, platforms, and data streams into one unified ecosystem that just works.",
+			"The systems behind your brand should work as seamlessly as the experience in front of it. We connect your tools, platforms, and data streams into one unified infrastructure.",
 		deliverables: [
 			"REST & GraphQL APIs",
 			"Webhooks",
 			"Automation",
-			"AI-Integrations",
+			"AI Integrations",
 			"Third-party Services",
 		],
 	},
 	{
 		id: "content",
 		number: "05",
-		title: "Content Media & Management",
+		title: "Visual Storytelling",
 		description:
-			"From custom media pipelines to on-site production — we capture and manage the content that makes your brand feel real. Photography, video, and the systems to distribute it all.",
+			"From on-site production to custom media pipelines — we capture and distribute the content that makes your brand feel real. Photography, video, and the infrastructure to put it everywhere.",
 		deliverables: [
 			"Photography",
 			"Videography",
