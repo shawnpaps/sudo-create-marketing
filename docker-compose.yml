@@ -19,8 +19,6 @@ services:
       context: ./cms
       dockerfile: Dockerfile
     restart: unless-stopped
-    ports:
-      - '3000:3000'
     environment:
       DATABASE_URL: postgres://${POSTGRES_USER:-payload}:${POSTGRES_PASSWORD}@postgres:5432/${POSTGRES_DB:-sudocreate}
       PAYLOAD_SECRET: ${PAYLOAD_SECRET}
@@ -30,6 +28,15 @@ services:
       S3_ACCESS_KEY_ID: ${S3_ACCESS_KEY_ID}
       S3_SECRET_ACCESS_KEY: ${S3_SECRET_ACCESS_KEY}
       S3_REGION: ${S3_REGION}
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.cms.rule=Host(`${CMS_HOST}`)"
+      - "traefik.http.routers.cms.entrypoints=websecure"
+      - "traefik.http.routers.cms.tls.certresolver=${TRAEFIK_CERTRESOLVER}"
+      - "traefik.http.services.cms.loadbalancer.server.port=3000"
+    networks:
+      - default
+      - traefik
     depends_on:
       postgres:
         condition: service_healthy
@@ -41,10 +48,22 @@ services:
       args:
         PUBLIC_PAYLOAD_URL: ${CMS_URL}
     restart: unless-stopped
-    ports:
-      - '4321:80'
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.client.rule=Host(`${CLIENT_HOST}`)"
+      - "traefik.http.routers.client.entrypoints=websecure"
+      - "traefik.http.routers.client.tls.certresolver=${TRAEFIK_CERTRESOLVER}"
+      - "traefik.http.services.client.loadbalancer.server.port=80"
+    networks:
+      - default
+      - traefik
     depends_on:
       - cms
 
 volumes:
   pgdata:
+
+networks:
+  traefik:
+    name: ${TRAEFIK_NETWORK}
+    external: true
