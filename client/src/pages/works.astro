@@ -3,18 +3,34 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import WorksGrid from "../components/react/WorksGrid.tsx";
 ---
 
-<BaseLayout title="Works" description="Client projects and case studies by Sudo Create.">
+<BaseLayout
+	title="Works"
+	description="Client projects and case studies by Sudo Create."
+>
 	<div class="fixed top-0 left-0 w-full h-full -z-10">
-		<img src="/lens-background.jpg" alt="" />
+		<img
+			class="object-cover w-full h-full"
+			src="/lens-background.jpg"
+			alt=""
+		/>
 	</div>
 
 	<section class="max-w-6xl mx-auto px-6 pt-32 pb-16 text-white">
 		<div class="max-w-2xl flex flex-col gap-4">
-			<span class="text-sm uppercase tracking-widest text-white/40">Our Work</span>
-			<h1 class="text-6xl font-bold leading-tight">Stuff We've Built</h1>
-			<p class="text-white/60 text-xl leading-relaxed">
-				A collection of projects we're proud of — from early-stage products to full-scale platforms.
-				Projects marked <span class="inline-flex items-center gap-1 border border-white/30 text-white/70 text-xs px-2 py-0.5 rounded-full align-middle mx-1"><span class="w-1.5 h-1.5 rounded-full bg-white/70 inline-block"></span>Case Study</span> go deeper with process, decisions, and outcomes.
+			<span class="text-sm uppercase tracking-widest text-white/40"
+				>Our Work</span
+			>
+			<h1 class="text-4xl md:text-6xl font-bold leading-tight">
+				Stuff We've Built
+			</h1>
+			<p class="text-white/60 text-base md:text-xl leading-relaxed">
+				A collection of projects we're proud of — from early-stage
+				products to full-scale platforms. Projects marked <span
+					class="inline-flex items-center gap-1 border border-white/30 text-white/70 text-xs px-2 py-0.5 rounded-full align-middle mx-1"
+					><span
+						class="w-1.5 h-1.5 rounded-full bg-white/70 inline-block"
+					></span>Case Study</span
+				> go deeper with process, decisions, and outcomes.
 			</p>
 		</div>
 	</section>

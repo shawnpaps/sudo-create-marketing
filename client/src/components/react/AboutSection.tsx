@@ -58,8 +58,12 @@ const AboutSection = () => {
 						<motion.div
 							initial={{ opacity: 0, y: 40 }}
 							animate={{ opacity: 1, y: 0 }}
-							transition={{ duration: 0.9, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
-							className="absolute bottom-0 right-0 w-[340px] lg:w-[420px] h-[600px] lg:h-[700px]"
+							transition={{
+								duration: 0.9,
+								delay: 0.3,
+								ease: [0.22, 1, 0.36, 1],
+							}}
+							className="absolute bottom-24 lg:bottom-0 right-0 w-[180px] sm:w-[260px] lg:w-[420px] h-[380px] sm:h-[500px] lg:h-[700px]"
 						>
 							<img
 								src="/headshot.jpg"
@@ -72,7 +76,7 @@ const AboutSection = () => {
 						</motion.div>
 
 						{/* Text content */}
-						<div className="relative max-w-6xl mx-auto px-6 pb-28 lg:pb-32 text-white w-full">
+						<div className="relative max-w-6xl mx-auto px-6 pb-20 lg:pb-32 text-white w-full">
 							{/* Eyebrow */}
 							<motion.div
 								initial={{ opacity: 0, x: -12 }}
@@ -104,7 +108,7 @@ const AboutSection = () => {
 												delay: 0.18 + i * 0.11,
 												ease: [0.22, 1, 0.36, 1],
 											}}
-											className="text-6xl xl:text-7xl font-bold leading-tight"
+											className="text-4xl sm:text-5xl xl:text-7xl font-bold leading-tight"
 										>
 											{line}
 										</motion.h2>
@@ -124,7 +128,7 @@ const AboutSection = () => {
 											delay: 0.5 + i * 0.13,
 											ease: "easeOut",
 										}}
-										className="text-white/60 text-base lg:text-lg leading-relaxed"
+										className="text-white/60 text-sm sm:text-base lg:text-lg leading-relaxed"
 									>
 										{para}
 									</motion.p>
