@@ -8,7 +8,7 @@ const HEADLINE_LINES = ["Craft-forward.", "Technology-driven.", "Experience abov
 
 const BODY_COPY = [
 	"Before shipping a single line of code, I spent years behind a camera and a mixing board — photographing bands and engineering records deep in Florida's metal underground.",
-	"That world taught me what it means to care obsessively about craft. The difference between a mix that hits and one that doesn't. How an image carries feeling before a word is read. That obsession lives in every line of code and every frame we shoot at Sudo Create — at the intersection of media and technology, for brands that understand experience isn't decoration. It's the whole point.",
+	"That world taught me what it means to care obsessively about craft. The difference between a mix that hits and one that doesn't. How an image carries feeling before a word is read. That obsession lives in everything we build at Sudo Create — at the intersection of media and technology, for brands that understand experience isn't decoration. It's the whole point.",
 ];
 
 const AboutSection = () => {
