@@ -15,7 +15,7 @@ const SERVICES: Service[] = [
 		number: "01",
 		title: "Content-Driven Websites",
 		description:
-			"Media-forward builds for brands that publish, stream, or perform. Not template sites — architected from the ground up around how your audience consumes content, with the infrastructure to back it.",
+			"Media-forward builds for brands that publish, stream, or perform. Architected from the ground up around how your audience consumes content — with the infrastructure to back it.",
 		deliverables: [
 			"Astro",
 			"CMS Integration",
@@ -26,56 +26,27 @@ const SERVICES: Service[] = [
 		],
 	},
 	{
-		id: "streaming",
+		id: "infrastructure",
 		number: "02",
-		title: "Media Infrastructure",
+		title: "Media & Content Infrastructure",
 		description:
-			"Live and on-demand video infrastructure built for reliability at scale — so your audience gets the experience you intended, every time.",
+			"Mux integrations, video delivery pipelines, and content management systems for brands where media is always in motion.",
 		deliverables: [
 			"Mux",
-			"Live Streaming",
 			"Video Delivery",
-			"HLS / DASH",
-			"CDN",
-			"API Integration",
-		],
-	},
-	{
-		id: "app",
-		number: "03",
-		title: "Apps & Software",
-		description:
-			"Custom software built around how your team actually works — not the other way around. Purpose-built for the workflows that generic tools never quite fit.",
-		deliverables: [
-			"React Native",
-			"iOS",
-			"Android",
-			"Web Apps",
-			"API Integration",
-		],
-	},
-	{
-		id: "content-systems",
-		number: "04",
-		title: "Content Systems",
-		description:
-			"The infrastructure that keeps your media organized and in motion — across channels, formats, and platforms. Built to scale with the way you publish.",
-		deliverables: [
 			"CMS",
-			"Automation",
-			"Webhooks",
-			"Content Distribution",
-			"REST & GraphQL APIs",
-			"Third-party Integrations",
+			"Live Streaming",
+			"HLS / DASH",
+			"API Integration",
 		],
 	},
 	{
 		id: "visual",
-		number: "05",
-		title: "Visual Production",
+		number: "03",
+		title: "Visual Media Production",
 		description:
-			"Content Media brought in selectively when original media is essential to the work.",
-		deliverables: ["Photography", "Videography"],
+			"Original photography and video for brands that need their story told — built to serve the work, not fill a template.",
+		deliverables: ["Photography", "Video Production", "Brand Content"],
 	},
 ];
 
