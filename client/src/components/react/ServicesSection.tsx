@@ -15,7 +15,7 @@ const SERVICES: Service[] = [
 		number: "01",
 		title: "Content-Driven Websites",
 		description:
-			"Media-forward builds for brands that publish, stream, or perform. Architected from the ground up around how your audience consumes content — with the infrastructure to back it.",
+			"Media-forward builds for brands that publish, stream, or perform. Not template sites — architected from the ground up around how your audience consumes content, with the infrastructure to back it.",
 		deliverables: [
 			"Astro",
 			"CMS Integration",
@@ -26,27 +26,56 @@ const SERVICES: Service[] = [
 		],
 	},
 	{
-		id: "infrastructure",
+		id: "streaming",
 		number: "02",
-		title: "Media & Content Infrastructure",
+		title: "Media Infrastructure",
 		description:
-			"Mux integrations, video delivery pipelines, and content management systems for brands where media is always in motion.",
+			"Live and on-demand video infrastructure built for reliability at scale — so your audience gets the experience you intended, every time.",
 		deliverables: [
 			"Mux",
-			"Video Delivery",
-			"CMS",
 			"Live Streaming",
+			"Video Delivery",
 			"HLS / DASH",
+			"CDN",
 			"API Integration",
 		],
 	},
 	{
-		id: "visual",
+		id: "app",
 		number: "03",
-		title: "Visual Media Production",
+		title: "Apps & Software",
 		description:
-			"Original photography and video for brands that need their story told — built to serve the work, not fill a template.",
-		deliverables: ["Photography", "Video Production", "Brand Content"],
+			"Custom software built around how your team actually works — not the other way around. Purpose-built for the workflows that generic tools never quite fit.",
+		deliverables: [
+			"React Native",
+			"iOS",
+			"Android",
+			"Web Apps",
+			"API Integration",
+		],
+	},
+	{
+		id: "content-systems",
+		number: "04",
+		title: "Content Systems",
+		description:
+			"The infrastructure that keeps your media organized and in motion — across channels, formats, and platforms. Built to scale with the way you publish.",
+		deliverables: [
+			"CMS",
+			"Automation",
+			"Webhooks",
+			"Content Distribution",
+			"REST & GraphQL APIs",
+			"Third-party Integrations",
+		],
+	},
+	{
+		id: "visual",
+		number: "05",
+		title: "Visual Production",
+		description:
+			"Content Media brought in selectively when original media is essential to the work.",
+		deliverables: ["Photography", "Videography"],
 	},
 ];
 
