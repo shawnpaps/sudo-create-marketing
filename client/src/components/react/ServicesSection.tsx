@@ -15,7 +15,7 @@ const SERVICES: Service[] = [
 		number: "01",
 		title: "Content-Driven Websites",
 		description:
-			"Media-forward builds for brands that publish, stream, or perform. Not template sites — architected from the ground up around how your audience consumes content, with the infrastructure to back it.",
+			"Media-forward builds for brands that publish, stream, or perform. Architected from the ground up around how your audience consumes content — not repurposed templates.",
 		deliverables: [
 			"Astro",
 			"CMS Integration",
@@ -28,9 +28,9 @@ const SERVICES: Service[] = [
 	{
 		id: "streaming",
 		number: "02",
-		title: "Media Infrastructure",
+		title: "Media Infrastructure & Streaming",
 		description:
-			"Live and on-demand video infrastructure built for reliability at scale — so your audience gets the experience you intended, every time.",
+			"Live and on-demand video infrastructure built for reliability at scale — powered by Mux, so your audience gets the experience you intended, every time.",
 		deliverables: [
 			"Mux",
 			"Live Streaming",
@@ -43,9 +43,9 @@ const SERVICES: Service[] = [
 	{
 		id: "app",
 		number: "03",
-		title: "Apps & Software",
+		title: "Apps & Custom Software",
 		description:
-			"Custom software built around how your team actually works — not the other way around. Purpose-built for the workflows that generic tools never quite fit.",
+			"Purpose-built software for teams that have outgrown generic tools. Built around your workflow — from mobile apps to internal platforms.",
 		deliverables: [
 			"React Native",
 			"iOS",
@@ -72,10 +72,10 @@ const SERVICES: Service[] = [
 	{
 		id: "visual",
 		number: "05",
-		title: "Visual Production",
+		title: "Visual Media Production",
 		description:
-			"Content Media brought in selectively when original media is essential to the work.",
-		deliverables: ["Photography", "Videography"],
+			"Original photography and video for brands that need their story told. We bring the same precision we apply to technology to every frame we compose.",
+		deliverables: ["Photography", "Video Production", "Brand Media"],
 	},
 ];
 

@@ -11,7 +11,6 @@ const Hero = ({ heading, subtext, location }: HeroProps) => {
 
 	return (
 		<section className="relative min-h-screen flex flex-col text-white max-w-6xl mx-auto px-6">
-			{/* Eyebrow */}
 			<div className="pt-10 h-20 flex items-center">
 				{location ? (
 					<motion.div
@@ -52,7 +51,6 @@ const Hero = ({ heading, subtext, location }: HeroProps) => {
 				)}
 			</div>
 
-			{/* Headline — vertically centered in remaining space */}
 			<div className="flex-1 flex items-center">
 				<div className="flex flex-col">
 					<div className="flex flex-col" style={{ gap: "0.05em" }}>
@@ -66,7 +64,7 @@ const Hero = ({ heading, subtext, location }: HeroProps) => {
 										delay: 0.12 + i * 0.13,
 										ease: [0.22, 1, 0.36, 1],
 									}}
-									className="font-bold leading-[0.88] p-4"
+									className="font-bold leading-[0.88]"
 									style={{ fontSize: "clamp(2.5rem, 11vw, 9.5rem)" }}
 								>
 									{word}
@@ -86,7 +84,6 @@ const Hero = ({ heading, subtext, location }: HeroProps) => {
 				</div>
 			</div>
 
-			{/* Bottom row — subtext left, scroll indicator right */}
 			<div className="pb-14 flex items-end justify-between gap-10">
 				<motion.p
 					initial={{ opacity: 0, y: 18 }}
