@@ -20,6 +20,7 @@ const BackgroundVideo = ({ playbackId }: { playbackId: string }) => (
 				} as React.CSSProperties
 			}
 		/>
+		<div className="absolute inset-0 bg-black/50" />
 	</div>
 );
 

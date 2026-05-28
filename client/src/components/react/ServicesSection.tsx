@@ -11,71 +11,60 @@ type Service = {
 
 const SERVICES: Service[] = [
 	{
-		id: "web",
+		id: "visual",
 		number: "01",
+		title: "Visual Media Production",
+		description:
+			"Photography and videography for brand, commercial, and music industry work. The content we shoot feeds directly into the websites and software we build — created together from the start.",
+		deliverables: [
+			"Photography",
+			"Videography",
+			"Brand",
+			"Commercial",
+			"Music Industry",
+		],
+	},
+	{
+		id: "post",
+		number: "02",
+		title: "Audio/Visual Post Production",
+		description:
+			"Video editing, audio editing, and audio mixing. Post production that understands both the creative vision and how the final cut needs to perform in a digital environment.",
+		deliverables: [
+			"Video Editing",
+			"Audio Editing",
+			"Audio Mixing",
+		],
+	},
+	{
+		id: "web",
+		number: "03",
 		title: "Content-Driven Websites",
 		description:
-			"Media-forward builds for brands that publish, stream, or perform. Not template sites — architected from the ground up around how your audience consumes content, with the infrastructure to back it.",
+			"Websites built around media from the ground up — not templated. Designed for brands where visuals do the heavy lifting, and built around the content we create together.",
 		deliverables: [
 			"Astro",
+			"React",
 			"CMS Integration",
 			"Video Delivery",
-			"Webflow",
 			"Performance",
 			"SEO",
 		],
 	},
 	{
-		id: "streaming",
-		number: "02",
-		title: "Media Infrastructure",
-		description:
-			"Live and on-demand video infrastructure built for reliability at scale — so your audience gets the experience you intended, every time.",
-		deliverables: [
-			"Mux",
-			"Live Streaming",
-			"Video Delivery",
-			"HLS / DASH",
-			"CDN",
-			"API Integration",
-		],
-	},
-	{
-		id: "app",
-		number: "03",
-		title: "Apps & Software",
-		description:
-			"Custom software built around how your team actually works — not the other way around. Purpose-built for the workflows that generic tools never quite fit.",
-		deliverables: [
-			"React Native",
-			"iOS",
-			"Android",
-			"Web Apps",
-			"API Integration",
-		],
-	},
-	{
-		id: "content-systems",
+		id: "infra",
 		number: "04",
-		title: "Content Systems",
+		title: "Media-First Infrastructure & Software",
 		description:
-			"The infrastructure that keeps your media organized and in motion — across channels, formats, and platforms. Built to scale with the way you publish.",
+			"React/web apps, Mux video integration, content management systems, streaming infrastructure, and third-party integrations. Built for brands that run on content.",
 		deliverables: [
+			"React",
+			"Mux",
 			"CMS",
-			"Automation",
-			"Webhooks",
-			"Content Distribution",
-			"REST & GraphQL APIs",
-			"Third-party Integrations",
+			"Live Streaming",
+			"APIs",
+			"Custom Workflows",
 		],
-	},
-	{
-		id: "visual",
-		number: "05",
-		title: "Visual Production",
-		description:
-			"Content Media brought in selectively when original media is essential to the work.",
-		deliverables: ["Photography", "Videography"],
 	},
 ];
 

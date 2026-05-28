@@ -6,57 +6,46 @@ type Service = {
 	description: string;
 	detail: string;
 	deliverables: string[];
-	secondary?: boolean;
 };
 
 const SERVICES: Service[] = [
 	{
 		number: "01",
-		title: "Content-Driven Websites",
+		title: "Visual Media Production",
 		description:
-			"For brands where content is the core product — not an afterthought.",
+			"The content and the container, designed together from day one.",
 		detail:
-			"We build websites architected around how your audience consumes media: fast, editorial, and built to handle whatever you publish next. Whether you're a streaming platform, a venue with a story to tell, or a media brand launching something new, we build the digital home that holds it all.",
-		deliverables: ["Astro", "CMS Integration", "Video Delivery", "Webflow", "Performance", "SEO"],
+			"Brand, commercial, and music industry photography and videography. When we shoot for a client, we're already thinking about how it loads on the page — because we're often building that page too. No stock photos, no visual mismatch. The same creative vision carries from the shoot through delivery.",
+		deliverables: ["Photography", "Videography", "Brand", "Commercial", "Music Industry"],
 	},
 	{
 		number: "02",
-		title: "Media Infrastructure",
+		title: "Audio/Visual Post Production",
 		description:
-			"Your audience shouldn't have to think about the technology. Neither should you.",
+			"We finish what we shoot — and what you bring us.",
 		detail:
-			"We build live and on-demand video delivery systems that just work — from single-stream setups to multi-channel pipelines. Whether you're a creative director launching a campaign, a marketing team running a live event, or a technical director managing broadcast infrastructure, we handle the delivery layer so the experience lands the way it was intended.",
-		deliverables: ["Mux", "Live Streaming", "Video Delivery", "HLS / DASH", "CDN", "API Integration"],
+			"Video editing, audio editing, and audio mixing. Post production that understands both the creative vision and how the final cut needs to perform in a digital environment. We edit the video and build the player — content and delivery designed as one.",
+		deliverables: ["Video Editing", "Audio Editing", "Audio Mixing"],
 	},
 	{
 		number: "03",
-		title: "Apps & Software",
+		title: "Content-Driven Websites",
 		description:
-			"Off-the-shelf software makes assumptions about how you work. We build tools that don't.",
+			"Built for brands where visuals do the heavy lifting.",
 		detail:
-			"Whether you're a creative director managing a content pipeline, a marketing team that needs a custom campaign tool, or a technical director running a media operation — we build the software that fits your workflow. Web apps, mobile apps, internal tools. Purpose-built from the ground up.",
-		deliverables: ["React Native", "iOS", "Android", "Web Apps", "API Integration"],
+			"Not templated. Websites designed from the ground up around the media and content that make a brand what it is. When we build a site, we often have the content in hand — because we shot it. The result is a digital presence where nothing feels bolted on.",
+		deliverables: ["Astro", "React", "CMS Integration", "Video Delivery", "Performance", "SEO"],
 	},
 	{
 		number: "04",
-		title: "Content Systems",
+		title: "Media-First Infrastructure & Software",
 		description:
-			"The infrastructure keeping your media moving is as important as the media itself.",
+			"The systems that keep your content moving.",
 		detail:
-			"We build the CMS setups, automation pipelines, and distribution systems that keep content organized, consistent, and flowing across every channel you publish to. Built to scale with the way you work — not the way someone else does.",
-		deliverables: ["CMS", "Automation", "Webhooks", "Content Distribution", "REST & GraphQL APIs", "Third-party Integrations"],
+			"React/web apps, Mux video integration, content management systems, streaming infrastructure, custom workflows, and third-party integrations. Built for brands that run on content — where the delivery system matters as much as what's being delivered.",
+		deliverables: ["React", "Mux", "CMS", "Live Streaming", "APIs", "Custom Workflows", "Third-party Integrations"],
 	},
 ];
-
-const SECONDARY: Service = {
-	number: "05",
-	title: "Visual Production",
-	description: "A capability, not a primary offering.",
-	detail:
-		"We have the capability to shoot and produce original photography and video when a project calls for it. This isn't a standalone service — it's something we bring in selectively when original media is essential to the build itself.",
-	deliverables: ["Photography", "Videography"],
-	secondary: true,
-};
 
 const ServiceBlock = ({ service, index }: { service: Service; index: number }) => (
 	<motion.div
@@ -114,7 +103,7 @@ const ServicesPage = () => (
 					className="block w-8 h-px bg-white/30"
 				/>
 				<span className="text-white/40 text-xs font-mono uppercase tracking-widest">
-					What We Build
+					Services
 				</span>
 			</motion.div>
 
@@ -126,7 +115,7 @@ const ServicesPage = () => (
 						transition={{ duration: 0.9, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
 						className="text-5xl md:text-7xl font-bold leading-tight"
 					>
-						Built around media.
+						The full chain.
 					</motion.h1>
 				</div>
 				<motion.p
@@ -135,7 +124,7 @@ const ServicesPage = () => (
 					transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
 					className="text-white/50 text-lg md:text-xl leading-relaxed max-w-2xl"
 				>
-					We don't offer everything. We do four things well — websites, streaming infrastructure, software, and content systems — for brands where media is central to how they operate.
+					Most studios stop at one layer. Sudo Create covers the whole thing — production, post, websites, and infrastructure. These aren't separate services you mix and match; they're a connected system. Some clients come with nothing. Some have content but no site. Some have a site but need the infrastructure. We meet you where you are.
 				</motion.p>
 			</div>
 		</div>
@@ -147,44 +136,6 @@ const ServicesPage = () => (
 			))}
 		</div>
 
-		{/* Secondary — Visual Production */}
-		<motion.div
-			initial={{ opacity: 0, y: 16 }}
-			whileInView={{ opacity: 1, y: 0 }}
-			viewport={{ once: true }}
-			transition={{ duration: 0.5, ease: "easeOut" }}
-			className="mt-20 mb-8"
-		>
-			<div className="flex items-center gap-3 mb-8">
-				<span className="block w-8 h-px bg-white/15" />
-				<span className="text-white/30 text-xs font-mono uppercase tracking-widest">
-					Additional Capability
-				</span>
-			</div>
-			<div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 py-10 border border-white/8 rounded-2xl px-8">
-				<div className="lg:col-span-5 flex flex-col gap-3">
-					<div className="flex items-baseline gap-4">
-						<span className="text-xs font-mono text-white/20 tabular-nums">{SECONDARY.number}</span>
-						<h2 className="text-xl lg:text-2xl font-bold text-white/70 leading-tight">{SECONDARY.title}</h2>
-					</div>
-					<p className="text-white/35 text-sm leading-relaxed italic">{SECONDARY.description}</p>
-				</div>
-				<div className="lg:col-span-7 flex flex-col gap-5">
-					<p className="text-white/45 text-base leading-relaxed">{SECONDARY.detail}</p>
-					<div className="flex flex-wrap gap-2">
-						{SECONDARY.deliverables.map((tag) => (
-							<span
-								key={tag}
-								className="border border-white/10 text-white/35 px-4 py-1.5 rounded-full text-sm"
-							>
-								{tag}
-							</span>
-						))}
-					</div>
-				</div>
-			</div>
-		</motion.div>
-
 		{/* CTA */}
 		<motion.div
 			initial={{ opacity: 0, y: 16 }}
@@ -194,8 +145,8 @@ const ServicesPage = () => (
 			className="py-24 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-8 border-t border-white/10"
 		>
 			<div className="flex flex-col gap-2">
-				<p className="text-white text-2xl font-bold">Ready to build?</p>
-				<p className="text-white/40 text-base">Tell us what you're working on.</p>
+				<p className="text-white text-2xl font-bold">Let's build something.</p>
+				<p className="text-white/40 text-base">Tell us where you are in the process.</p>
 			</div>
 			<a
 				href="/contact"

@@ -4,11 +4,11 @@ import MuxPlayer from "@mux/mux-player-react";
 
 const PLAYBACK_ID = "Nyp500Sn01UNJTG4LcTlcOj901ASU502rQCsMn0002zDUpyCg";
 
-const HEADLINE_LINES = ["Craft-forward.", "Technology-driven.", "Experience above all."];
+const HEADLINE_LINES = ["Before the code,", "there was a camera.", "There still is."];
 
 const BODY_COPY = [
-	"Before shipping a single line of code, I spent years behind a camera and a mixing board — photographing bands and engineering records deep in Florida's metal underground.",
-	"That world taught me what it means to care obsessively about craft. The difference between a mix that hits and one that doesn't. How an image carries feeling before a word is read. That obsession lives in everything we build at Sudo Create — at the intersection of media and technology, for brands that understand experience isn't decoration. It's the whole point.",
+	"Shawn Paps started behind a camera and a mixing board — photographing bands, engineering records deep in Florida's metal underground. That world taught him what it means to care obsessively about craft: how an image carries feeling before a word is read, how a mix either hits or it doesn't.",
+	"Sudo Create is built on that foundation. The same instincts that drive the shoot drive the code — because at this studio, it's the same person doing both. We produce the content, handle post, and build the infrastructure that delivers it. One creative vision, from the shoot to the screen.",
 ];
 
 const AboutSection = () => {
