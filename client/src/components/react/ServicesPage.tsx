@@ -11,39 +11,39 @@ type Service = {
 const SERVICES: Service[] = [
 	{
 		number: "01",
-		title: "Visual Media Production",
-		description:
-			"The content and the container, designed together from day one.",
-		detail:
-			"Brand, commercial, and music industry photography and videography. When we shoot for a client, we're already thinking about how it loads on the page — because we're often building that page too. No stock photos, no visual mismatch. The same creative vision carries from the shoot through delivery.",
-		deliverables: ["Photography", "Videography", "Brand", "Commercial", "Music Industry"],
-	},
-	{
-		number: "02",
-		title: "Audio/Visual Post Production",
-		description:
-			"We finish what we shoot — and what you bring us.",
-		detail:
-			"Video editing, audio editing, and audio mixing. Post production that understands both the creative vision and how the final cut needs to perform in a digital environment. We edit the video and build the player — content and delivery designed as one.",
-		deliverables: ["Video Editing", "Audio Editing", "Audio Mixing"],
-	},
-	{
-		number: "03",
 		title: "Content-Driven Websites",
 		description:
-			"Built for brands where visuals do the heavy lifting.",
+			"Built for brands where the content IS the brand.",
 		detail:
-			"Not templated. Websites designed from the ground up around the media and content that make a brand what it is. When we build a site, we often have the content in hand — because we shot it. The result is a digital presence where nothing feels bolted on.",
+			"Not templated. Websites designed from the ground up around the media, content, and creative vision that make a brand what it is. Built for music labels, photographers, founders, and creators — where a generic template isn't an option.",
 		deliverables: ["Astro", "React", "CMS Integration", "Video Delivery", "Performance", "SEO"],
 	},
 	{
-		number: "04",
-		title: "Media-First Infrastructure & Software",
+		number: "02",
+		title: "Custom Software & Apps",
+		description:
+			"Built for how you actually work — not how someone else does.",
+		detail:
+			"Web apps and platforms designed around your specific workflow and creative model. Tourpass, our music industry networking platform, is proof: when off-the-shelf doesn't fit, we build something that does. From audience-facing products to internal tools, we cover the full build.",
+		deliverables: ["React", "Next.js", "APIs", "Custom Workflows", "Third-party Integrations", "Auth & Payments"],
+	},
+	{
+		number: "03",
+		title: "Media Infrastructure & CMS",
 		description:
 			"The systems that keep your content moving.",
 		detail:
-			"React/web apps, Mux video integration, content management systems, streaming infrastructure, custom workflows, and third-party integrations. Built for brands that run on content — where the delivery system matters as much as what's being delivered.",
-		deliverables: ["React", "Mux", "CMS", "Live Streaming", "APIs", "Custom Workflows", "Third-party Integrations"],
+			"Mux video integration, streaming infrastructure, content management systems, and the backend that powers it all. Built for brands where the delivery system matters as much as what's being delivered — so content reaches your audience exactly the way you intended.",
+		deliverables: ["Mux", "Payload CMS", "Live Streaming", "APIs", "Video Delivery", "Custom Workflows"],
+	},
+	{
+		number: "04",
+		title: "Content Creation",
+		description:
+			"Visual media shot for the products we build.",
+		detail:
+			"Photography and video created specifically to power our tech solutions — websites, apps, and platforms. When we build your site, we can shoot the content that goes in it. No stock. No mismatch. The visuals and the technology are designed as one.",
+		deliverables: ["Photography", "Videography", "Brand", "Music Industry", "On-location", "Studio"],
 	},
 ];
 
@@ -115,7 +115,7 @@ const ServicesPage = () => (
 						transition={{ duration: 0.9, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
 						className="text-5xl md:text-7xl font-bold leading-tight"
 					>
-						The full chain.
+						The full stack.
 					</motion.h1>
 				</div>
 				<motion.p
@@ -124,7 +124,7 @@ const ServicesPage = () => (
 					transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
 					className="text-white/50 text-lg md:text-xl leading-relaxed max-w-2xl"
 				>
-					Most studios stop at one layer. Sudo Create covers the whole thing — production, post, websites, and infrastructure. These aren't separate services you mix and match; they're a connected system. Some clients come with nothing. Some have content but no site. Some have a site but need the infrastructure. We meet you where you are.
+					Most agencies stop at one layer. Sudo Create covers the whole thing — custom websites, software, and the media infrastructure behind them. Built specifically for music brands, photographers, founders, and creators. Some clients start from scratch. Some have a brand but no site. Some have a site but need the tech behind it. We meet you where you are.
 				</motion.p>
 			</div>
 		</div>

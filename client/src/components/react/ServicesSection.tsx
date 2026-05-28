@@ -11,37 +11,11 @@ type Service = {
 
 const SERVICES: Service[] = [
 	{
-		id: "visual",
-		number: "01",
-		title: "Visual Media Production",
-		description:
-			"Photography and videography for brand, commercial, and music industry work. The content we shoot feeds directly into the websites and software we build — created together from the start.",
-		deliverables: [
-			"Photography",
-			"Videography",
-			"Brand",
-			"Commercial",
-			"Music Industry",
-		],
-	},
-	{
-		id: "post",
-		number: "02",
-		title: "Audio/Visual Post Production",
-		description:
-			"Video editing, audio editing, and audio mixing. Post production that understands both the creative vision and how the final cut needs to perform in a digital environment.",
-		deliverables: [
-			"Video Editing",
-			"Audio Editing",
-			"Audio Mixing",
-		],
-	},
-	{
 		id: "web",
-		number: "03",
+		number: "01",
 		title: "Content-Driven Websites",
 		description:
-			"Websites built around media from the ground up — not templated. Designed for brands where visuals do the heavy lifting, and built around the content we create together.",
+			"Custom websites built around your brand, content, and creative vision — not a template. Designed for music brands, photographers, and founders where the visuals do the heavy lifting.",
 		deliverables: [
 			"Astro",
 			"React",
@@ -52,18 +26,46 @@ const SERVICES: Service[] = [
 		],
 	},
 	{
-		id: "infra",
-		number: "04",
-		title: "Media-First Infrastructure & Software",
+		id: "software",
+		number: "02",
+		title: "Custom Software & Apps",
 		description:
-			"React/web apps, Mux video integration, content management systems, streaming infrastructure, and third-party integrations. Built for brands that run on content.",
+			"Web apps and platforms built for how you actually work — from Tourpass, a music industry networking platform, to custom tools for creative brands. If it needs to be built, we build it.",
 		deliverables: [
 			"React",
-			"Mux",
-			"CMS",
-			"Live Streaming",
+			"Next.js",
 			"APIs",
 			"Custom Workflows",
+			"Third-party Integrations",
+		],
+	},
+	{
+		id: "infra",
+		number: "03",
+		title: "Media Infrastructure & CMS",
+		description:
+			"The systems that keep your content moving — Mux video integration, streaming infrastructure, content management, and the backend that powers it all.",
+		deliverables: [
+			"Mux",
+			"Payload CMS",
+			"Live Streaming",
+			"APIs",
+			"Video Delivery",
+			"Custom Workflows",
+		],
+	},
+	{
+		id: "content",
+		number: "04",
+		title: "Content Creation",
+		description:
+			"Photography and video shot specifically for the digital products we build — so your site, app, or platform looks as good as it works.",
+		deliverables: [
+			"Photography",
+			"Videography",
+			"Brand",
+			"Music Industry",
+			"On-location",
 		],
 	},
 ];

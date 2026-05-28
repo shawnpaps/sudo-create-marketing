@@ -43,7 +43,7 @@ const PortfolioSection = () => (
 					transition={{ duration: 0.6, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
 					className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight max-w-xl"
 				>
-					See the portfolio.
+					Media powered solutions.
 				</motion.h2>
 
 				<motion.p
@@ -53,7 +53,7 @@ const PortfolioSection = () => (
 					transition={{ duration: 0.55, delay: 0.2, ease: "easeOut" }}
 					className="text-white/50 text-base lg:text-lg leading-relaxed max-w-md"
 				>
-					Brand, commercial, and music industry photography — shot on location and in studio across Florida.
+					Brand, commercial, and music photography — the visual work that informs how we build.
 				</motion.p>
 			</div>
 
