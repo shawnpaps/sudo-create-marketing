@@ -11,30 +11,39 @@ type Service = {
 const SERVICES: Service[] = [
 	{
 		number: "01",
+		title: "Visual Media Production",
+		description:
+			"The content and the container, designed together from day one.",
+		detail:
+			"Brand, commercial, and music industry photography and videography. When we shoot for a client, we're already thinking about how it loads on the page — because we're often building that page too. No stock photos, no visual mismatch. The same creative vision carries from the shoot through delivery.",
+		deliverables: ["Photography", "Videography", "Brand", "Commercial", "Music Industry"],
+	},
+	{
+		number: "02",
+		title: "Audio/Visual Post Production",
+		description:
+			"We finish what we shoot — and what you bring us.",
+		detail:
+			"Video editing, audio editing, and audio mixing. Post production that understands both the creative vision and how the final cut needs to perform in a digital environment. We edit the video and build the player — content and delivery designed as one.",
+		deliverables: ["Video Editing", "Audio Editing", "Audio Mixing"],
+	},
+	{
+		number: "03",
 		title: "Content-Driven Websites",
 		description:
 			"Built for brands where visuals do the heavy lifting.",
 		detail:
-			"Not templated. Websites designed from the ground up around the content, brand, and audience that make you what you are. We build for music labels, photographers, gaming companies, founders, and creators — every site is custom, every decision intentional.",
+			"Not templated. Websites designed from the ground up around the media and content that make a brand what it is. When we build a site, we often have the content in hand — because we shot it. The result is a digital presence where nothing feels bolted on.",
 		deliverables: ["Astro", "React", "CMS Integration", "Video Delivery", "Performance", "SEO"],
 	},
 	{
-		number: "02",
-		title: "Custom Software & Apps",
-		description:
-			"Platforms and tools built for the way creators actually work.",
-		detail:
-			"Web apps, platforms, and custom tooling built for creative businesses and founders. Tourpass — our music industry networking platform — is what this looks like in practice: a full product, designed and built by Sudo Create, live in the real world.",
-		deliverables: ["React", "Web Apps", "Platforms", "APIs", "Custom Workflows", "Third-party Integrations"],
-	},
-	{
-		number: "03",
-		title: "Media Infrastructure & CMS",
+		number: "04",
+		title: "Media-First Infrastructure & Software",
 		description:
 			"The systems that keep your content moving.",
 		detail:
-			"Mux video integration, streaming infrastructure, content management systems, and backend systems. Built for brands that publish, stream, and perform — where the delivery layer matters as much as what's being delivered.",
-		deliverables: ["Mux", "CMS", "Live Streaming", "APIs", "Custom Workflows"],
+			"React/web apps, Mux video integration, content management systems, streaming infrastructure, custom workflows, and third-party integrations. Built for brands that run on content — where the delivery system matters as much as what's being delivered.",
+		deliverables: ["React", "Mux", "CMS", "Live Streaming", "APIs", "Custom Workflows", "Third-party Integrations"],
 	},
 ];
 
@@ -106,7 +115,7 @@ const ServicesPage = () => (
 						transition={{ duration: 0.9, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
 						className="text-5xl md:text-7xl font-bold leading-tight"
 					>
-						The full stack.
+						The full chain.
 					</motion.h1>
 				</div>
 				<motion.p
@@ -115,7 +124,7 @@ const ServicesPage = () => (
 					transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
 					className="text-white/50 text-lg md:text-xl leading-relaxed max-w-2xl"
 				>
-					Most agencies stop at one layer. Sudo Create covers them all — websites, software, and the infrastructure behind them. These aren't separate services you mix and match; they're a connected system. Some clients have an idea. Some have a brand but no platform. Some have a platform but need the software behind it. We meet you where you are.
+					Most studios stop at one layer. Sudo Create covers the whole thing — production, post, websites, and infrastructure. These aren't separate services you mix and match; they're a connected system. Some clients come with nothing. Some have content but no site. Some have a site but need the infrastructure. We meet you where you are.
 				</motion.p>
 			</div>
 		</div>
