@@ -152,7 +152,7 @@ const CTASection = () => {
 				transition={{ duration: 0.6, delay: 0.5, ease: "easeOut" }}
 				className="text-black/40 text-lg text-center max-w-md leading-relaxed mb-14"
 			>
-				Some clients start from scratch. Some have a brand but no site. Some have a site but need the tech behind it. Tell us where you are.
+				Some clients come with nothing. Some have content but no site. Some have a site but need the infrastructure. Tell us where you are.
 			</motion.p>
 
 			{/* Interactive area — button → form → success */}
