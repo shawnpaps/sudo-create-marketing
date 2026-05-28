@@ -46,7 +46,7 @@ const Hero = ({ heading, subtext, location }: HeroProps) => {
 							className="block w-8 h-px bg-white/30"
 						/>
 						<span className="text-white/40 text-xs font-mono uppercase tracking-widest">
-							Media Technology Studio · Tampa, FL
+							Creative Technology Studio · Tampa, FL
 						</span>
 					</motion.div>
 				)}

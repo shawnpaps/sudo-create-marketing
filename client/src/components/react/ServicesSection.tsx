@@ -11,37 +11,11 @@ type Service = {
 
 const SERVICES: Service[] = [
 	{
-		id: "visual",
-		number: "01",
-		title: "Visual Media Production",
-		description:
-			"Photography and videography for brand, commercial, and music industry work. The content we shoot feeds directly into the websites and software we build — created together from the start.",
-		deliverables: [
-			"Photography",
-			"Videography",
-			"Brand",
-			"Commercial",
-			"Music Industry",
-		],
-	},
-	{
-		id: "post",
-		number: "02",
-		title: "Audio/Visual Post Production",
-		description:
-			"Video editing, audio editing, and audio mixing. Post production that understands both the creative vision and how the final cut needs to perform in a digital environment.",
-		deliverables: [
-			"Video Editing",
-			"Audio Editing",
-			"Audio Mixing",
-		],
-	},
-	{
 		id: "web",
-		number: "03",
+		number: "01",
 		title: "Content-Driven Websites",
 		description:
-			"Websites built around media from the ground up — not templated. Designed for brands where visuals do the heavy lifting, and built around the content we create together.",
+			"Custom-built around your brand, your content, and your audience — not a template. For music brands, photographers, founders, and creators.",
 		deliverables: [
 			"Astro",
 			"React",
@@ -52,13 +26,26 @@ const SERVICES: Service[] = [
 		],
 	},
 	{
-		id: "infra",
-		number: "04",
-		title: "Media-First Infrastructure & Software",
+		id: "software",
+		number: "02",
+		title: "Custom Software & Apps",
 		description:
-			"React/web apps, Mux video integration, content management systems, streaming infrastructure, and third-party integrations. Built for brands that run on content.",
+			"Web apps and platforms built for creators and founders. Tourpass — our music industry networking platform — is what this looks like in practice.",
 		deliverables: [
 			"React",
+			"Web Apps",
+			"Platforms",
+			"APIs",
+			"Custom Workflows",
+		],
+	},
+	{
+		id: "infra",
+		number: "03",
+		title: "Media Infrastructure & CMS",
+		description:
+			"Mux video, streaming infrastructure, content management systems, and backend systems. Built for brands that run on content.",
+		deliverables: [
 			"Mux",
 			"CMS",
 			"Live Streaming",
