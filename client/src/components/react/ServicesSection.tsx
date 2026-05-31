@@ -11,59 +11,47 @@ type Service = {
 
 const SERVICES: Service[] = [
 	{
-		id: "visual",
-		number: "01",
-		title: "Visual Media Production",
-		description:
-			"Photography and videography for brand, commercial, and music industry work. The content we shoot feeds directly into the websites and software we build — created together from the start.",
-		deliverables: [
-			"Photography",
-			"Videography",
-			"Brand",
-			"Commercial",
-			"Music Industry",
-		],
-	},
-	{
-		id: "post",
-		number: "02",
-		title: "Audio/Visual Post Production",
-		description:
-			"Video editing, audio editing, and audio mixing. Post production that understands both the creative vision and how the final cut needs to perform in a digital environment.",
-		deliverables: [
-			"Video Editing",
-			"Audio Editing",
-			"Audio Mixing",
-		],
-	},
-	{
 		id: "web",
-		number: "03",
-		title: "Content-Driven Websites",
+		number: "01",
+		title: "Custom Websites",
 		description:
-			"Websites built around media from the ground up — not templated. Designed for brands where visuals do the heavy lifting, and built around the content we create together.",
+			"Content-driven and built to last. Designed from the ground up for music brands, gaming companies, creative founders — not off a template.",
 		deliverables: [
 			"Astro",
 			"React",
-			"CMS Integration",
-			"Video Delivery",
-			"Performance",
+			"CMS",
 			"SEO",
+			"Performance",
+			"Video Delivery",
+		],
+	},
+	{
+		id: "software",
+		number: "02",
+		title: "Custom Software & Apps",
+		description:
+			"Platforms and tools purpose-built for the way you work. Tourpass — our live event networking platform — is what this looks like in practice.",
+		deliverables: [
+			"Web Apps",
+			"Platforms",
+			"APIs",
+			"Mux",
+			"Custom Workflows",
 		],
 	},
 	{
 		id: "infra",
-		number: "04",
-		title: "Media-First Infrastructure & Software",
+		number: "03",
+		title: "Workflows & Infrastructure",
 		description:
-			"React/web apps, Mux video integration, content management systems, streaming infrastructure, and third-party integrations. Built for brands that run on content.",
+			"CMS architecture, streaming infrastructure, and backend systems for brands that run on content. We build the pipelines that keep everything moving.",
 		deliverables: [
-			"React",
-			"Mux",
 			"CMS",
+			"Mux",
 			"Live Streaming",
 			"APIs",
-			"Custom Workflows",
+			"Integrations",
+			"Infrastructure",
 		],
 	},
 ];

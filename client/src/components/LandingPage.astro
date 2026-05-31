@@ -4,7 +4,6 @@ import Hero from "./react/Hero.tsx";
 import BackgroundVideo from "./react/BackgroundVideo.tsx";
 import FeaturedWorkCarousel from "./react/FeaturedWorkCarousel.tsx";
 import ServicesSection from "./react/ServicesSection.tsx";
-import PortfolioSection from "./react/PortfolioSection.tsx";
 import TestimonialsSection from "./react/TestimonialsSection.tsx";
 import AboutSection from "./react/AboutSection.tsx";
 import CTASection from "./react/CTASection.tsx";
@@ -33,7 +32,7 @@ const baseOrganization = {
 		url: `${SITE_URL}/sudo_white.png`,
 	},
 	description:
-		"Solo media production and technology studio — visual media production, post, content-driven websites, and media infrastructure for brands where content is the product.",
+		"Creative technology studio in Tampa, FL — custom websites, software, and digital infrastructure for music brands, gaming companies, and creative founders.",
 	address: {
 		"@type": "PostalAddress",
 		addressLocality: "Tampa",
@@ -58,12 +57,11 @@ const homeStructuredData: Record<string, unknown> = {
 
 const offerCatalog = {
 	"@type": "OfferCatalog",
-	name: "Media Production & Technology Services",
+	name: "Creative Technology Services",
 	itemListElement: [
-		{ "@type": "Offer", itemOffered: { "@type": "Service", name: "Visual Media Production" } },
-		{ "@type": "Offer", itemOffered: { "@type": "Service", name: "Audio/Visual Post Production" } },
-		{ "@type": "Offer", itemOffered: { "@type": "Service", name: "Content-Driven Websites" } },
-		{ "@type": "Offer", itemOffered: { "@type": "Service", name: "Media-First Infrastructure & Software" } },
+		{ "@type": "Offer", itemOffered: { "@type": "Service", name: "Custom Websites" } },
+		{ "@type": "Offer", itemOffered: { "@type": "Service", name: "Custom Software & Apps" } },
+		{ "@type": "Offer", itemOffered: { "@type": "Service", name: "Workflows & Infrastructure" } },
 	],
 };
 
@@ -95,7 +93,7 @@ const structuredData = localBusinessStructuredData ?? homeStructuredData;
 <BaseLayout title={title} description={description} structuredData={structuredData}>
 	<BackgroundVideo
 		client:load
-		playbackId="LwLeS9iH4T02SdguRAhMAfai7MQ2MErOuePpuL5GTkiU"
+		playbackId="aSAZ60167YcF01oASekPZJ1eNBPgF6dtoeJ79tYrqHlxU"
 	/>
 
 	<Hero
@@ -124,8 +122,6 @@ const structuredData = localBusinessStructuredData ?? homeStructuredData;
 			<ServicesSection client:load />
 		</div>
 	</section>
-
-	<PortfolioSection client:load />
 
 	<TestimonialsSection client:load />
 

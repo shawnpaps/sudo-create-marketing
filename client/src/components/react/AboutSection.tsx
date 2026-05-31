@@ -8,7 +8,7 @@ const HEADLINE_LINES = ["Before the code,", "there was a camera.", "There still 
 
 const BODY_COPY = [
 	"Shawn Paps started behind a camera and a mixing board — photographing bands, engineering records deep in Florida's metal underground. That world taught him what it means to care obsessively about craft: how an image carries feeling before a word is read, how a mix either hits or it doesn't.",
-	"Sudo Create is built on that foundation. The same instincts that drive the shoot drive the code — because at this studio, it's the same person doing both. We produce the content, handle post, and build the infrastructure that delivers it. One creative vision, from the shoot to the screen.",
+	"Sudo Create is built on that foundation. The same instincts that shaped the frame shape the code. We build the websites, software, and infrastructure that help creative brands perform — one vision, from idea to execution.",
 ];
 
 const AboutSection = () => {
