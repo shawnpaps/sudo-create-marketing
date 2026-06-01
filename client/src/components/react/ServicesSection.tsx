@@ -11,14 +11,28 @@ type Service = {
 
 const SERVICES: Service[] = [
 	{
-		id: "web",
+		id: "post",
 		number: "01",
-		title: "Custom Websites",
+		title: "Audio Visual Post-production",
 		description:
-			"Content-driven and built to last. Designed from the ground up for music brands, gaming companies, creative founders — not off a template.",
+			"Video edits, color, and sound that sharpen the finished piece. Built for music, gaming, tabletop, and media work.",
 		deliverables: [
-			"Astro",
-			"React",
+			"Video Editing",
+			"Color Grading",
+			"Audio Mixing",
+			"Mastering",
+			"Delivery Prep",
+		],
+	},
+	{
+		id: "visual",
+		number: "02",
+		title: "Digital Media & Websites",
+		description:
+			"Content-driven websites and digital presence for creative companies. Clear structure. Strong visuals. Fast delivery.",
+		deliverables: [
+			"Websites",
+			"Digital Presence",
 			"CMS",
 			"SEO",
 			"Performance",
@@ -27,31 +41,16 @@ const SERVICES: Service[] = [
 	},
 	{
 		id: "software",
-		number: "02",
+		number: "03",
 		title: "Custom Software & Apps",
 		description:
-			"Platforms and tools purpose-built for the way you work. Tourpass — our live event networking platform — is what this looks like in practice.",
+			"Tools for creative workflows and media businesses. Tourpass, our live event platform, is the proof point.",
 		deliverables: [
 			"Web Apps",
 			"Platforms",
 			"APIs",
 			"Mux",
 			"Custom Workflows",
-		],
-	},
-	{
-		id: "infra",
-		number: "03",
-		title: "Workflows & Infrastructure",
-		description:
-			"CMS architecture, streaming infrastructure, and backend systems for brands that run on content. We build the pipelines that keep everything moving.",
-		deliverables: [
-			"CMS",
-			"Mux",
-			"Live Streaming",
-			"APIs",
-			"Integrations",
-			"Infrastructure",
 		],
 	},
 ];

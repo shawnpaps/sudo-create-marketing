@@ -11,30 +11,30 @@ type Service = {
 const SERVICES: Service[] = [
 	{
 		number: "01",
-		title: "Custom Websites",
+		title: "Audio Visual Post-production",
 		description:
-			"Built for brands where the content matters.",
+			"Finish the piece with intent.",
 		detail:
-			"Not templated. Designed from the ground up for music brands, gaming companies, photographers, and creative founders. We build around your content — CMS integrated, performance-first, and built to last. No off-the-shelf themes, no visual mismatch.",
-		deliverables: ["Astro", "React", "CMS Integration", "Video Delivery", "Performance", "SEO"],
+			"Video editing, color grading, audio mixing, and mastering for media that needs to land. We work with music industry teams, recording studios, gaming companies, tabletop brands, and media companies that care about the final pass.",
+		deliverables: ["Video Editing", "Color Grading", "Audio Mixing", "Mastering", "Delivery Prep"],
 	},
 	{
 		number: "02",
-		title: "Custom Software & Apps",
+		title: "Digital Media & Websites",
 		description:
-			"Purpose-built platforms and tools.",
+			"Build a digital presence around the content.",
 		detail:
-			"Web applications and platforms designed specifically for how you work. Tourpass is our flagship — a live event networking platform built from scratch for the music industry. We bring that same rigor to every build, whether it's a fan community, a game companion app, or a custom workflow tool.",
-		deliverables: ["Web Apps", "Platforms", "React", "APIs", "Mux", "Custom Workflows"],
+			"Content-driven websites and digital systems for creative businesses. We shape the structure, front end, CMS, performance, SEO, and video delivery so your work is easy to find, watch, and share.",
+		deliverables: ["Websites", "Digital Presence", "CMS Integration", "Video Delivery", "Performance", "SEO"],
 	},
 	{
 		number: "03",
-		title: "Workflows & Infrastructure",
+		title: "Custom Software & Apps",
 		description:
-			"The systems that keep everything moving.",
+			"Build the tool your workflow needs.",
 		detail:
-			"CMS architecture, Mux video integration, streaming infrastructure, custom workflows, and third-party integrations. Built for brands that run on content — where the delivery system matters as much as what's being delivered.",
-		deliverables: ["CMS", "Mux", "Live Streaming", "APIs", "Integrations", "Infrastructure"],
+			"Custom platforms and apps for creative workflows and media businesses. Tourpass is our flagship: a live event platform built by Sudo Create. We bring that same focus to fan tools, game companions, internal systems, and media operations.",
+		deliverables: ["Web Apps", "Platforms", "APIs", "Integrations", "Custom Workflows", "Mux"],
 	},
 ];
 
@@ -106,7 +106,7 @@ const ServicesPage = () => (
 						transition={{ duration: 0.9, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
 						className="text-5xl md:text-7xl font-bold leading-tight"
 					>
-						The full stack.
+						Media work, finished right.
 					</motion.h1>
 				</div>
 				<motion.p
@@ -115,7 +115,7 @@ const ServicesPage = () => (
 					transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
 					className="text-white/50 text-lg md:text-xl leading-relaxed max-w-2xl"
 				>
-					Most agencies stop at one layer. Sudo Create covers them all — websites, software, and infrastructure. Three connected services. One studio. Some clients need a site. Some need a platform. Some need both plus the systems to run it. We meet you where you are.
+					Sudo Create is a media studio in Tampa. We handle audio visual post-production, digital media & websites, and custom software for music, gaming, tabletop, media, and adjacent creative businesses.
 				</motion.p>
 			</div>
 		</div>
@@ -137,7 +137,7 @@ const ServicesPage = () => (
 		>
 			<div className="flex flex-col gap-2">
 				<p className="text-white text-2xl font-bold">Let's build something.</p>
-				<p className="text-white/40 text-base">Tell us where you are in the process.</p>
+				<p className="text-white/40 text-base">Tell us what needs to be finished, launched, or built.</p>
 			</div>
 			<a
 				href="/contact"

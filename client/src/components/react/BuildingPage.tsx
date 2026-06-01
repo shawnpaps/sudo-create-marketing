@@ -3,7 +3,7 @@ import { motion } from "motion/react";
 import VerticalVideoPlayer from "./VerticalVideoPlayer";
 import { getProducts, type Product } from "../../lib/payload";
 
-const HEADLINE_WORDS = ["Stuff", "we're", "building."];
+const HEADLINE_WORDS = ["Media", "tools", "we build."];
 
 const Eyebrow = ({ label }: { label: string }) => (
 	<motion.div
@@ -47,7 +47,7 @@ const BuildingPage = () => {
 			{/* ── Page header ───────────────────────────────────────── */}
 			<section className="max-w-6xl mx-auto px-6 pt-32 pb-20">
 				<div className="mb-10">
-					<Eyebrow label="Our Products & R&D" />
+				<Eyebrow label="Products & R&D" />
 				</div>
 
 				<div className="flex flex-col" style={{ gap: "0.05em" }}>
@@ -76,9 +76,9 @@ const BuildingPage = () => {
 					transition={{ duration: 0.6, delay: 0.6, ease: "easeOut" }}
 					className="text-white/50 text-base md:text-lg leading-relaxed max-w-lg mt-10"
 				>
-					Products, tools, and experiments we build for ourselves — and anyone
-					who needs them. No clients. No briefs. Just things we think should
-					exist.
+					Tourpass is our flagship product: a live event platform built by
+					Sudo Create. We also prototype tools for creative workflows and media
+					businesses.
 				</motion.p>
 			</section>
 
@@ -99,7 +99,7 @@ const BuildingPage = () => {
 							{product.thumbnail?.url && (
 								<img
 									src={product.thumbnail.url}
-									alt=""
+									alt={`${product.name} product artwork`}
 									className="w-full h-full object-cover"
 								/>
 							)}

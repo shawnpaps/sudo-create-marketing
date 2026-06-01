@@ -191,7 +191,7 @@ const ProjectStep = ({
 	onNext: () => void;
 }) => (
 	<StepShell direction={direction}>
-		<StepQuestion question="Tell us what you're building." subtext="03 — The project" />
+		<StepQuestion question="What needs to be finished, launched, or built?" subtext="03 — The project" />
 		<motion.textarea
 			initial={{ opacity: 0, y: 10 }}
 			animate={{ opacity: 1, y: 0 }}
@@ -204,7 +204,7 @@ const ProjectStep = ({
 					onNext();
 				}
 			}}
-			placeholder="We're working on..."
+			placeholder="We need..."
 			autoFocus
 			rows={4}
 			className={`${underlineInput} text-xl lg:text-2xl resize-none`}
@@ -405,7 +405,7 @@ const ContactPage = () => {
 
 							{/* Staggered headline */}
 							<div className="flex flex-col items-center mb-10" style={{ gap: "0.04em" }}>
-								{["Start", "something", "great."].map((word, i) => (
+								{["Start", "the", "conversation."].map((word, i) => (
 									<div key={i} className="overflow-hidden">
 										<motion.h1
 											initial={{ y: "110%" }}
@@ -430,7 +430,7 @@ const ContactPage = () => {
 								transition={{ duration: 0.55, delay: 0.55, ease: "easeOut" }}
 								className="text-white/40 text-lg leading-relaxed max-w-md mb-16"
 							>
-								Tell us about your project and we'll get back to you within one business day.
+								Tell us what you need across audio visual post-production, digital media & websites, or custom software. We'll reply within one business day.
 							</motion.p>
 
 							<motion.div
@@ -443,7 +443,7 @@ const ContactPage = () => {
 									onClick={() => go("name")}
 									className="inline-flex items-center gap-3 bg-white text-black font-semibold px-10 py-5 rounded-full hover:bg-white/90 transition-all duration-300 text-lg"
 								>
-									Let's go
+									Start a project
 									<motion.span
 										animate={{ x: [0, 4, 0] }}
 										transition={{ repeat: Infinity, duration: 1.5, ease: "easeInOut" }}

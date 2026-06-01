@@ -26,7 +26,7 @@ const FeaturedWork = ({
 					<img
 						className="object-cover w-full h-full"
 						src={thumbnail}
-						alt=""
+						alt={`${title} project thumbnail`}
 					/>
 				</div>
 			) : (

@@ -4,6 +4,7 @@ import Hero from "./react/Hero.tsx";
 import BackgroundVideo from "./react/BackgroundVideo.tsx";
 import FeaturedWorkCarousel from "./react/FeaturedWorkCarousel.tsx";
 import ServicesSection from "./react/ServicesSection.tsx";
+import PortfolioSection from "./react/PortfolioSection.tsx";
 import TestimonialsSection from "./react/TestimonialsSection.tsx";
 import AboutSection from "./react/AboutSection.tsx";
 import CTASection from "./react/CTASection.tsx";
@@ -32,7 +33,7 @@ const baseOrganization = {
 		url: `${SITE_URL}/sudo_white.png`,
 	},
 	description:
-		"Creative technology studio in Tampa, FL — custom websites, software, and digital infrastructure for music brands, gaming companies, and creative founders.",
+		"Media studio in Tampa, FL for audio visual post-production, digital media & websites, and custom software for creative businesses.",
 	address: {
 		"@type": "PostalAddress",
 		addressLocality: "Tampa",
@@ -57,11 +58,11 @@ const homeStructuredData: Record<string, unknown> = {
 
 const offerCatalog = {
 	"@type": "OfferCatalog",
-	name: "Creative Technology Services",
+	name: "Media Studio Services",
 	itemListElement: [
-		{ "@type": "Offer", itemOffered: { "@type": "Service", name: "Custom Websites" } },
+		{ "@type": "Offer", itemOffered: { "@type": "Service", name: "Audio Visual Post-production" } },
+		{ "@type": "Offer", itemOffered: { "@type": "Service", name: "Digital Media & Websites" } },
 		{ "@type": "Offer", itemOffered: { "@type": "Service", name: "Custom Software & Apps" } },
-		{ "@type": "Offer", itemOffered: { "@type": "Service", name: "Workflows & Infrastructure" } },
 	],
 };
 
@@ -93,7 +94,7 @@ const structuredData = localBusinessStructuredData ?? homeStructuredData;
 <BaseLayout title={title} description={description} structuredData={structuredData}>
 	<BackgroundVideo
 		client:load
-		playbackId="aSAZ60167YcF01oASekPZJ1eNBPgF6dtoeJ79tYrqHlxU"
+		playbackId="LwLeS9iH4T02SdguRAhMAfai7MQ2MErOuePpuL5GTkiU"
 	/>
 
 	<Hero
@@ -122,6 +123,8 @@ const structuredData = localBusinessStructuredData ?? homeStructuredData;
 			<ServicesSection client:load />
 		</div>
 	</section>
+
+	<PortfolioSection client:load />
 
 	<TestimonialsSection client:load />
 

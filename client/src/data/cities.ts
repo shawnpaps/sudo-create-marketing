@@ -8,57 +8,57 @@ export type CityData = {
 
 export const CITIES: Record<string, CityData> = {
 	tampa: {
-		title: "Creative Technology Studio in Tampa, FL | Sudo Create",
+		title: "Tampa | Sudo Create",
 		description:
-			"Sudo Create is a Tampa-based creative technology studio — custom websites, software, and digital infrastructure for music brands, gaming companies, and creative founders.",
-		heroHeading: "Built for creators.",
+			"Tampa media studio for audio visual post-production, digital media & websites, and custom software. Start a project.",
+		heroHeading: "Digital media, amplified.",
 		heroSubtext:
-			"Tampa's creative technology studio. Custom websites, software, and digital infrastructure — built for music brands, gaming companies, and founders.",
+			"Tampa media studio for audio visual post-production, digital media & websites, and custom software.",
 		location: "Tampa, FL",
 	},
 	"st-petersburg": {
-		title: "Creative Technology Studio in St. Petersburg, FL | Sudo Create",
+		title: "St. Petersburg | Sudo Create",
 		description:
-			"Sudo Create partners with St. Pete brands — building custom websites, software, and digital infrastructure for music brands, gaming companies, and creative founders across the 727.",
-		heroHeading: "Built for creators.",
+			"Audio visual post-production, digital media & websites, and custom software for St. Petersburg media. Talk to Sudo Create.",
+		heroHeading: "Digital media, amplified.",
 		heroSubtext:
-			"St. Pete has the culture. We build the technology — custom websites, software, and infrastructure for creative brands across the 727.",
+			"Audio visual post-production, digital media & websites, and custom software for St. Petersburg creative businesses.",
 		location: "St. Petersburg, FL",
 	},
 	valrico: {
-		title: "Creative Technology Studio in Valrico, FL | Sudo Create",
+		title: "Valrico | Sudo Create",
 		description:
-			"Sudo Create serves Valrico and greater Hillsborough County — custom websites, software, and digital infrastructure for music brands, gaming companies, and creative founders.",
-		heroHeading: "Built for creators.",
+			"Valrico media studio support for audio visual post-production, digital media & websites, and custom software. Start a project.",
+		heroHeading: "Digital media, amplified.",
 		heroSubtext:
-			"Serving Valrico and greater Hillsborough County. Custom websites, software, and infrastructure for brands built to perform.",
+			"Audio visual post-production, digital media & websites, and custom software for Valrico and greater Hillsborough County.",
 		location: "Valrico, FL",
 	},
 	riverview: {
-		title: "Creative Technology Studio in Riverview, FL | Sudo Create",
+		title: "Riverview | Sudo Create",
 		description:
-			"Sudo Create serves Riverview and the greater Tampa Bay area — custom websites, software, and digital infrastructure for music brands, gaming companies, and creative founders.",
-		heroHeading: "Built for creators.",
+			"Riverview media studio for audio visual post-production, digital media & websites, and custom software. Talk to Sudo Create.",
+		heroHeading: "Digital media, amplified.",
 		heroSubtext:
-			"Riverview's creative technology partner. Custom websites, software, and infrastructure — built for creators and businesses in the Tampa Bay area.",
+			"Audio visual post-production, digital media & websites, and custom software for Riverview creative businesses.",
 		location: "Riverview, FL",
 	},
 	brandon: {
-		title: "Creative Technology Studio in Brandon, FL | Sudo Create",
+		title: "Brandon | Sudo Create",
 		description:
-			"Sudo Create serves Brandon and greater Tampa Bay — custom websites, software, and digital infrastructure for music brands, gaming companies, and creative founders.",
-		heroHeading: "Built for creators.",
+			"Brandon media studio for audio visual post-production, digital media & websites, and custom software. Start a project.",
+		heroHeading: "Digital media, amplified.",
 		heroSubtext:
-			"Brandon's home for serious technology work. Custom websites, software, and infrastructure — built for creators, start to finish.",
+			"Audio visual post-production, digital media & websites, and custom software for Brandon creative businesses.",
 		location: "Brandon, FL",
 	},
 	lakeland: {
-		title: "Creative Technology Studio in Lakeland, FL | Sudo Create",
+		title: "Lakeland | Sudo Create",
 		description:
-			"Sudo Create serves Lakeland and Polk County — custom websites, software, and digital infrastructure for music brands, gaming companies, and creative founders.",
-		heroHeading: "Built for creators.",
+			"Lakeland media studio for audio visual post-production, digital media & websites, and custom software. Talk to Sudo Create.",
+		heroHeading: "Digital media, amplified.",
 		heroSubtext:
-			"Lakeland and Polk County's creative technology studio. Custom websites, software, and infrastructure — one studio, one creative vision.",
+			"Audio visual post-production, digital media & websites, and custom software for Lakeland and Polk County.",
 		location: "Lakeland, FL",
 	},
 };

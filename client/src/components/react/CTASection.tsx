@@ -1,7 +1,7 @@
 import React, { useRef, useState } from "react";
 import { motion, AnimatePresence, useMotionValue, useSpring } from "motion/react";
 
-const HEADLINE = ["Let's build", "something worth", "experiencing."];
+const HEADLINE = ["Let's make", "the media", "work harder."];
 const BUDGET_OPTIONS = ["Under $5k", "$5k – $15k", "$15k – $50k", "$50k+", "Let's talk"];
 
 type FormState = "idle" | "open" | "submitted";
@@ -152,7 +152,7 @@ const CTASection = () => {
 				transition={{ duration: 0.6, delay: 0.5, ease: "easeOut" }}
 				className="text-black/40 text-lg text-center max-w-md leading-relaxed mb-14"
 			>
-				Some need a website. Some need a platform. Some need both plus the infrastructure to run it. Tell us where you are.
+				Need a finished edit, a sharper digital presence, or software for a creative workflow? Tell us where you are.
 			</motion.p>
 
 			{/* Interactive area — button → form → success */}
@@ -224,7 +224,7 @@ const CTASection = () => {
 								className="flex items-center justify-between mb-2"
 							>
 								<div>
-									<h3 className="text-white font-bold text-xl">Start a conversation</h3>
+									<h3 className="text-white font-bold text-xl">Start a project</h3>
 									<p className="text-white/40 text-sm mt-0.5">We'll follow up within one business day.</p>
 								</div>
 								<button
@@ -274,7 +274,7 @@ const CTASection = () => {
 								</label>
 								<textarea
 									required
-									placeholder="Tell us what you're working on..."
+									placeholder="Tell us what needs to be finished, launched, or built..."
 									rows={4}
 									value={formData.description}
 									onChange={(e) => setFormData((p) => ({ ...p, description: e.target.value }))}

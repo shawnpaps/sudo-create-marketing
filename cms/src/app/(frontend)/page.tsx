@@ -21,13 +21,13 @@ export default async function HomePage() {
         <picture>
           <source srcSet="https://raw.githubusercontent.com/payloadcms/payload/3.x/packages/ui/src/assets/payload-favicon.svg" />
           <Image
-            alt="Payload Logo"
+            alt="Sudo Create CMS"
             height={65}
             src="https://raw.githubusercontent.com/payloadcms/payload/3.x/packages/ui/src/assets/payload-favicon.svg"
             width={65}
           />
         </picture>
-        {!user && <h1>Welcome to your new project.</h1>}
+        {!user && <h1>Sudo Create CMS</h1>}
         {user && <h1>Welcome back, {user.email}</h1>}
         <div className="links">
           <a
@@ -36,7 +36,7 @@ export default async function HomePage() {
             rel="noopener noreferrer"
             target="_blank"
           >
-            Go to admin panel
+            Open admin
           </a>
           <a
             className="docs"
@@ -44,12 +44,12 @@ export default async function HomePage() {
             rel="noopener noreferrer"
             target="_blank"
           >
-            Documentation
+            Payload docs
           </a>
         </div>
       </div>
       <div className="footer">
-        <p>Update this page by editing</p>
+        <p>Manage Sudo Create media studio content.</p>
         <a className="codeLink" href={fileURL}>
           <code>app/(frontend)/page.tsx</code>
         </a>

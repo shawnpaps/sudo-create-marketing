@@ -7,7 +7,7 @@ const PortfolioSection = () => (
 		<div className="absolute inset-0">
 			<img
 				src="/lens-background.jpg"
-				alt=""
+				alt="Lens texture behind Sudo Create portfolio link"
 				className="w-full h-full object-cover"
 				aria-hidden="true"
 			/>
@@ -32,7 +32,7 @@ const PortfolioSection = () => (
 						className="block w-8 h-px bg-white/40"
 					/>
 					<span className="text-white/40 text-xs font-mono tracking-widest uppercase">
-						Photography
+						Photography & Videography
 					</span>
 				</motion.div>
 
@@ -43,7 +43,7 @@ const PortfolioSection = () => (
 					transition={{ duration: 0.6, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
 					className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight max-w-xl"
 				>
-					See the portfolio.
+					We shoot when the project calls for it.
 				</motion.h2>
 
 				<motion.p
@@ -53,7 +53,7 @@ const PortfolioSection = () => (
 					transition={{ duration: 0.55, delay: 0.2, ease: "easeOut" }}
 					className="text-white/50 text-base lg:text-lg leading-relaxed max-w-md"
 				>
-					Brand, commercial, and music industry photography — shot on location and in studio across Florida.
+					Some projects need original visuals. When they do, we keep the shoot focused, useful, and tied to the final piece.
 				</motion.p>
 			</div>
 

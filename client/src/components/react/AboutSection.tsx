@@ -4,11 +4,11 @@ import MuxPlayer from "@mux/mux-player-react";
 
 const PLAYBACK_ID = "Nyp500Sn01UNJTG4LcTlcOj901ASU502rQCsMn0002zDUpyCg";
 
-const HEADLINE_LINES = ["Before the code,", "there was a camera.", "There still is."];
+const HEADLINE_LINES = ["Built in media.", "Made for creative", "businesses."];
 
 const BODY_COPY = [
-	"Shawn Paps started behind a camera and a mixing board — photographing bands, engineering records deep in Florida's metal underground. That world taught him what it means to care obsessively about craft: how an image carries feeling before a word is read, how a mix either hits or it doesn't.",
-	"Sudo Create is built on that foundation. The same instincts that shaped the frame shape the code. We build the websites, software, and infrastructure that help creative brands perform — one vision, from idea to execution.",
+	"Sudo Create grew out of music, recording, and visual media. That world rewards sharp decisions. The edit has to move. The color has to feel right. The mix has to hit.",
+	"Today we bring that standard to audio visual post-production, digital media & websites, and custom software. We work with music, gaming, tabletop, media, and creative businesses that need focused execution.",
 ];
 
 const AboutSection = () => {
@@ -67,7 +67,7 @@ const AboutSection = () => {
 						>
 							<img
 								src="/headshot.jpg"
-								alt="Shawn Papineau"
+								alt="Shawn Papineau, founder of Sudo Create"
 								className="w-full h-full object-cover object-top"
 							/>
 							{/* Fade into background on all edges */}
