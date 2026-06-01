@@ -430,7 +430,7 @@ const ContactPage = () => {
 								transition={{ duration: 0.55, delay: 0.55, ease: "easeOut" }}
 								className="text-white/40 text-lg leading-relaxed max-w-md mb-16"
 							>
-								Tell us what you need across audio visual post-production, digital media & websites, or custom software. We'll reply within one business day.
+								Tell us what you need built, launched, or connected. We'll reply within one business day.
 							</motion.p>
 
 							<motion.div

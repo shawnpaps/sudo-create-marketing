@@ -7,7 +7,7 @@ const PortfolioSection = () => (
 		<div className="absolute inset-0">
 			<img
 				src="/lens-background.jpg"
-				alt="Lens texture behind Sudo Create portfolio link"
+				alt="Tech-forward background for Sudo Create product work"
 				className="w-full h-full object-cover"
 				aria-hidden="true"
 			/>
@@ -32,7 +32,7 @@ const PortfolioSection = () => (
 						className="block w-8 h-px bg-white/40"
 					/>
 					<span className="text-white/40 text-xs font-mono tracking-widest uppercase">
-						Photography & Videography
+						Flagship Product
 					</span>
 				</motion.div>
 
@@ -43,7 +43,7 @@ const PortfolioSection = () => (
 					transition={{ duration: 0.6, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
 					className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight max-w-xl"
 				>
-					We shoot when the project calls for it.
+					Tourpass proves how we build.
 				</motion.h2>
 
 				<motion.p
@@ -53,21 +53,19 @@ const PortfolioSection = () => (
 					transition={{ duration: 0.55, delay: 0.2, ease: "easeOut" }}
 					className="text-white/50 text-base lg:text-lg leading-relaxed max-w-md"
 				>
-					Some projects need original visuals. When they do, we keep the shoot focused, useful, and tied to the final piece.
+					Tourpass is a music industry networking platform built by Sudo Create. It shows how we turn creative workflows into software that ships.
 				</motion.p>
 			</div>
 
 			<motion.a
-				href="https://portfolio.sudocreate.studio"
-				target="_blank"
-				rel="noopener noreferrer"
+				href="/projects"
 				initial={{ opacity: 0, y: 12 }}
 				whileInView={{ opacity: 1, y: 0 }}
 				viewport={{ once: true }}
 				transition={{ duration: 0.5, delay: 0.3 }}
 				className="self-start md:self-auto inline-flex items-center gap-3 border border-white/20 px-7 py-4 rounded-full text-white font-medium hover:bg-white hover:text-black transition-all duration-300 whitespace-nowrap"
 			>
-				View portfolio →
+				See Tourpass →
 			</motion.a>
 		</div>
 	</section>

@@ -49,7 +49,7 @@ export default async function HomePage() {
         </div>
       </div>
       <div className="footer">
-        <p>Manage Sudo Create media studio content.</p>
+        <p>Manage Sudo Create software studio content.</p>
         <a className="codeLink" href={fileURL}>
           <code>app/(frontend)/page.tsx</code>
         </a>

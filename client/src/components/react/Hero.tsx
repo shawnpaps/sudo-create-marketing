@@ -46,7 +46,7 @@ const Hero = ({ heading, subtext, location }: HeroProps) => {
 							className="block w-8 h-px bg-white/30"
 						/>
 						<span className="text-white/40 text-xs font-mono uppercase tracking-widest">
-							Media Studio · Tampa, FL
+							Software Studio · Tampa, FL
 						</span>
 					</motion.div>
 				)}
@@ -81,7 +81,7 @@ const Hero = ({ heading, subtext, location }: HeroProps) => {
 						transition={{ duration: 0.5, delay: 0.55, ease: "easeOut" }}
 						className="text-white/30 text-xs font-mono mt-5 tracking-wide"
 					>
-						// Digital media, amplified.
+						// Built for creators.
 					</motion.p>
 				</div>
 			</div>

@@ -3,7 +3,7 @@ import { motion } from "motion/react";
 import VerticalVideoPlayer from "./VerticalVideoPlayer";
 import { getProducts, type Product } from "../../lib/payload";
 
-const HEADLINE_WORDS = ["Media", "tools", "we build."];
+const HEADLINE_WORDS = ["Software", "we", "build."];
 
 const Eyebrow = ({ label }: { label: string }) => (
 	<motion.div
@@ -76,9 +76,9 @@ const BuildingPage = () => {
 					transition={{ duration: 0.6, delay: 0.6, ease: "easeOut" }}
 					className="text-white/50 text-base md:text-lg leading-relaxed max-w-lg mt-10"
 				>
-					Tourpass is our flagship product: a live event platform built by
-					Sudo Create. We also prototype tools for creative workflows and media
-					businesses.
+					Tourpass is our flagship product: a music industry networking
+					platform built by Sudo Create. We also prototype tools for creative
+					workflows and creative businesses.
 				</motion.p>
 			</section>
 

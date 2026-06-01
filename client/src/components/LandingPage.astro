@@ -33,7 +33,7 @@ const baseOrganization = {
 		url: `${SITE_URL}/sudo_white.png`,
 	},
 	description:
-		"Media studio in Tampa, FL for audio visual post-production, digital media & websites, and custom software for creative businesses.",
+		"Software studio in Tampa, FL building custom software, websites, online experiences, and digital infrastructure for creative industries.",
 	address: {
 		"@type": "PostalAddress",
 		addressLocality: "Tampa",
@@ -58,11 +58,11 @@ const homeStructuredData: Record<string, unknown> = {
 
 const offerCatalog = {
 	"@type": "OfferCatalog",
-	name: "Media Studio Services",
+	name: "Software Studio Services",
 	itemListElement: [
-		{ "@type": "Offer", itemOffered: { "@type": "Service", name: "Audio Visual Post-production" } },
-		{ "@type": "Offer", itemOffered: { "@type": "Service", name: "Digital Media & Websites" } },
 		{ "@type": "Offer", itemOffered: { "@type": "Service", name: "Custom Software & Apps" } },
+		{ "@type": "Offer", itemOffered: { "@type": "Service", name: "Websites & Online Experiences" } },
+		{ "@type": "Offer", itemOffered: { "@type": "Service", name: "Infrastructure & Systems" } },
 	],
 };
 
@@ -94,7 +94,7 @@ const structuredData = localBusinessStructuredData ?? homeStructuredData;
 <BaseLayout title={title} description={description} structuredData={structuredData}>
 	<BackgroundVideo
 		client:load
-		playbackId="LwLeS9iH4T02SdguRAhMAfai7MQ2MErOuePpuL5GTkiU"
+		playbackId="aSAZ60167YcF01oASekPZJ1eNBPgF6dtoeJ79tYrqHlxU"
 	/>
 
 	<Hero

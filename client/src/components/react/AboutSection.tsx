@@ -4,11 +4,12 @@ import MuxPlayer from "@mux/mux-player-react";
 
 const PLAYBACK_ID = "Nyp500Sn01UNJTG4LcTlcOj901ASU502rQCsMn0002zDUpyCg";
 
-const HEADLINE_LINES = ["Built in media.", "Made for creative", "businesses."];
+const HEADLINE_LINES = ["A note", "from the", "founder."];
 
 const BODY_COPY = [
-	"Sudo Create grew out of music, recording, and visual media. That world rewards sharp decisions. The edit has to move. The color has to feel right. The mix has to hit.",
-	"Today we bring that standard to audio visual post-production, digital media & websites, and custom software. We work with music, gaming, tabletop, media, and creative businesses that need focused execution.",
+	"I started sudo.create because creative businesses deserve software that understands the work. Not generic tools. Not bloated systems. Tools that fit the way creators actually move.",
+	"My background is music, recording, and creative technology. That shaped how I build: clear interfaces, useful systems, and products that get out of the way.",
+	"Today I use that lens to build custom software, websites, online experiences, and infrastructure for music, gaming, tabletop, TCG, media, and adjacent creative businesses.",
 ];
 
 const AboutSection = () => {
@@ -92,7 +93,7 @@ const AboutSection = () => {
 									className="block w-8 h-px bg-white/40"
 								/>
 								<span className="text-white/40 text-xs font-mono tracking-widest uppercase">
-									Who we are
+									Founder note
 								</span>
 							</motion.div>
 
@@ -146,7 +147,7 @@ const AboutSection = () => {
 									</div>
 									<span className="text-white/30 text-xs">·</span>
 									<div className="text-white/40 text-xs tracking-wide">
-										Founder, Sudo Create
+										Founder, sudo.create
 									</div>
 								</motion.div>
 							</div>
@@ -183,7 +184,7 @@ const AboutSection = () => {
 							transition={{ duration: 0.2 }}
 							className="flex items-center gap-2"
 						>
-							Our Story <span className="opacity-50 text-xs">→</span>
+							Founder Note <span className="opacity-50 text-xs">→</span>
 						</motion.span>
 					)}
 				</AnimatePresence>

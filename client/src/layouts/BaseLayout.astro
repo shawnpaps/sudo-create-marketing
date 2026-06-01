@@ -12,7 +12,7 @@ interface Props {
 
 const {
 	title = "Home | Sudo Create",
-	description = "Tampa media studio for audio visual post-production, digital media & websites, and custom software. Start a project.",
+	description = "Tampa software studio for custom software, websites, online experiences, and creative infrastructure. Start a project.",
 	ogImage = "/lens-background.jpg",
 	structuredData,
 	noIndex = false,
@@ -21,6 +21,15 @@ const {
 const SITE_URL = "https://sudocreate.studio";
 const canonical = `${SITE_URL}${Astro.url.pathname}`;
 const ogImageAbsolute = `${SITE_URL}${ogImage}`;
+const seoKeywords = [
+	"software studio",
+	"custom software",
+	"web applications",
+	"music industry",
+	"gaming",
+	"tabletop",
+	"built for creators",
+].join(", ");
 ---
 
 <!DOCTYPE html>
@@ -29,6 +38,7 @@ const ogImageAbsolute = `${SITE_URL}${ogImage}`;
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta name="description" content={description} />
+	<meta name="keywords" content={seoKeywords} />
 	<meta name="theme-color" content="#000000" />
 
 	{noIndex && <meta name="robots" content="noindex, nofollow" />}
@@ -49,15 +59,16 @@ const ogImageAbsolute = `${SITE_URL}${ogImage}`;
 	<meta property="og:image" content={ogImageAbsolute} />
 	<meta property="og:image:width" content="1200" />
 	<meta property="og:image:height" content="630" />
-	<meta property="og:image:alt" content="Sudo Create media studio in Tampa, FL" />
+	<meta property="og:image:alt" content="Sudo Create software studio in Tampa, FL" />
 	<meta property="og:locale" content="en_US" />
 
 	<!-- Twitter / X Card -->
 	<meta name="twitter:card" content="summary_large_image" />
 	<meta name="twitter:title" content={title} />
 	<meta name="twitter:description" content={description} />
+	<meta name="twitter:url" content={canonical} />
 	<meta name="twitter:image" content={ogImageAbsolute} />
-	<meta name="twitter:image:alt" content="Sudo Create media studio in Tampa, FL" />
+	<meta name="twitter:image:alt" content="Sudo Create software studio in Tampa, FL" />
 
 	<!-- Preconnect for Mux video -->
 	<link rel="preconnect" href="https://stream.mux.com" />

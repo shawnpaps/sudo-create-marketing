@@ -11,46 +11,47 @@ type Service = {
 
 const SERVICES: Service[] = [
 	{
-		id: "post",
+		id: "software",
 		number: "01",
-		title: "Audio Visual Post-production",
+		title: "Custom Software & Apps",
 		description:
-			"Video edits, color, and sound that sharpen the finished piece. Built for music, gaming, tabletop, and media work.",
+			"Purpose-built tools for creative workflows. Built for music, gaming, tabletop, media, and the teams behind them.",
 		deliverables: [
-			"Video Editing",
-			"Color Grading",
-			"Audio Mixing",
-			"Mastering",
-			"Delivery Prep",
+			"Workflow Tools",
+			"Internal Apps",
+			"Fan Platforms",
+			"Game Companions",
+			"Integrations",
 		],
 	},
 	{
-		id: "visual",
+		id: "web",
 		number: "02",
-		title: "Digital Media & Websites",
+		title: "Websites & Online Experiences",
 		description:
-			"Content-driven websites and digital presence for creative companies. Clear structure. Strong visuals. Fast delivery.",
+			"High-end websites and online experiences engineered like products. Fast, sharp, and built around the way your business works.",
 		deliverables: [
 			"Websites",
-			"Digital Presence",
+			"Online Experiences",
+			"Product Sites",
 			"CMS",
 			"SEO",
 			"Performance",
-			"Video Delivery",
+			"Design Systems",
 		],
 	},
 	{
-		id: "software",
+		id: "systems",
 		number: "03",
-		title: "Custom Software & Apps",
+		title: "Infrastructure & Systems",
 		description:
-			"Tools for creative workflows and media businesses. Tourpass, our live event platform, is the proof point.",
+			"The backend that powers creative businesses. Tourpass, our music industry networking platform, is the proof point.",
 		deliverables: [
-			"Web Apps",
-			"Platforms",
 			"APIs",
-			"Mux",
-			"Custom Workflows",
+			"Automation",
+			"Data Models",
+			"Cloud Infrastructure",
+			"Operational Systems",
 		],
 	},
 ];

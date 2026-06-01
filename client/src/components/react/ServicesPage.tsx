@@ -11,30 +11,30 @@ type Service = {
 const SERVICES: Service[] = [
 	{
 		number: "01",
-		title: "Audio Visual Post-production",
-		description:
-			"Finish the piece with intent.",
-		detail:
-			"Video editing, color grading, audio mixing, and mastering for media that needs to land. We work with music industry teams, recording studios, gaming companies, tabletop brands, and media companies that care about the final pass.",
-		deliverables: ["Video Editing", "Color Grading", "Audio Mixing", "Mastering", "Delivery Prep"],
-	},
-	{
-		number: "02",
-		title: "Digital Media & Websites",
-		description:
-			"Build a digital presence around the content.",
-		detail:
-			"Content-driven websites and digital systems for creative businesses. We shape the structure, front end, CMS, performance, SEO, and video delivery so your work is easy to find, watch, and share.",
-		deliverables: ["Websites", "Digital Presence", "CMS Integration", "Video Delivery", "Performance", "SEO"],
-	},
-	{
-		number: "03",
 		title: "Custom Software & Apps",
 		description:
 			"Build the tool your workflow needs.",
 		detail:
-			"Custom platforms and apps for creative workflows and media businesses. Tourpass is our flagship: a live event platform built by Sudo Create. We bring that same focus to fan tools, game companions, internal systems, and media operations.",
-		deliverables: ["Web Apps", "Platforms", "APIs", "Integrations", "Custom Workflows", "Mux"],
+			"Purpose-built software for creative workflows. We build internal tools, fan platforms, game companions, scheduling systems, content operations, and custom apps for music, gaming, tabletop, TCG, media, and music technology companies.",
+		deliverables: ["Workflow Tools", "Internal Apps", "Fan Platforms", "Game Companions", "Integrations", "Custom Apps"],
+	},
+	{
+		number: "02",
+		title: "Websites & Online Experiences",
+		description:
+			"Build a site that works like a product.",
+		detail:
+			"High-end, tech-forward websites and online experiences for creative businesses. We shape the interface, front end, CMS, performance, SEO, and product logic so the experience is useful beyond the first visit.",
+		deliverables: ["Websites", "Online Experiences", "Product Sites", "CMS Integration", "Performance", "SEO"],
+	},
+	{
+		number: "03",
+		title: "Infrastructure & Systems",
+		description:
+			"Power the business behind the work.",
+		detail:
+			"The backend systems that keep creative businesses moving. We build APIs, databases, automations, integrations, and cloud infrastructure. Tourpass is our flagship: a music industry networking platform built by Sudo Create.",
+		deliverables: ["APIs", "Automation", "Data Models", "Cloud Infrastructure", "Integrations", "Operational Systems"],
 	},
 ];
 
@@ -106,7 +106,7 @@ const ServicesPage = () => (
 						transition={{ duration: 0.9, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
 						className="text-5xl md:text-7xl font-bold leading-tight"
 					>
-						Media work, finished right.
+						Software for creative work.
 					</motion.h1>
 				</div>
 				<motion.p
@@ -115,7 +115,7 @@ const ServicesPage = () => (
 					transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
 					className="text-white/50 text-lg md:text-xl leading-relaxed max-w-2xl"
 				>
-					Sudo Create is a media studio in Tampa. We handle audio visual post-production, digital media & websites, and custom software for music, gaming, tabletop, media, and adjacent creative businesses.
+					Sudo Create is a software studio in Tampa. We build custom software, high-end websites, online experiences, and digital infrastructure for music, gaming, tabletop, TCG, media, and adjacent creative businesses.
 				</motion.p>
 			</div>
 		</div>
@@ -137,7 +137,7 @@ const ServicesPage = () => (
 		>
 			<div className="flex flex-col gap-2">
 				<p className="text-white text-2xl font-bold">Let's build something.</p>
-				<p className="text-white/40 text-base">Tell us what needs to be finished, launched, or built.</p>
+				<p className="text-white/40 text-base">Tell us what needs to be built, launched, or connected.</p>
 			</div>
 			<a
 				href="/contact"
