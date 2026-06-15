@@ -58,7 +58,7 @@ const PortfolioSection = () => (
 			</div>
 
 			<motion.a
-				href="https://portfolio.sudo-create.studio"
+				href="https://portfolio.sudocreate.studio"
 				target="_blank"
 				rel="noopener noreferrer"
 				initial={{ opacity: 0, y: 12 }}
