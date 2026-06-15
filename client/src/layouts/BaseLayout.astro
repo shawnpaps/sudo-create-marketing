@@ -11,8 +11,8 @@ interface Props {
 }
 
 const {
-	title = "Home | Sudo Create",
-	description = "Tampa software studio for custom software, websites, online experiences, and creative infrastructure. Start a project.",
+	title = "Tampa Creative Studio | Sudo Create",
+	description = "Tampa Bay creative studio for brand photography, brand videography, and creative websites for hospitality, wellness, and lifestyle brands.",
 	ogImage = "/lens-background.jpg",
 	structuredData,
 	noIndex = false,
@@ -22,13 +22,13 @@ const SITE_URL = "https://sudocreate.studio";
 const canonical = `${SITE_URL}${Astro.url.pathname}`;
 const ogImageAbsolute = `${SITE_URL}${ogImage}`;
 const seoKeywords = [
-	"software studio",
-	"custom software",
-	"web applications",
-	"music industry",
-	"gaming",
-	"tabletop",
-	"built for creators",
+	"Tampa brand photography",
+	"Tampa brand videography",
+	"Tampa creative studio",
+	"hospitality photography Tampa",
+	"wellness brand photography Tampa",
+	"Tampa Bay creative studio",
+	"creative websites Tampa",
 ].join(", ");
 ---
 
@@ -59,7 +59,7 @@ const seoKeywords = [
 	<meta property="og:image" content={ogImageAbsolute} />
 	<meta property="og:image:width" content="1200" />
 	<meta property="og:image:height" content="630" />
-	<meta property="og:image:alt" content="Sudo Create software studio in Tampa, FL" />
+	<meta property="og:image:alt" content="Sudo Create, a Tampa Bay creative studio" />
 	<meta property="og:locale" content="en_US" />
 
 	<!-- Twitter / X Card -->
@@ -68,7 +68,7 @@ const seoKeywords = [
 	<meta name="twitter:description" content={description} />
 	<meta name="twitter:url" content={canonical} />
 	<meta name="twitter:image" content={ogImageAbsolute} />
-	<meta name="twitter:image:alt" content="Sudo Create software studio in Tampa, FL" />
+	<meta name="twitter:image:alt" content="Sudo Create, a Tampa Bay creative studio" />
 
 	<!-- Preconnect for Mux video -->
 	<link rel="preconnect" href="https://stream.mux.com" />

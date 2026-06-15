@@ -3,6 +3,7 @@ import { AnimatePresence, motion } from "motion/react";
 import { FaInstagram, FaFacebook } from "react-icons/fa";
 
 type NavItem = { label: string; href: string };
+const isExternal = (href: string) => href.startsWith("http");
 
 const DesktopNavigation = ({ items }: { items: NavItem[] }) => {
 	const [expanded, setExpanded] = useState(false);
@@ -25,7 +26,13 @@ const DesktopNavigation = ({ items }: { items: NavItem[] }) => {
 									key={item.href}
 									className="list-none text-sm whitespace-nowrap flex items-center hover:bg-white hover:text-black px-4 py-2 rounded-full transition-all duration-300"
 								>
-									<a href={item.href}>{item.label}</a>
+									<a
+										href={item.href}
+										target={isExternal(item.href) ? "_blank" : undefined}
+										rel={isExternal(item.href) ? "noopener noreferrer" : undefined}
+									>
+										{item.label}
+									</a>
 								</li>
 							))}
 						</motion.ul>

@@ -41,20 +41,6 @@ export type Work = {
   order: number;
 };
 
-export type Product = {
-  id: string;
-  name: string;
-  category: string;
-  description: string;
-  status: 'live' | 'in-lab' | 'open-call';
-  tags?: { id: string; tag: string }[];
-  playbackId?: string | null;
-  thumbnail?: MediaDoc | null;
-  caseStudyHref?: string | null;
-  siteHref?: string | null;
-  order: number;
-};
-
 // Works
 export const getWorks = (params?: Record<string, string>) =>
   fetchAPI<PaginatedResponse<Work>>('/works', params);
@@ -65,10 +51,6 @@ export const getFeaturedWorks = () =>
     sort: 'order',
     limit: '20',
   });
-
-// Products
-export const getProducts = (params?: Record<string, string>) =>
-  fetchAPI<PaginatedResponse<Product>>('/products', params);
 
 // Testimonials
 export type Testimonial = {

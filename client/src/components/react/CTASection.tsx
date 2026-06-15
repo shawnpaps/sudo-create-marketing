@@ -1,7 +1,7 @@
 import React, { useRef, useState } from "react";
 import { motion, AnimatePresence, useMotionValue, useSpring } from "motion/react";
 
-const HEADLINE = ["Let's build", "what your creative", "business needs."];
+const HEADLINE = ["Let's shape", "how your brand", "is seen."];
 const BUDGET_OPTIONS = ["Under $5k", "$5k – $15k", "$15k – $50k", "$50k+", "Let's talk"];
 
 type FormState = "idle" | "open" | "submitted";
@@ -152,7 +152,7 @@ const CTASection = () => {
 				transition={{ duration: 0.6, delay: 0.5, ease: "easeOut" }}
 				className="text-black/40 text-lg text-center max-w-md leading-relaxed mb-14"
 			>
-				Need custom software, a serious website, or the systems behind it? Tell us what you are building.
+				Need photography, video, or a website that finally matches the experience? Tell us what you are shaping.
 			</motion.p>
 
 			{/* Interactive area — button → form → success */}
@@ -274,7 +274,7 @@ const CTASection = () => {
 								</label>
 								<textarea
 									required
-									placeholder="Tell me what needs to be built, launched, or connected..."
+									placeholder="Tell me what needs to be photographed, filmed, designed, or launched..."
 									rows={4}
 									value={formData.description}
 									onChange={(e) => setFormData((p) => ({ ...p, description: e.target.value }))}

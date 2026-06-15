@@ -7,9 +7,9 @@ const PLAYBACK_ID = "Nyp500Sn01UNJTG4LcTlcOj901ASU502rQCsMn0002zDUpyCg";
 const HEADLINE_LINES = ["A note", "from the", "founder."];
 
 const BODY_COPY = [
-	"I started sudo.create because creative businesses deserve software that understands the work. Not generic tools. Not bloated systems. Tools that fit the way creators actually move.",
-	"My background is music, recording, and creative technology. That shaped how I build: clear interfaces, useful systems, and products that get out of the way.",
-	"Today I use that lens to build custom software, websites, online experiences, and infrastructure for music, gaming, tabletop, TCG, media, and adjacent creative businesses.",
+	"I started Sudo Create for brands that care how they look before anyone reads a word. Not generic content. Not filler. Images, motion, and websites with a point of view.",
+	"My background is music, recording, and creative technology. That shaped how I see: light, rhythm, texture, space, and the feeling someone gets before they book, visit, or buy.",
+	"Today I use that lens to create brand photography, video, and websites for hospitality, wellness, lifestyle, and property brands across Tampa Bay.",
 ];
 
 const AboutSection = () => {
@@ -147,7 +147,7 @@ const AboutSection = () => {
 									</div>
 									<span className="text-white/30 text-xs">·</span>
 									<div className="text-white/40 text-xs tracking-wide">
-										Founder, sudo.create
+										Founder, Sudo Create
 									</div>
 								</motion.div>
 							</div>

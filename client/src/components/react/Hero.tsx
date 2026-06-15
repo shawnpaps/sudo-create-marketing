@@ -7,18 +7,21 @@ type HeroProps = {
 };
 
 const Hero = ({ heading, subtext, location }: HeroProps) => {
-	const words = heading.split(" ");
+	const eyebrow = location ?? "Creative Studio | Tampa Bay";
+	const headingLines =
+		heading === "Look like the place people want to be."
+			? ["Look like the place", "people want to be."]
+			: [heading];
 
 	return (
 		<section className="relative min-h-screen flex flex-col text-white max-w-6xl mx-auto px-6">
-			{/* Eyebrow */}
-			<div className="pt-10 h-20 flex items-center">
-				{location ? (
+			<div className="flex-1 flex items-center justify-center text-center py-28">
+				<div className="flex flex-col items-center max-w-5xl">
 					<motion.div
-						initial={{ opacity: 0, x: -12 }}
-						animate={{ opacity: 1, x: 0 }}
+						initial={{ opacity: 0, y: 10 }}
+						animate={{ opacity: 1, y: 0 }}
 						transition={{ duration: 0.45, ease: "easeOut" }}
-						className="flex items-center gap-3"
+						className="mb-8 inline-flex items-center gap-3 rounded-full border border-white/15 bg-black/30 px-4 py-2 backdrop-blur-sm"
 					>
 						<motion.span
 							initial={{ scaleX: 0 }}
@@ -28,75 +31,53 @@ const Hero = ({ heading, subtext, location }: HeroProps) => {
 							className="block w-8 h-px bg-white/30"
 						/>
 						<span className="text-white/40 text-xs font-mono uppercase tracking-widest">
-							{location}
+							{eyebrow}
 						</span>
 					</motion.div>
-				) : (
-					<motion.div
-						initial={{ opacity: 0, x: -12 }}
-						animate={{ opacity: 1, x: 0 }}
-						transition={{ duration: 0.45, ease: "easeOut" }}
-						className="flex items-center gap-3"
-					>
-						<motion.span
-							initial={{ scaleX: 0 }}
-							animate={{ scaleX: 1 }}
-							transition={{ duration: 0.4, delay: 0.1, ease: "easeOut" }}
-							style={{ originX: 0 }}
-							className="block w-8 h-px bg-white/30"
-						/>
-						<span className="text-white/40 text-xs font-mono uppercase tracking-widest">
-							Software Studio · Tampa, FL
-						</span>
-					</motion.div>
-				)}
-			</div>
 
-			{/* Headline — vertically centered in remaining space */}
-			<div className="flex-1 flex items-center">
-				<div className="flex flex-col">
-					<div className="flex flex-col" style={{ gap: "0.05em" }}>
-						{words.map((word, i) => (
+					<div className="flex flex-col items-center gap-2 md:gap-3">
+						{headingLines.map((line, i) => (
 							<div key={i} className="overflow-hidden">
 								<motion.h1
-									initial={{ y: "110%" }}
+									initial={{ y: "105%" }}
 									animate={{ y: 0 }}
 									transition={{
-										duration: 0.9,
-										delay: 0.12 + i * 0.13,
+										duration: 0.85,
+										delay: 0.12 + i * 0.1,
 										ease: [0.22, 1, 0.36, 1],
 									}}
-									className="font-bold leading-[0.88] p-4"
-									style={{ fontSize: "clamp(2.5rem, 11vw, 9.5rem)" }}
+									className="font-bold leading-[0.92] tracking-tight text-center"
+									style={{ fontSize: "clamp(3.25rem, 8vw, 7.25rem)" }}
 								>
-									{word}
+									{line}
 								</motion.h1>
 							</div>
 						))}
 					</div>
 
 					<motion.p
-						initial={{ opacity: 0, y: 6 }}
+						initial={{ opacity: 0, y: 14 }}
 						animate={{ opacity: 1, y: 0 }}
-						transition={{ duration: 0.5, delay: 0.55, ease: "easeOut" }}
-						className="text-white/30 text-xs font-mono mt-5 tracking-wide"
+						transition={{ duration: 0.55, delay: 0.45, ease: "easeOut" }}
+						className="text-white/65 text-base md:text-xl leading-relaxed max-w-2xl mt-8"
 					>
-						// Built for creators.
+						{subtext}
 					</motion.p>
+
+					<motion.a
+						href="/contact"
+						initial={{ opacity: 0, y: 10 }}
+						animate={{ opacity: 1, y: 0 }}
+						transition={{ duration: 0.45, delay: 0.58, ease: "easeOut" }}
+						className="inline-flex items-center gap-2 mt-9 rounded-full border border-white/25 bg-white px-7 py-3.5 text-sm font-semibold text-black shadow-[0_20px_80px_rgba(255,255,255,0.12)] hover:bg-white/90 transition-colors duration-300"
+					>
+						Start a project →
+					</motion.a>
 				</div>
 			</div>
 
-			{/* Bottom row — subtext left, scroll indicator right */}
-			<div className="pb-14 flex items-end justify-between gap-10">
-				<motion.p
-					initial={{ opacity: 0, y: 18 }}
-					animate={{ opacity: 1, y: 0 }}
-					transition={{ duration: 0.6, delay: 0.55, ease: "easeOut" }}
-					className="text-white/50 text-lg leading-relaxed max-w-md"
-				>
-					{subtext}
-				</motion.p>
-
+			{/* Bottom row — scroll indicator */}
+			<div className="pb-14 flex justify-center">
 				<motion.div
 					initial={{ opacity: 0 }}
 					animate={{ opacity: 1 }}

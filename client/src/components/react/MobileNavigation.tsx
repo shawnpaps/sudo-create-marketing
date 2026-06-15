@@ -3,6 +3,7 @@ import { AnimatePresence, motion } from "motion/react";
 import { FaInstagram, FaFacebook } from "react-icons/fa";
 
 type NavItem = { label: string; href: string };
+const isExternal = (href: string) => href.startsWith("http");
 
 const MobileNavigation = ({ items }: { items: NavItem[] }) => {
 	const [open, setOpen] = useState(false);
@@ -64,6 +65,8 @@ const MobileNavigation = ({ items }: { items: NavItem[] }) => {
 										<li key={item.href}>
 											<a
 												href={item.href}
+												target={isExternal(item.href) ? "_blank" : undefined}
+												rel={isExternal(item.href) ? "noopener noreferrer" : undefined}
 												onClick={() => setOpen(false)}
 												className="flex items-center py-4 px-4 text-white text-lg rounded-2xl hover:bg-white/10 transition-all duration-200"
 											>

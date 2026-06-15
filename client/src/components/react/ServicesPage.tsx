@@ -11,30 +11,30 @@ type Service = {
 const SERVICES: Service[] = [
 	{
 		number: "01",
-		title: "Custom Software & Apps",
+		title: "Brand Photography",
 		description:
-			"Build the tool your workflow needs.",
+			"Make the brand feel like somewhere people want to be.",
 		detail:
-			"Purpose-built software for creative workflows. We build internal tools, fan platforms, game companions, scheduling systems, content operations, and custom apps for music, gaming, tabletop, TCG, media, and music technology companies.",
-		deliverables: ["Workflow Tools", "Internal Apps", "Fan Platforms", "Game Companions", "Integrations", "Custom Apps"],
+			"Cinematic brand photography for hospitality, wellness, lifestyle, real estate, and Airbnb brands around Tampa Bay. We shoot the room, the ritual, the texture, the people, and the details that make the experience worth choosing.",
+		deliverables: ["Brand Campaigns", "Hospitality Photography", "Wellness Brand Photography", "Property Photography", "Lifestyle Content", "Image Libraries"],
 	},
 	{
 		number: "02",
-		title: "Websites & Online Experiences",
+		title: "Brand Videography",
 		description:
-			"Build a site that works like a product.",
+			"Let the atmosphere move.",
 		detail:
-			"High-end, tech-forward websites and online experiences for creative businesses. We shape the interface, front end, CMS, performance, SEO, and product logic so the experience is useful beyond the first visit.",
-		deliverables: ["Websites", "Online Experiences", "Product Sites", "CMS Integration", "Performance", "SEO"],
+			"Brand videography for businesses with a real sense of place. Short films, social edits, launch videos, and motion assets for hotels, restaurants, studios, spas, shops, and properties that need to feel alive online.",
+		deliverables: ["Brand Films", "Reels", "Social Clips", "Launch Videos", "Location Stories", "Motion Assets"],
 	},
 	{
 		number: "03",
-		title: "Infrastructure & Systems",
+		title: "Creative Websites",
 		description:
-			"Power the business behind the work.",
+			"Give the work a place to land.",
 		detail:
-			"The backend systems that keep creative businesses moving. We build APIs, databases, automations, integrations, and cloud infrastructure. Tourpass is our flagship: a music industry networking platform built by Sudo Create.",
-		deliverables: ["APIs", "Automation", "Data Models", "Cloud Infrastructure", "Integrations", "Operational Systems"],
+			"Websites for hospitality, wellness, lifestyle, and property brands that need more than a template. Clean pages, sharp copy, strong imagery, booking paths, and SEO foundations built around how people actually decide.",
+		deliverables: ["Web Design", "Landing Pages", "Portfolio Sites", "Booking Flows", "CMS Integration", "SEO"],
 	},
 ];
 
@@ -106,7 +106,7 @@ const ServicesPage = () => (
 						transition={{ duration: 0.9, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
 						className="text-5xl md:text-7xl font-bold leading-tight"
 					>
-						Software for creative work.
+						Media for brands with a point of view.
 					</motion.h1>
 				</div>
 				<motion.p
@@ -115,7 +115,7 @@ const ServicesPage = () => (
 					transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
 					className="text-white/50 text-lg md:text-xl leading-relaxed max-w-2xl"
 				>
-					Sudo Create is a software studio in Tampa. We build custom software, high-end websites, online experiences, and digital infrastructure for music, gaming, tabletop, TCG, media, and adjacent creative businesses.
+					Sudo Create is a bespoke media studio in Tampa Bay. We create cinematic brand photography, video, and websites for hospitality, wellness, lifestyle, and property brands.
 				</motion.p>
 			</div>
 		</div>
@@ -136,8 +136,8 @@ const ServicesPage = () => (
 			className="py-24 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-8 border-t border-white/10"
 		>
 			<div className="flex flex-col gap-2">
-				<p className="text-white text-2xl font-bold">Let's build something.</p>
-				<p className="text-white/40 text-base">Tell us what needs to be built, launched, or connected.</p>
+				<p className="text-white text-2xl font-bold">Let's shape the first impression.</p>
+				<p className="text-white/40 text-base">Tell us what needs to be seen, felt, or launched.</p>
 			</div>
 			<a
 				href="/contact"
