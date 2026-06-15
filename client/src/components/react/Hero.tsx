@@ -7,10 +7,10 @@ type HeroProps = {
 };
 
 const Hero = ({ heading, subtext, location }: HeroProps) => {
-	const eyebrow = location ?? "Creative Studio | Tampa Bay";
+	const eyebrow = location ?? "Technology Studio | Tampa Bay";
 	const headingLines =
-		heading === "Look like the place people want to be."
-			? ["Look like the place", "people want to be."]
+		heading === "Built for creators."
+			? ["Built for", "creators."]
 			: [heading];
 
 	return (

@@ -64,3 +64,21 @@ export type Testimonial = {
 
 export const getTestimonials = () =>
   fetchAPI<PaginatedResponse<Testimonial>>('/testimonials', { sort: 'order', limit: '100' });
+
+// Products
+export type Product = {
+  id: string;
+  name: string;
+  category: string;
+  description: string;
+  status: 'live' | 'in-lab' | 'open-call';
+  tags?: { id: string; tag: string }[];
+  playbackId?: string | null;
+  thumbnail?: MediaDoc | null;
+  caseStudyHref?: string | null;
+  siteHref?: string | null;
+  order: number;
+};
+
+export const getProducts = (params?: Record<string, string>) =>
+  fetchAPI<PaginatedResponse<Product>>('/products', params);

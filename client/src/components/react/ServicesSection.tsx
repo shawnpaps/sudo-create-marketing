@@ -11,45 +11,59 @@ type Service = {
 
 const SERVICES: Service[] = [
 	{
-		id: "photography",
+		id: "website-design",
 		number: "01",
-		title: "Brand Photography",
+		title: "Premium Website Design",
 		description:
-			"Cinematic Tampa brand photography for spaces, people, rituals, and the details that make a brand feel real.",
+			"Bespoke websites for brands that care how the whole thing feels.",
 		deliverables: [
-			"Brand Campaigns",
-			"Hospitality Photography",
-			"Wellness Sessions",
-			"Property Photography",
-			"Lifestyle Content",
-		],
-	},
-	{
-		id: "video",
-		number: "02",
-		title: "Brand Videography",
-		description:
-			"Short-form brand films, social cuts, and moving visuals that make the atmosphere easier to feel before someone arrives.",
-		deliverables: [
-			"Brand Films",
-			"Reels",
-			"Social Clips",
-			"Launch Videos",
-			"Location Stories",
-		],
-	},
-	{
-		id: "websites",
-		number: "03",
-		title: "Creative Websites",
-		description:
-			"Websites for hospitality, wellness, lifestyle, and property brands that need the digital experience to match the room.",
-		deliverables: [
-			"Web Design",
+			"Website Design",
 			"Landing Pages",
 			"Portfolio Sites",
 			"Booking Flows",
-			"SEO",
+			"SEO Foundations",
+		],
+	},
+	{
+		id: "software-development",
+		number: "02",
+		title: "Custom Software Development",
+		description:
+			"Tools, platforms, and product builds shaped around the work they need to do.",
+		deliverables: [
+			"Web Apps",
+			"Product Builds",
+			"Internal Tools",
+			"CMS Platforms",
+			"API Integrations",
+		],
+	},
+	{
+		id: "product-design",
+		number: "03",
+		title: "Product Design & UI/UX",
+		description:
+			"Interfaces with taste, logic, and restraint. Clear flows. Sharp screens.",
+		deliverables: [
+			"Product Strategy",
+			"UI Design",
+			"UX Flows",
+			"Design Systems",
+			"Prototypes",
+		],
+	},
+	{
+		id: "tech-strategy",
+		number: "04",
+		title: "Tech Strategy & Consulting",
+		description:
+			"Technical direction for founders and creative teams before they build.",
+		deliverables: [
+			"Technical Planning",
+			"Stack Decisions",
+			"Product Scoping",
+			"Workflow Audits",
+			"Launch Roadmaps",
 		],
 	},
 ];

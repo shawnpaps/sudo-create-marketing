@@ -7,9 +7,9 @@ const PLAYBACK_ID = "Nyp500Sn01UNJTG4LcTlcOj901ASU502rQCsMn0002zDUpyCg";
 const HEADLINE_LINES = ["A note", "from the", "founder."];
 
 const BODY_COPY = [
-	"I started Sudo Create for brands that care how they look before anyone reads a word. Not generic content. Not filler. Images, motion, and websites with a point of view.",
-	"My background is music, recording, and creative technology. That shaped how I see: light, rhythm, texture, space, and the feeling someone gets before they book, visit, or buy.",
-	"Today I use that lens to create brand photography, video, and websites for hospitality, wellness, lifestyle, and property brands across Tampa Bay.",
+	"I started Sudo Create because creative people deserve technology that feels as considered as the work behind it.",
+	"My background runs through audio engineering, photography, video post-production, and software development. That mix changed how I build. I think about rhythm, pacing, image, interface, and the invisible systems holding everything together.",
+	"Today I use that range to design websites, build software, and shape digital products for people who care about the details.",
 ];
 
 const AboutSection = () => {
