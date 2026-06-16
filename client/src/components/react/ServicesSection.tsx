@@ -25,22 +25,8 @@ const SERVICES: Service[] = [
 		],
 	},
 	{
-		id: "website-media",
-		number: "02",
-		title: "Website Media",
-		description:
-			"Photography, video, and visual assets shaped for the website they need to sell.",
-		deliverables: [
-			"Brand Photography",
-			"Website Video",
-			"Content Direction",
-			"Visual Systems",
-			"Media Libraries",
-		],
-	},
-	{
 		id: "software-development",
-		number: "03",
+		number: "02",
 		title: "Custom Software Development",
 		description:
 			"Tools, platforms, and product builds shaped around the work they need to do.",
@@ -54,7 +40,7 @@ const SERVICES: Service[] = [
 	},
 	{
 		id: "product-design",
-		number: "04",
+		number: "03",
 		title: "Product Design & UI/UX",
 		description:
 			"Interfaces with taste, logic, and restraint. Clear flows. Sharp screens.",
@@ -68,7 +54,7 @@ const SERVICES: Service[] = [
 	},
 	{
 		id: "tech-strategy",
-		number: "05",
+		number: "04",
 		title: "Tech Strategy & Consulting",
 		description:
 			"Technical direction for founders and creative teams before they build.",
