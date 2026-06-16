@@ -11,39 +11,30 @@ type Service = {
 const SERVICES: Service[] = [
 	{
 		number: "01",
-		title: "Premium Website Design",
+		title: "Brand Photography",
 		description:
-			"Bespoke websites for brands that care how the whole thing feels.",
+			"Make the brand feel like somewhere people want to be.",
 		detail:
-			"Sharp, premium websites for creative brands, startups, and founders who need more than a template. Strategy, copy, design, CMS thinking, and front-end execution built around how people actually judge the work.",
-		deliverables: ["Website Design", "Landing Pages", "Portfolio Sites", "Booking Flows", "CMS Architecture", "SEO Foundations"],
+			"Cinematic brand photography for hospitality, wellness, lifestyle, real estate, and Airbnb brands around Tampa Bay. We shoot the room, the ritual, the texture, the people, and the details that make the experience worth choosing.",
+		deliverables: ["Brand Campaigns", "Hospitality Photography", "Wellness Brand Photography", "Property Photography", "Lifestyle Content", "Image Libraries"],
 	},
 	{
 		number: "02",
-		title: "Custom Software Development",
+		title: "Brand Videography",
 		description:
-			"Tools, platforms, and product builds shaped around the work they need to do.",
+			"Let the atmosphere move.",
 		detail:
-			"Custom software for creative workflows, startups, and industries with specific needs. Tourpass is the flagship proof: a music industry product built by someone who understood the world from the inside.",
-		deliverables: ["Web Apps", "Product Builds", "Internal Tools", "CMS Platforms", "API Integrations", "Workflow Software"],
+			"Brand videography for businesses with a real sense of place. Short films, social edits, launch videos, and motion assets for hotels, restaurants, studios, spas, shops, and properties that need to feel alive online.",
+		deliverables: ["Brand Films", "Reels", "Social Clips", "Launch Videos", "Location Stories", "Motion Assets"],
 	},
 	{
 		number: "03",
-		title: "Product Design & UI/UX",
+		title: "Creative Websites",
 		description:
-			"Interfaces with taste, logic, and restraint.",
+			"Give the work a place to land.",
 		detail:
-			"Product design for digital tools that need to look right, move cleanly, and make sense fast. Clear flows. Sharp screens. Less friction.",
-		deliverables: ["Product Strategy", "UI Design", "UX Flows", "Design Systems", "Prototypes", "Interface Audits"],
-	},
-	{
-		number: "04",
-		title: "Tech Strategy & Consulting",
-		description:
-			"The right path before the build.",
-		detail:
-			"Technical direction for founders and creative teams who need clarity before they spend. Stack decisions, product scopes, workflow audits, and launch roadmaps with a bias toward what will actually work.",
-		deliverables: ["Technical Planning", "Stack Decisions", "Product Scoping", "Workflow Audits", "Launch Roadmaps", "System Reviews"],
+			"Websites for hospitality, wellness, lifestyle, and property brands that need more than a template. Clean pages, sharp copy, strong imagery, booking paths, and SEO foundations built around how people actually decide.",
+		deliverables: ["Web Design", "Landing Pages", "Portfolio Sites", "Booking Flows", "CMS Integration", "SEO"],
 	},
 ];
 
@@ -115,7 +106,7 @@ const ServicesPage = () => (
 						transition={{ duration: 0.9, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
 						className="text-5xl md:text-7xl font-bold leading-tight"
 					>
-						Bespoke technology for creative people.
+						Media for brands with a point of view.
 					</motion.h1>
 				</div>
 				<motion.p
@@ -124,7 +115,7 @@ const ServicesPage = () => (
 					transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
 					className="text-white/50 text-lg md:text-xl leading-relaxed max-w-2xl"
 				>
-					Sudo Create is a boutique technology studio in Tampa Bay. Premium websites, custom software, product design, and strategy for creative brands and founders everywhere.
+					Sudo Create is a bespoke media studio in Tampa Bay. We create cinematic brand photography, video, and websites for hospitality, wellness, lifestyle, and property brands.
 				</motion.p>
 			</div>
 		</div>
@@ -145,8 +136,8 @@ const ServicesPage = () => (
 			className="py-24 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-8 border-t border-white/10"
 		>
 			<div className="flex flex-col gap-2">
-				<p className="text-white text-2xl font-bold">Let's shape the thing you need built.</p>
-				<p className="text-white/40 text-base">Tell us what should exist, work better, or launch next.</p>
+				<p className="text-white text-2xl font-bold">Let's shape the first impression.</p>
+				<p className="text-white/40 text-base">Tell us what needs to be seen, felt, or launched.</p>
 			</div>
 			<a
 				href="/contact"

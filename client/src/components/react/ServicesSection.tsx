@@ -11,59 +11,45 @@ type Service = {
 
 const SERVICES: Service[] = [
 	{
-		id: "website-design",
+		id: "photography",
 		number: "01",
-		title: "Premium Website Design",
+		title: "Brand Photography",
 		description:
-			"Bespoke websites for brands that care how the whole thing feels.",
+			"Cinematic Tampa brand photography for spaces, people, rituals, and the details that make a brand feel real.",
 		deliverables: [
-			"Website Design",
+			"Brand Campaigns",
+			"Hospitality Photography",
+			"Wellness Sessions",
+			"Property Photography",
+			"Lifestyle Content",
+		],
+	},
+	{
+		id: "video",
+		number: "02",
+		title: "Brand Videography",
+		description:
+			"Short-form brand films, social cuts, and moving visuals that make the atmosphere easier to feel before someone arrives.",
+		deliverables: [
+			"Brand Films",
+			"Reels",
+			"Social Clips",
+			"Launch Videos",
+			"Location Stories",
+		],
+	},
+	{
+		id: "websites",
+		number: "03",
+		title: "Creative Websites",
+		description:
+			"Websites for hospitality, wellness, lifestyle, and property brands that need the digital experience to match the room.",
+		deliverables: [
+			"Web Design",
 			"Landing Pages",
 			"Portfolio Sites",
 			"Booking Flows",
-			"SEO Foundations",
-		],
-	},
-	{
-		id: "software-development",
-		number: "02",
-		title: "Custom Software Development",
-		description:
-			"Tools, platforms, and product builds shaped around the work they need to do.",
-		deliverables: [
-			"Web Apps",
-			"Product Builds",
-			"Internal Tools",
-			"CMS Platforms",
-			"API Integrations",
-		],
-	},
-	{
-		id: "product-design",
-		number: "03",
-		title: "Product Design & UI/UX",
-		description:
-			"Interfaces with taste, logic, and restraint. Clear flows. Sharp screens.",
-		deliverables: [
-			"Product Strategy",
-			"UI Design",
-			"UX Flows",
-			"Design Systems",
-			"Prototypes",
-		],
-	},
-	{
-		id: "tech-strategy",
-		number: "04",
-		title: "Tech Strategy & Consulting",
-		description:
-			"Technical direction for founders and creative teams before they build.",
-		deliverables: [
-			"Technical Planning",
-			"Stack Decisions",
-			"Product Scoping",
-			"Workflow Audits",
-			"Launch Roadmaps",
+			"SEO",
 		],
 	},
 ];
