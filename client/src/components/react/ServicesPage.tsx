@@ -20,15 +20,6 @@ const SERVICES: Service[] = [
 	},
 	{
 		number: "02",
-		title: "Website Media",
-		description:
-			"Photography, video, and visual assets for the site itself.",
-		detail:
-			"Website media for brands that need the visuals to carry the same weight as the design. Photography, video, content direction, and asset systems built around how the site needs to look, feel, and convert.",
-		deliverables: ["Brand Photography", "Website Video", "Content Direction", "Visual Systems", "Media Libraries", "Launch Assets"],
-	},
-	{
-		number: "03",
 		title: "Custom Software Development",
 		description:
 			"Tools, platforms, and product builds shaped around the work they need to do.",
@@ -37,7 +28,7 @@ const SERVICES: Service[] = [
 		deliverables: ["Web Apps", "Product Builds", "Internal Tools", "CMS Platforms", "API Integrations", "Workflow Software"],
 	},
 	{
-		number: "04",
+		number: "03",
 		title: "Product Design & UI/UX",
 		description:
 			"Interfaces with taste, logic, and restraint.",
@@ -46,7 +37,7 @@ const SERVICES: Service[] = [
 		deliverables: ["Product Strategy", "UI Design", "UX Flows", "Design Systems", "Prototypes", "Interface Audits"],
 	},
 	{
-		number: "05",
+		number: "04",
 		title: "Tech Strategy & Consulting",
 		description:
 			"The right path before the build.",
@@ -133,7 +124,7 @@ const ServicesPage = () => (
 					transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
 					className="text-white/50 text-lg md:text-xl leading-relaxed max-w-2xl"
 				>
-					Sudo Create is a boutique technology studio in Tampa Bay. Premium websites, website media, custom software, product design, and strategy for creative brands and founders everywhere.
+					Sudo Create is a boutique technology studio in Tampa Bay. Premium websites, custom software, product design, and strategy for creative brands and founders everywhere.
 				</motion.p>
 			</div>
 		</div>
