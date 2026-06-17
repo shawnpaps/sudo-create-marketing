@@ -8,57 +8,57 @@ export type CityData = {
 
 export const CITIES: Record<string, CityData> = {
 	tampa: {
-		title: "Tampa Web Design Studio & Custom Software Development | Sudo Create",
+		title: "Tampa Brand Photography & Videography | Sudo Create",
 		description:
-			"Premium website design, custom software development, product design, and tech strategy from a Tampa Bay technology studio.",
-		heroHeading: "Built for creators.",
+			"Tampa brand photography, videography, and creative websites for hospitality, wellness, lifestyle, and property brands.",
+		heroHeading: "Look like the place people want to be.",
 		heroSubtext:
-			"Sudo Create builds websites, software, and digital products for Tampa brands and founders who care how the work performs.",
+			"Sudo Create is a Tampa creative studio for hospitality, wellness, lifestyle, and property brands that care how they look.",
 		location: "Tampa, FL",
 	},
 	"st-petersburg": {
-		title: "St. Petersburg Web Design & Product Studio | Sudo Create",
+		title: "St. Petersburg Brand Photography & Videography | Sudo Create",
 		description:
-			"Premium web design, product design, custom software, and tech strategy for St. Petersburg creative brands and startups.",
-		heroHeading: "Built for creators.",
+			"Brand photography, videography, and creative websites for St. Petersburg hospitality, wellness, and lifestyle brands.",
+		heroHeading: "Make the first look count.",
 		heroSubtext:
-			"Digital products, websites, and sharp technical direction for St. Petersburg teams with a clear point of view.",
+			"Cinematic photography, video, and websites for St. Petersburg brands with a clear point of view.",
 		location: "St. Petersburg, FL",
 	},
 	valrico: {
-		title: "Valrico Web Design & Custom Software Studio | Sudo Create",
+		title: "Valrico Brand Photography & Videography | Sudo Create",
 		description:
-			"Valrico web design, custom software development, UI/UX, and tech consulting for creative businesses.",
-		heroHeading: "Built for creators.",
+			"Brand photography, videography, and creative websites for Valrico hospitality, wellness, lifestyle, and property brands.",
+		heroHeading: "Show people what it feels like.",
 		heroSubtext:
-			"Sudo Create helps Valrico and Hillsborough County brands design, build, and launch better digital work.",
+			"Sudo Create helps Valrico and Hillsborough County brands look sharp, specific, and worth choosing.",
 		location: "Valrico, FL",
 	},
 	riverview: {
-		title: "Riverview Web Design & Product Studio | Sudo Create",
+		title: "Riverview Brand Photography & Videography | Sudo Create",
 		description:
-			"Riverview web design, product design, custom software, and technology strategy for creative industries.",
-		heroHeading: "Built for creators.",
+			"Riverview brand photography, videography, and creative websites for hospitality, wellness, lifestyle, and property brands.",
+		heroHeading: "Turn attention into trust.",
 		heroSubtext:
-			"Digital products and websites for Riverview brands that want the interface to feel as considered as the idea.",
+			"Visual direction, photo, video, and web for Riverview brands that want to look as good as the work feels.",
 		location: "Riverview, FL",
 	},
 	brandon: {
-		title: "Brandon Web Design & Custom Software Studio | Sudo Create",
+		title: "Brandon Brand Photography & Videography | Sudo Create",
 		description:
-			"Brandon web design, custom software development, product design, and tech strategy for creative brands and founders.",
-		heroHeading: "Built for creators.",
+			"Brand photography, videography, and creative websites for Brandon hospitality, wellness, lifestyle, and property brands.",
+		heroHeading: "Give the brand a real presence.",
 		heroSubtext:
-			"Sudo Create creates premium websites, software, and digital product direction for Brandon businesses ready to build with intent.",
+			"Sudo Create creates cinematic brand media and websites for Brandon businesses ready to look more considered.",
 		location: "Brandon, FL",
 	},
 	lakeland: {
-		title: "Lakeland Web Design & Product Studio | Sudo Create",
+		title: "Lakeland Brand Photography & Videography | Sudo Create",
 		description:
-			"Lakeland web design, product design, custom software, and technology consulting for creative brands.",
-		heroHeading: "Built for creators.",
+			"Lakeland brand photography, videography, and creative websites for hospitality, wellness, lifestyle, and property brands.",
+		heroHeading: "Make the brand feel lived in.",
 		heroSubtext:
-			"Websites, software, and product thinking for Lakeland and Polk County brands with taste, texture, and a point of view.",
+			"Photography, video, and websites for Lakeland and Polk County brands with taste, texture, and a point of view.",
 		location: "Lakeland, FL",
 	},
 };

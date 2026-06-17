@@ -191,7 +191,7 @@ const ProjectStep = ({
 	onNext: () => void;
 }) => (
 	<StepShell direction={direction}>
-		<StepQuestion question="What are you trying to design, build, fix, or launch?" subtext="03 — The project" />
+		<StepQuestion question="What needs to be photographed, filmed, or launched?" subtext="03 — The project" />
 		<motion.textarea
 			initial={{ opacity: 0, y: 10 }}
 			animate={{ opacity: 1, y: 0 }}
@@ -430,7 +430,7 @@ const ContactPage = () => {
 								transition={{ duration: 0.55, delay: 0.55, ease: "easeOut" }}
 								className="text-white/40 text-lg leading-relaxed max-w-md mb-16"
 							>
-								Tell me what you are trying to design, build, fix, or launch. I will reply within one business day.
+								Tell us what you need photographed, filmed, designed, or launched. We'll reply within one business day.
 							</motion.p>
 
 							<motion.div

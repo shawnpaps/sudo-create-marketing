@@ -32,7 +32,7 @@ const PortfolioSection = () => (
 						className="block w-8 h-px bg-white/40"
 					/>
 					<span className="text-white/40 text-xs font-mono tracking-widest uppercase">
-						Visual Archive
+						Photography Portfolio
 					</span>
 				</motion.div>
 
@@ -43,7 +43,7 @@ const PortfolioSection = () => (
 					transition={{ duration: 0.6, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
 					className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight max-w-xl"
 				>
-					See the image work.
+					See the photography work.
 				</motion.h2>
 
 				<motion.p
@@ -53,7 +53,7 @@ const PortfolioSection = () => (
 					transition={{ duration: 0.55, delay: 0.2, ease: "easeOut" }}
 					className="text-white/50 text-base lg:text-lg leading-relaxed max-w-md"
 				>
-					Photography and visual work still shape how the studio sees. This archive holds the image side of the practice.
+					A separate portfolio of brand photography, hospitality work, wellness sessions, properties, and visual stories from Tampa Bay and beyond.
 				</motion.p>
 			</div>
 
@@ -67,7 +67,7 @@ const PortfolioSection = () => (
 				transition={{ duration: 0.5, delay: 0.3 }}
 				className="self-start md:self-auto inline-flex items-center gap-3 border border-white/20 px-7 py-4 rounded-full text-white font-medium hover:bg-white hover:text-black transition-all duration-300 whitespace-nowrap"
 			>
-				View visual archive →
+				View photography portfolio →
 			</motion.a>
 		</div>
 	</section>
