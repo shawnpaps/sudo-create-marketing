@@ -2,67 +2,39 @@
 
 Sudo Create is an independent software development studio building apps, websites, and e-commerce for creative businesses and creative people.
 
-This repository contains two separately deployed applications:
-
-- `client/` — the public Astro site
-- `cms/` — Payload CMS on Next.js
+This repository contains the public Astro site in `client/`. Project case studies live alongside the code as Markdown content and are validated by an Astro content collection.
 
 ## Local development
 
-Use Node 22 LTS and pnpm.
+Use Node 22 LTS and npm.
 
 ```bash
 cd client
-cp .env.example .env
-pnpm install
-pnpm dev
+npm install
+npm run dev
 ```
 
-In a second terminal:
+The site runs at `http://localhost:4321`.
 
-```bash
-cd cms
-cp .env.example .env
-pnpm install
-pnpm dev
-```
+## Adding a project
 
-The site runs at `http://localhost:4321`; Payload runs at `http://localhost:3000/admin`.
+1. Add the project cover to `client/public/project-covers/`.
+2. Create a Markdown file in `client/src/content/projects/`.
+3. Fill in the validated frontmatter and write the case study below it.
 
-## Content model
-
-- **Projects** — software, website, commerce, and studio-product work
-- **Services** — capabilities and deliverables
-- **Testimonials** — approved client quotes
-- **Media** — images stored in Vercel Blob
-- **Site settings** — studio description, contact details, availability, and social links
-
-The frontend loads published Projects from Payload at runtime. If the CMS is unavailable, it deliberately falls back to the bundled Tourpass example so the public page does not collapse.
+The homepage and work index are generated from the collection automatically. The project filename becomes its URL: `boardstate.md` becomes `/work/boardstate/`.
 
 ## Vercel deployment
 
-Create two Vercel projects from this repository.
-
-### Public site
+Create one Vercel project from this repository.
 
 - Root directory: `client`
 - Framework preset: Astro
-- Environment variable: `PUBLIC_PAYLOAD_URL=https://your-cms-project.vercel.app`
+- Build command: `npm run build`
+- Output directory: `dist`
 
-### CMS
+## Before production deploy
 
-- Root directory: `cms`
-- Framework preset: Next.js
-- Connect a Neon database and set `DATABASE_URL` to its pooled connection string
-- Connect a Vercel Blob store; Vercel supplies `BLOB_READ_WRITE_TOKEN`
-- Set `PAYLOAD_SECRET`, `SERVER_URL`, and `CORS_ORIGINS`
-
-For production, `SERVER_URL` must be the CMS origin and `CORS_ORIGINS` must include the public site’s production and preview origins. Media uploads use direct client uploads to avoid Vercel’s server upload-size limit.
-
-## Before first production deploy
-
-1. Deploy the CMS and create the first Payload admin user.
-2. Add the three Services records and the initial Projects records.
-3. Set the public site’s `PUBLIC_PAYLOAD_URL` to the CMS URL.
-4. Deploy the public site and add its URL to `CORS_ORIGINS` in the CMS.
-5. Verify one media upload, one published project, the contact form, and both mobile and desktop layouts.
+1. Confirm the three project pages and their live-site links.
+2. Configure the contact form destination.
+3. Verify the homepage, project index, one project detail page, and the contact flow on mobile and desktop.

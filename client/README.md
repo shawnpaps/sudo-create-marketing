@@ -1,43 +1,31 @@
-# Astro Starter Kit: Minimal
+# Sudo Create website
 
-```sh
-npm create astro@latest -- --template minimal
-```
+The public Sudo Create website is a static Astro application. Projects are stored as Markdown in `src/content/projects/` and validated by `src/content.config.ts`.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
-
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
+## Project structure
 
 ```text
 /
-├── public/
+├── public/project-covers/
 ├── src/
+│   ├── content/projects/
+│   ├── content.config.ts
+│   ├── components/
 │   └── pages/
-│       └── index.astro
 └── package.json
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+## Commands
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+Run these from `client/`:
 
-Any static assets, like images, can be placed in the `public/` directory.
+| Command | Action |
+| :-- | :-- |
+| `npm install` | Install dependencies |
+| `npm run dev` | Start the local development server |
+| `npm run build` | Build the production site to `dist/` |
+| `npm run preview` | Preview the production build |
 
-## 🧞 Commands
+## Add a project
 
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+Add a cover image to `public/project-covers/`, then copy an existing Markdown file in `src/content/projects/` and update its frontmatter and body. The work index and project route are generated automatically.

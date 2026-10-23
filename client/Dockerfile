@@ -2,13 +2,9 @@ FROM node:22-alpine AS builder
 WORKDIR /app
 
 COPY package.json package-lock.json ./
-RUN npm install
+RUN npm ci
 
 COPY . .
-
-# PUBLIC_PAYLOAD_URL is baked into the static build at compile time
-ARG PUBLIC_PAYLOAD_URL
-ENV PUBLIC_PAYLOAD_URL=$PUBLIC_PAYLOAD_URL
 
 RUN npm run build
 

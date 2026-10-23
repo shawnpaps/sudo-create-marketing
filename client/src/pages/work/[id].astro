@@ -1,0 +1,54 @@
+---
+import { getCollection, render } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+export async function getStaticPaths() {
+  const projects = await getCollection("projects");
+  return projects.map((project) => ({ params: { id: project.id }, props: { project } }));
+}
+
+const { project } = Astro.props;
+const { Content } = await render(project);
+---
+
+<BaseLayout
+  title={`${project.data.title} | Sudo Create`}
+  description={project.data.summary}
+  ogImage={project.data.cover}
+>
+  <header class="project-hero">
+    <div class="shell project-hero-grid">
+      <div>
+        <a class="back-link" href="/work">← All work</a>
+        <span class="eyebrow">{project.data.eyebrow}</span>
+        <h1 class="display">{project.data.title}</h1>
+        <p class="project-deck">{project.data.summary}</p>
+        <a class="button button-primary" href={project.data.liveURL} target="_blank" rel="noreferrer">Visit the live project ↗</a>
+      </div>
+      <div class="project-hero-visual">
+        <img src={project.data.cover} alt={project.data.coverAlt} />
+      </div>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="shell project-story-grid">
+      <aside class="project-facts">
+        <span class="eyebrow">Build sheet</span>
+        <dl>
+          <div><dt>Project</dt><dd>{project.data.projectType}</dd></div>
+          {project.data.stack.length > 0 && <div><dt>Built with</dt><dd>{project.data.stack.join(" · ")}</dd></div>}
+          <div><dt>Status</dt><dd>Live</dd></div>
+        </dl>
+      </aside>
+      <article class="project-prose"><Content /></article>
+    </div>
+  </section>
+
+  <section class="section band">
+    <div class="shell content-grid">
+      <h2 class="display">Have something useful in mind?</h2>
+      <div><p>Bring us the idea, the stubborn problem, or the half-finished plan. We’ll help find the right shape for it.</p><a class="button button-primary" href="/contact">Start a project →</a></div>
+    </div>
+  </section>
+</BaseLayout>
