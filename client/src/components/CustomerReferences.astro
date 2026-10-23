@@ -1,0 +1,100 @@
+---
+import { getCollection } from "astro:content";
+
+const reviews = (await getCollection("testimonials"))
+    .filter(({ data }) => data.featured)
+    .sort((a, b) => a.data.sortOrder - b.data.sortOrder || a.id.localeCompare(b.id))
+    .map((review) => ({
+      ...review,
+      quote: review.body?.trim(),
+      excerpt: review.body?.trim().match(/^.*?[.!?](?:\s|$)/)?.[0].trim(),
+    }));
+---
+{reviews.length > 0 && (
+  <section class="section references" aria-labelledby="references-heading">
+    <div class="shell">
+      <div class="split-heading">
+        <span class="eyebrow">Customer references</span>
+        <div>
+          <h2 class="display" id="references-heading">Good word<br/>gets around.</h2>
+          <p>A few notes from folks we’ve had the pleasure of working with.</p>
+        </div>
+      </div>
+      <div class="reference-file">
+        <div class="reference-file-label" aria-hidden="true">Sudo Create / References on file</div>
+        {reviews.map(({ data, quote, excerpt }, index) => (
+          <article class="reference-slip" aria-labelledby={`reviewer-${index}`}>
+            <div class="reference-binding" aria-hidden="true"><i></i><i></i><i></i></div>
+            <div class="reference-person">
+              <span class="reference-number" aria-hidden="true">Reference / {String(index + 1).padStart(2, "0")}</span>
+              <h3 id={`reviewer-${index}`}>{data.displayName}</h3>
+              {data.role && <p class="reference-role">{data.role}</p>}
+              {data.company && <p class="reference-company">{data.company}</p>}
+              <div class="reference-rating">
+                <span aria-hidden="true">{"★".repeat(data.rating)}{"☆".repeat(5 - data.rating)}</span>
+                <span class="sr-only">{data.rating} out of 5 stars</span>
+              </div>
+              {data.source && <span class="reference-source">{data.source} review</span>}
+            </div>
+            <div class="reference-words">
+              <blockquote class="reference-desktop"><p>{quote}</p></blockquote>
+              <div class="reference-mobile">
+                <details>
+                  <summary>
+                    <span class="reference-excerpt">“{excerpt}”</span>
+                    <span class="reference-read"><span class="when-closed">Read full review</span><span class="when-open">Close full review</span><span aria-hidden="true"> ↗</span><span class="sr-only"> by {data.displayName}</span></span>
+                  </summary>
+                  <blockquote><p>{quote}</p></blockquote>
+                </details>
+              </div>
+            </div>
+          </article>
+        ))}
+        <div class="reference-file-footer" aria-hidden="true">Good people. Good work. / Filed with thanks.</div>
+      </div>
+    </div>
+  </section>
+)}
+
+<style>
+  .references { padding-top:0; }
+  .references .split-heading p { margin-top:1.25rem; }
+  .reference-file { border:2px solid var(--ink); background:var(--paper-deep); box-shadow:var(--shadow); }
+  .reference-file-label,.reference-file-footer,.reference-number,.reference-source { font:700 .68rem/1.5 ui-monospace,monospace; letter-spacing:.08em; text-transform:uppercase; }
+  .reference-file-label { padding:.8rem 1.25rem; background:var(--signal); border-bottom:2px solid var(--ink); }
+  .reference-slip { display:grid; grid-template-columns:36px minmax(180px,.7fr) minmax(0,1.8fr); background:var(--white); border-bottom:2px solid var(--ink); }
+  .reference-binding { display:flex; flex-direction:column; align-items:center; justify-content:space-around; border-right:1px dashed var(--line); padding-block:1rem; }
+  .reference-binding i { width:10px; height:10px; background:var(--paper-deep); border:1px solid var(--ink); border-radius:50%; }
+  .reference-person { padding:2rem clamp(1rem,3vw,2.5rem); }
+  .reference-number { color:var(--blue); }
+  .reference-person h3 { margin:1.1rem 0 .65rem; font:800 clamp(1.8rem,3vw,2.5rem)/1 var(--font-display); letter-spacing:-.04em; }
+  .reference-role { margin:0; font-size:.85rem; }
+  .reference-company { margin:.15rem 0 0; font-weight:750; line-height:1.35; }
+  .reference-rating { margin-top:1.2rem; color:var(--blue); letter-spacing:.15em; font-size:1.1rem; }
+  .reference-source { display:block; margin-top:.35rem; }
+  .reference-words { padding:2rem clamp(1.25rem,3vw,2.5rem); border-left:1px solid var(--line); }
+  blockquote { margin:0; font-size:clamp(1.05rem,1.5vw,1.2rem); line-height:1.7; }
+  blockquote p { margin:0; }
+  .reference-file-footer { padding:.8rem 1.25rem; }
+  .reference-mobile { display:none; }
+  .sr-only { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip-path:inset(50%); white-space:nowrap; border:0; }
+  @media(max-width:700px) {
+    .reference-slip { grid-template-columns:24px minmax(0,1fr); }
+    .reference-binding { grid-row:span 2; }
+    .reference-person { padding:1.4rem 1.25rem 1rem; }
+    .reference-person h3 { margin:.7rem 0; }
+    .reference-rating { margin-top:.8rem; }
+    .reference-words { grid-column:2; padding:0 1.25rem 1.5rem; border-left:0; }
+    .reference-desktop { display:none; }
+    .reference-mobile { display:block; }
+    summary { cursor:pointer; list-style:none; }
+    summary::-webkit-details-marker { display:none; }
+    summary:focus-visible { outline:3px solid var(--blue); outline-offset:5px; background:var(--signal); }
+    .reference-excerpt { display:block; font-size:1.15rem; line-height:1.6; }
+    .reference-read { display:inline-block; padding:.75rem 0; font-weight:750; text-decoration:underline; text-underline-offset:4px; }
+    .when-open,details[open] .when-closed,details[open] .reference-excerpt { display:none; }
+    details[open] .when-open { display:inline; }
+    details[open] blockquote { padding-top:.5rem; }
+    .reference-file-footer { font-size:.6rem; }
+  }
+</style>
