@@ -1,0 +1,32 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+  title="Message received | Sudo Create"
+  description="Thanks for getting in touch with Sudo Create."
+  noIndex={true}
+>
+  <section class="thanks-section">
+    <div class="shell thanks-grid">
+      <div>
+        <span class="eyebrow">Message received</span>
+        <h1 class="display">Thanks for<br/>stopping by.</h1>
+        <p class="thanks-copy">Your note is on its way to Shawn. You’ll hear back soon with a real response from a real person.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="/">Back to the shop →</a>
+          <a class="button button-secondary" href="/work">See the work</a>
+        </div>
+      </div>
+      <aside class="work-ticket thanks-ticket" aria-label="Inquiry receipt">
+        <div class="ticket-label"><span>Inquiry receipt</span><span>Sent</span></div>
+        <p class="ticket-title">We’ve got it.</p>
+        <p class="muted">Good projects start with a conversation. Thanks for starting one.</p>
+        <div class="rule thanks-rule">
+          <div class="ticket-label"><span>Next step</span><span>Human reply</span></div>
+        </div>
+        <div class="punches" aria-hidden="true">{Array.from({length:9}).map(()=><i></i>)}</div>
+      </aside>
+    </div>
+  </section>
+</BaseLayout>

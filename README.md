@@ -35,6 +35,6 @@ Create one Vercel project from this repository.
 
 ## Before production deploy
 
-1. Confirm the three project pages and their live-site links.
-2. Configure the contact form destination.
-3. Verify the homepage, project index, one project detail page, and the contact flow on mobile and desktop.
+1. Confirm the four project pages and their live-site links.
+2. Submit the contact form once and activate the FormSubmit destination from the email sent to `hello@sudocreate.studio`.
+3. Verify the homepage, project index, one project detail page, and the complete contact-to-thanks flow on mobile and desktop.
