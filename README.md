@@ -38,3 +38,17 @@ Create one Vercel project from this repository.
 1. Confirm the four project pages and their live-site links.
 2. Submit the contact form once and activate the FormSubmit destination from the email sent to `hello@sudocreate.studio`.
 3. Verify the homepage, project index, one project detail page, and the complete contact-to-thanks flow on mobile and desktop.
+
+## Customer references
+
+Homepage reviews live in `client/src/content/testimonials/*.md`, using the same Astro
+content-collection architecture as projects. Keep the complete review verbatim in the
+Markdown body. Frontmatter defines `displayName`, nullable `role` and `company`,
+`rating` (1–5), optional `source`, `featured`, and `sortOrder`.
+
+Only featured records appear, ordered by `sortOrder`. Use public-facing abbreviated
+names only; do not add private reviewer names to filenames, frontmatter, or bodies.
+Business-owner roles and organizations should only be added when supplied by the
+reviewer. Desktop shows the entire review; screens up to 700px show the first
+sentence with a native, keyboard-accessible disclosure containing the full review.
+Content changes are published with the normal Astro build/deploy.
