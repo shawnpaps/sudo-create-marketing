@@ -1,31 +1,12 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import ServicesPage from "../components/react/ServicesPage.tsx";
-
-const SITE_URL = "https://sudocreate.studio";
-
-const structuredData = {
-	"@context": "https://schema.org",
-	"@type": "WebPage",
-	name: "Tampa Brand Photography, Videography & Websites | Sudo Create",
-	description: "Cinematic Tampa brand photography, brand videography, and creative websites for hospitality, wellness, lifestyle, and property brands.",
-	url: `${SITE_URL}/services`,
-	publisher: { "@id": `${SITE_URL}/#organization` },
-};
+const services=[
+  {id:"apps",code:"01 / APP",title:"Custom apps",intro:"Software shaped around a specific idea, team, or way of working.",items:["Product strategy and scoping","Web and mobile applications","Internal tools and portals","Rapid prototypes and MVPs","Ongoing product development"]},
+  {id:"websites",code:"02 / WEB",title:"Websites",intro:"A digital home that sounds like you, works hard, and stays easy to own.",items:["Strategy and information architecture","Visual design systems","Astro, React, and modern CMS builds","Content modeling and migration","Performance and accessibility"]},
+  {id:"commerce",code:"03 / SHOP",title:"E-commerce",intro:"Storefronts that make buying feel natural without sanding off the brand.",items:["Store strategy and architecture","Custom storefront design","Shopify and headless commerce","Product and collection systems","Launch support and iteration"]},
+];
 ---
-
-<BaseLayout
-	title="Tampa Brand Photography, Videography & Websites | Sudo Create"
-	description="Cinematic Tampa brand photography, brand videography, and creative websites for hospitality, wellness, lifestyle, and property brands."
-	structuredData={structuredData}
->
-	<div class="fixed top-0 left-0 w-full h-full -z-10">
-		<img
-			class="object-cover w-full h-full"
-			src="/lens-background.jpg"
-			alt="Sudo Create creative studio background for brand media services"
-		/>
-	</div>
-
-	<ServicesPage client:load />
+<BaseLayout title="Services | Sudo Create" description="Custom apps, websites, and e-commerce development for creative businesses and creative people.">
+  <header class="page-hero"><div class="shell"><span class="eyebrow">Capabilities</span><h1 class="display">Software with<br/>its sleeves rolled up.</h1><p>From the first sketch to the production release, Sudo Create combines product thinking, design, and development in one close working relationship.</p></div></header>
+  {services.map((service,index)=><section class:list={["section",index%2===1&&"band"]} id={service.id}><div class="shell content-grid"><div><span class="eyebrow">{service.code}</span><h2 class="display" style="margin-top:1rem">{service.title}</h2></div><div><p style="font-size:1.35rem">{service.intro}</p><ul class="list-plain">{service.items.map(item=><li>{item}</li>)}</ul><a class="button button-primary" style="margin-top:2rem" href={`/contact?service=${service.id}`}>Talk about this →</a></div></div></section>)}
 </BaseLayout>
