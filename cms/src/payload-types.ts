@@ -69,8 +69,8 @@ export interface Config {
   collections: {
     users: User;
     media: Media;
-    works: Work;
-    products: Product;
+    projects: Project;
+    services: Service;
     testimonials: Testimonial;
     'payload-kv': PayloadKv;
     'payload-locked-documents': PayloadLockedDocument;
@@ -81,8 +81,8 @@ export interface Config {
   collectionsSelect: {
     users: UsersSelect<false> | UsersSelect<true>;
     media: MediaSelect<false> | MediaSelect<true>;
-    works: WorksSelect<false> | WorksSelect<true>;
-    products: ProductsSelect<false> | ProductsSelect<true>;
+    projects: ProjectsSelect<false> | ProjectsSelect<true>;
+    services: ServicesSelect<false> | ServicesSelect<true>;
     testimonials: TestimonialsSelect<false> | TestimonialsSelect<true>;
     'payload-kv': PayloadKvSelect<false> | PayloadKvSelect<true>;
     'payload-locked-documents': PayloadLockedDocumentsSelect<false> | PayloadLockedDocumentsSelect<true>;
@@ -93,8 +93,12 @@ export interface Config {
     defaultIDType: number;
   };
   fallbackLocale: null;
-  globals: {};
-  globalsSelect: {};
+  globals: {
+    'site-settings': SiteSetting;
+  };
+  globalsSelect: {
+    'site-settings': SiteSettingsSelect<false> | SiteSettingsSelect<true>;
+  };
   locale: null;
   widgets: {
     collections: CollectionsWidget;
@@ -155,6 +159,7 @@ export interface User {
 export interface Media {
   id: number;
   alt: string;
+  prefix?: string | null;
   updatedAt: string;
   createdAt: string;
   url?: string | null;
@@ -169,77 +174,70 @@ export interface Media {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "works".
+ * via the `definition` "projects".
  */
-export interface Work {
+export interface Project {
   id: number;
-  /**
-   * Short label shown in the featured carousel (e.g. "Product", "Website + Media").
-   */
-  label: string;
   title: string;
   /**
-   * Used for filtering in the works grid (e.g. "Music Tech", "App Development").
+   * Lowercase URL-friendly name, e.g. tourpass.
    */
-  category: string;
-  description: string;
-  thumbnail?: (number | null) | Media;
-  tags?:
+  slug: string;
+  /**
+   * Short label shown above the project title.
+   */
+  eyebrow?: string | null;
+  projectType: 'app' | 'website' | 'commerce' | 'product';
+  year?: string | null;
+  summary: string;
+  coverImage?: (number | null) | Media;
+  services?:
     | {
-        tag: string;
+        service: string;
         id?: string | null;
       }[]
     | null;
-  /**
-   * Mux playback ID — required for featured carousel display.
-   */
-  playbackId?: string | null;
-  /**
-   * Link to the live project or site.
-   */
-  siteHref?: string | null;
-  hasCaseStudy?: boolean | null;
-  /**
-   * Link to the case study page.
-   */
-  caseStudyHref?: string | null;
-  /**
-   * Featured works appear in the carousel on the landing page.
-   */
-  isFeatured?: boolean | null;
-  /**
-   * Sort order — lower numbers appear first.
-   */
+  body?: {
+    root: {
+      type: string;
+      children: {
+        type: any;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  } | null;
+  liveURL?: string | null;
+  featured?: boolean | null;
   order?: number | null;
   updatedAt: string;
   createdAt: string;
+  _status?: ('draft' | 'published') | null;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "products".
+ * via the `definition` "services".
  */
-export interface Product {
+export interface Service {
   id: number;
-  name: string;
-  category: string;
-  description: string;
-  status: 'live' | 'in-lab' | 'open-call';
-  tags?:
+  title: string;
+  slug: string;
+  /**
+   * Utility label such as 01 / APP.
+   */
+  code: string;
+  summary: string;
+  deliverables?:
     | {
-        tag: string;
+        item: string;
         id?: string | null;
       }[]
     | null;
-  /**
-   * Mux playback ID for the product demo video.
-   */
-  playbackId?: string | null;
-  thumbnail?: (number | null) | Media;
-  caseStudyHref?: string | null;
-  siteHref?: string | null;
-  /**
-   * Sort order — lower numbers appear first.
-   */
   order?: number | null;
   updatedAt: string;
   createdAt: string;
@@ -297,12 +295,12 @@ export interface PayloadLockedDocument {
         value: number | Media;
       } | null)
     | ({
-        relationTo: 'works';
-        value: number | Work;
+        relationTo: 'projects';
+        value: number | Project;
       } | null)
     | ({
-        relationTo: 'products';
-        value: number | Product;
+        relationTo: 'services';
+        value: number | Service;
       } | null)
     | ({
         relationTo: 'testimonials';
@@ -378,6 +376,7 @@ export interface UsersSelect<T extends boolean = true> {
  */
 export interface MediaSelect<T extends boolean = true> {
   alt?: T;
+  prefix?: T;
   updatedAt?: T;
   createdAt?: T;
   url?: T;
@@ -392,48 +391,45 @@ export interface MediaSelect<T extends boolean = true> {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "works_select".
+ * via the `definition` "projects_select".
  */
-export interface WorksSelect<T extends boolean = true> {
-  label?: T;
+export interface ProjectsSelect<T extends boolean = true> {
   title?: T;
-  category?: T;
-  description?: T;
-  thumbnail?: T;
-  tags?:
+  slug?: T;
+  eyebrow?: T;
+  projectType?: T;
+  year?: T;
+  summary?: T;
+  coverImage?: T;
+  services?:
     | T
     | {
-        tag?: T;
+        service?: T;
         id?: T;
       };
-  playbackId?: T;
-  siteHref?: T;
-  hasCaseStudy?: T;
-  caseStudyHref?: T;
-  isFeatured?: T;
+  body?: T;
+  liveURL?: T;
+  featured?: T;
   order?: T;
   updatedAt?: T;
   createdAt?: T;
+  _status?: T;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "products_select".
+ * via the `definition` "services_select".
  */
-export interface ProductsSelect<T extends boolean = true> {
-  name?: T;
-  category?: T;
-  description?: T;
-  status?: T;
-  tags?:
+export interface ServicesSelect<T extends boolean = true> {
+  title?: T;
+  slug?: T;
+  code?: T;
+  summary?: T;
+  deliverables?:
     | T
     | {
-        tag?: T;
+        item?: T;
         id?: T;
       };
-  playbackId?: T;
-  thumbnail?: T;
-  caseStudyHref?: T;
-  siteHref?: T;
   order?: T;
   updatedAt?: T;
   createdAt?: T;
@@ -490,6 +486,44 @@ export interface PayloadMigrationsSelect<T extends boolean = true> {
   batch?: T;
   updatedAt?: T;
   createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "site-settings".
+ */
+export interface SiteSetting {
+  id: number;
+  studioDescription?: string | null;
+  contactEmail?: string | null;
+  availabilityNote?: string | null;
+  socialLinks?:
+    | {
+        label: string;
+        url: string;
+        id?: string | null;
+      }[]
+    | null;
+  updatedAt?: string | null;
+  createdAt?: string | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "site-settings_select".
+ */
+export interface SiteSettingsSelect<T extends boolean = true> {
+  studioDescription?: T;
+  contactEmail?: T;
+  availabilityNote?: T;
+  socialLinks?:
+    | T
+    | {
+        label?: T;
+        url?: T;
+        id?: T;
+      };
+  updatedAt?: T;
+  createdAt?: T;
+  globalType?: T;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema

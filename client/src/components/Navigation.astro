@@ -1,20 +1,4 @@
 ---
-import DesktopNavigation from "./react/DesktopNavigation";
-import MobileNavigation from "./react/MobileNavigation";
-
-const navItems = [
-	{ label: "work", href: "/works" },
-	{ label: "photography", href: "https://portfolio.sudocreate.studio" },
-	{ label: "services", href: "/services" },
-	{ label: "get in touch", href: "/contact" },
-];
+const navItems = [{label:"Work",href:"/work"},{label:"Services",href:"/services"},{label:"About",href:"/about"}];
 ---
-
-<nav class="fixed bottom-0 w-full p-5 z-50 text-white">
-	<div class="hidden md:block">
-		<DesktopNavigation client:load items={navItems} />
-	</div>
-	<div class="md:hidden">
-		<MobileNavigation client:load items={navItems} />
-	</div>
-</nav>
+<header class="site-header"><div class="shell nav-row"><a class="brand" href="/" aria-label="Sudo Create home"><span class="brand-shield" aria-hidden="true">SUDO</span><span class="brand-text">Sudo Create</span></a><nav class="nav-links" aria-label="Main navigation">{navItems.map((item)=><a href={item.href}>{item.label}</a>)}<a class="nav-cta" href="/contact">Start a project&nbsp; →</a></nav></div></header>

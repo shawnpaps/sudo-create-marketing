@@ -1,0 +1,9 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import ProjectFeed from "../components/react/ProjectFeed";
+---
+<BaseLayout title="Work | Sudo Create" description="Apps, websites, and e-commerce built by Sudo Create for creative businesses and creative people.">
+  <header class="page-hero"><div class="shell"><span class="eyebrow">Work from the bench</span><h1 class="display">Useful things,<br/>well made.</h1><p>Selected software, sites, and products. Some are client work; some begin in our own workshop. Every one starts with a real need.</p></div></header>
+  <section class="section"><div class="shell"><ProjectFeed client:load /></div></section>
+  <section class="section band"><div class="shell content-grid"><h2 class="display">The next one could be yours.</h2><div><p>If you have a project with an honest problem, a strong point of view, and room for a real partner, we should talk.</p><a class="button button-primary" href="/contact">Start a project →</a></div></div></section>
+</BaseLayout>
