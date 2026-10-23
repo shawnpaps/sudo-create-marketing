@@ -5,16 +5,212 @@ import ProjectGrid from "../components/ProjectGrid.astro";
 import { getCollection } from "astro:content";
 
 const projects = (await getCollection("projects"))
-  .filter((project) => project.data.featured)
-  .sort((a, b) => a.data.order - b.data.order);
+    .filter((project) => project.data.featured)
+    .sort((a, b) => a.data.order - b.data.order);
 ---
+
 <BaseLayout>
-  <section class="hero"><svg class="scribble" style="left:-30px;bottom:40px;width:210px" viewBox="0 0 220 120" aria-hidden="true"><path d="M4 72c34-68 113-65 162-24 42 36-34 83-84 53-43-26-6-82 60-79 30 2 57 17 72 36" fill="none" stroke="#244766" stroke-width="3" stroke-linecap="round"/></svg><div class="shell hero-grid"><div><span class="eyebrow">Independent software studio · Tampa Bay</span><h1 class="display">We make digital tools <span>feel human.</span></h1><p class="hero-copy">Apps, websites, and e-commerce built for creative businesses and creative people—with clear thinking, sturdy code, and the kind of care you can feel.</p><div class="hero-actions"><a class="button button-primary" href="/contact">Bring us a project <span aria-hidden="true">→</span></a><a class="button button-secondary" href="/work">See the work</a></div></div><aside class="work-ticket" aria-label="Sudo Create work order"><div class="ticket-label"><span>Work order № 1984</span><span>Open</span></div><p class="ticket-title">Built to be used.</p><p class="muted">Good software should feel like a familiar tool: easy to pick up, dependable when the work gets real, and unmistakably yours.</p><div class="rule" style="margin-top:1.1rem;padding-top:.8rem"><div class="ticket-label" style="border:0;padding:0"><span>Apps · Web · Commerce</span><span>EST. 2026</span></div></div><div class="punches" aria-hidden="true">{Array.from({length:9}).map(()=><i></i>)}</div></aside></div></section>
-  <div class="marquee" aria-hidden="true"><span>Strategy ✦ Design ✦ Development ✦ Apps ✦ Websites ✦ E-commerce ✦ Built with care ✦ Strategy ✦ Design ✦ Development ✦ Apps ✦ Websites ✦ E-commerce ✦</span></div>
-  <section class="section band"><div class="shell"><div class="split-heading"><span class="eyebrow">The shop floor</span><div><h2 class="display">What we build.</h2><p>Practical digital work for people with taste, ideas, and a business to run. No mysterious process. No off-the-shelf personality.</p></div></div><div class="service-ledger"><a class="service-row" href="/services#apps"><span class="service-number">01 / APP</span><h3>Custom apps</h3><p>Purpose-built products, internal tools, and prototypes shaped around the way your people actually work.</p></a><a class="service-row" href="/services#websites"><span class="service-number">02 / WEB</span><h3>Websites</h3><p>Distinctive, fast sites that make your business easier to understand—and easier to choose.</p></a><a class="service-row" href="/services#commerce"><span class="service-number">03 / SHOP</span><h3>E-commerce</h3><p>Thoughtful storefronts and buying flows that serve the brand without getting in the customer’s way.</p></a></div></div></section>
-  <section class="section"><div class="shell"><div class="split-heading"><span class="eyebrow">Selected work</span><div><h2 class="display">Made for real life.</h2><p>Digital products and places with a clear job to do—built for the people who will actually use them.</p></div></div><ProjectGrid projects={projects}/></div></section>
-  <section class="section band"><div class="shell"><div class="split-heading"><span class="eyebrow">How it goes</span><div><h2 class="display">A handshake, then a plan.</h2><p>You’ll always know what we’re making, why it matters, and what happens next.</p></div></div><div class="process-grid"><article class="process-card"><h3>Pull up a chair.</h3><p>We start with the business, the people, and the stubborn problem—not a list of trendy features.</p></article><article class="process-card"><h3>Make it tangible.</h3><p>We map the work, prototype the important parts, and show decisions early enough to improve them.</p></article><article class="process-card"><h3>Build it sturdy.</h3><p>We ship clean, maintainable work and leave you with a system you understand and can keep using.</p></article></div></div></section>
-  <section class="section"><div class="shell founder-grid"><div class="portrait-frame"><img src="/headshot.jpg" width="1280" height="853" loading="lazy" decoding="async" alt="Shawn Papineau working at his desk in the Sudo Create studio"/></div><div class="founder-copy"><span class="eyebrow">Your neighbor in software</span><h2 class="display">Small studio.<br/>Full attention.</h2><p>Sudo Create is Shawn Papineau’s independent software studio. It brings the curiosity of a creative practice and the accountability of a good trade: listen closely, explain the work, and build something worth putting your name on.</p><a class="button button-primary" href="/about">Meet Sudo Create →</a></div></div></section>
-  <CustomerReferences />
-  <section class="section" style="padding-top:0"><div class="shell contact-card"><div class="split-heading" style="margin:0"><span class="eyebrow">Have a project?</span><div><h2 class="display">Let’s make something useful.</h2><p>Tell us what you’re trying to build, fix, or finally get out of your head.</p><a class="button button-primary" href="/contact">Start the conversation →</a></div></div></div></section>
+    <section class="hero">
+        <svg
+            class="scribble"
+            style="left:-30px;bottom:40px;width:210px"
+            viewBox="0 0 220 120"
+            aria-hidden="true"
+        >
+            <path
+                d="M4 72c34-68 113-65 162-24 42 36-34 83-84 53-43-26-6-82 60-79 30 2 57 17 72 36"
+                fill="none"
+                stroke="#244766"
+                stroke-width="3"
+                stroke-linecap="round"
+            />
+        </svg>
+        <div class="shell hero-grid">
+            <div>
+                <h1 class="display">
+                    We make digital tools <span>feel human.</span>
+                </h1>
+                <p class="hero-copy">
+                    Apps, websites, and e-commerce built for creative businesses
+                    and creative people—with clear thinking, sturdy code, and
+                    the kind of care you can feel.
+                </p>
+                <div class="hero-actions">
+                    <a class="button button-primary" href="/contact">
+                        Bring us a project <span aria-hidden="true">→</span>
+                    </a>
+                    <a class="button button-secondary" href="/work">
+                        See the work
+                    </a>
+                </div>
+            </div>
+            <aside class="work-ticket" aria-label="Sudo Create work order">
+                <div class="ticket-label">
+                    <span>Work order № 1984</span>
+                    <span>Open</span>
+                </div>
+                <p class="ticket-title">Built to be used.</p>
+                <p class="muted">
+                    Good software should feel like a familiar tool: easy to pick
+                    up, dependable when the work gets real, and unmistakably
+                    yours.
+                </p>
+                <div class="rule" style="margin-top:1.1rem;padding-top:.8rem">
+                    <div class="ticket-label" style="border:0;padding:0">
+                        <span>Apps · Web · Commerce</span>
+                        <span>EST. 2026</span>
+                    </div>
+                </div>
+                <div class="punches" aria-hidden="true">
+                    {Array.from({ length: 9 }).map(() => (
+                        <i></i>
+                    ))}
+                </div>
+            </aside>
+        </div>
+    </section>
+    <div class="marquee" aria-hidden="true">
+        <span>
+            Strategy ✦ Design ✦ Development ✦ Apps ✦ Websites ✦ E-commerce ✦
+            Built with care ✦ Strategy ✦ Design ✦ Development ✦ Apps ✦ Websites
+            ✦ E-commerce ✦
+        </span>
+    </div>
+    <section class="section band">
+        <div class="shell">
+            <div class="split-heading">
+                <div>
+                    <h2 class="display">What we build.</h2>
+                    <p>
+                        Practical digital work for people with taste, ideas, and
+                        a business to run. No mysterious process. No
+                        off-the-shelf personality.
+                    </p>
+                </div>
+            </div>
+            <div class="service-ledger">
+                <a class="service-row" href="/services#apps">
+                    <span class="service-number">01 / APP</span>
+                    <h3>Custom apps</h3>
+                    <p>
+                        Purpose-built products, internal tools, and prototypes
+                        shaped around the way your people actually work.
+                    </p>
+                </a>
+                <a class="service-row" href="/services#websites">
+                    <span class="service-number">02 / WEB</span>
+                    <h3>Websites</h3>
+                    <p>
+                        Distinctive, fast sites that make your business easier
+                        to understand—and easier to choose.
+                    </p>
+                </a>
+                <a class="service-row" href="/services#commerce">
+                    <span class="service-number">03 / SHOP</span>
+                    <h3>E-commerce</h3>
+                    <p>
+                        Thoughtful storefronts and buying flows that serve the
+                        brand without getting in the customer’s way.
+                    </p>
+                </a>
+            </div>
+        </div>
+    </section>
+    <section class="section">
+        <div class="shell">
+            <div class="split-heading">
+                <div>
+                    <h2 class="display">Made for real life.</h2>
+                    <p>
+                        Digital products and places with a clear job to do—built
+                        for the people who will actually use them.
+                    </p>
+                </div>
+            </div>
+            <ProjectGrid projects={projects} />
+        </div>
+    </section>
+    <section class="section band">
+        <div class="shell">
+            <div class="split-heading">
+                <div>
+                    <h2 class="display">A handshake, then a plan.</h2>
+                    <p>
+                        You’ll always know what we’re making, why it matters,
+                        and what happens next.
+                    </p>
+                </div>
+            </div>
+            <div class="process-grid">
+                <article class="process-card">
+                    <h3>Pull up a chair.</h3>
+                    <p>
+                        We start with the business, the people, and the stubborn
+                        problem—not a list of trendy features.
+                    </p>
+                </article>
+                <article class="process-card">
+                    <h3>Make it tangible.</h3>
+                    <p>
+                        We map the work, prototype the important parts, and show
+                        decisions early enough to improve them.
+                    </p>
+                </article>
+                <article class="process-card">
+                    <h3>Build it sturdy.</h3>
+                    <p>
+                        We ship clean, maintainable work and leave you with a
+                        system you understand and can keep using.
+                    </p>
+                </article>
+            </div>
+        </div>
+    </section>
+    <section class="section">
+        <div class="shell founder-grid">
+            <div class="portrait-frame">
+                <img
+                    src="/headshot.jpg"
+                    width="1280"
+                    height="853"
+                    loading="lazy"
+                    decoding="async"
+                    alt="Shawn Papineau working at his desk in the Sudo Create studio"
+                />
+            </div>
+            <div class="founder-copy">
+                <h2 class="display">
+                    Small studio.
+                    <br />
+                    Full attention.
+                </h2>
+                <p>
+                    Sudo Create is Shawn Papineau’s independent software studio.
+                    It brings the curiosity of a creative practice and the
+                    accountability of a good trade: listen closely, explain the
+                    work, and build something worth putting your name on.
+                </p>
+                <a class="button button-primary" href="/about">
+                    Meet Sudo Create →
+                </a>
+            </div>
+        </div>
+    </section>
+    <CustomerReferences />
+    <section class="section" style="padding-top:0">
+        <div class="shell contact-card">
+            <div class="split-heading" style="margin:0">
+                <div>
+                    <h2 class="display">Let’s make something useful.</h2>
+                    <p>
+                        Tell us what you’re trying to build, fix, or finally get
+                        out of your head.
+                    </p>
+                    <a class="button button-primary" href="/contact">
+                        Start the conversation →
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
 </BaseLayout>
