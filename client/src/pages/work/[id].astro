@@ -20,7 +20,6 @@ const { Content } = await render(project);
     <div class="shell project-hero-grid">
       <div>
         <a class="back-link" href="/work">← All work</a>
-        <span class="eyebrow">{project.data.eyebrow}</span>
         <h1 class="display">{project.data.title}</h1>
         <p class="project-deck">{project.data.summary}</p>
         <a class="button button-primary" href={project.data.liveURL} target="_blank" rel="noreferrer">Visit the live project ↗</a>
@@ -34,7 +33,6 @@ const { Content } = await render(project);
   <section class="section">
     <div class="shell project-story-grid">
       <aside class="project-facts">
-        <span class="eyebrow">Build sheet</span>
         <dl>
           <div><dt>Project</dt><dd>{project.data.projectType}</dd></div>
           {project.data.stack.length > 0 && <div><dt>Built with</dt><dd>{project.data.stack.join(" · ")}</dd></div>}
