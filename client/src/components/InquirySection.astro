@@ -1,0 +1,24 @@
+---
+import DiscoveryCall from "./DiscoveryCall.astro";
+import type { ProjectType, ServiceCategory } from "../lib/conversion";
+
+interface Props {
+  heading: string;
+  placement: string;
+  service?: ServiceCategory;
+  project?: string;
+  inquiryType?: ProjectType;
+  orange?: boolean;
+}
+
+const { heading, placement, service, project, inquiryType, orange = false } = Astro.props;
+---
+<section class:list={["section", orange ? "inquiry-orange" : "band"]}>
+  <div class="shell content-grid">
+    <h2 class="display">{heading}</h2>
+    <div>
+      <slot />
+      <DiscoveryCall placement={placement} service={service} project={project} inquiryType={inquiryType} onOrange={orange} />
+    </div>
+  </div>
+</section>

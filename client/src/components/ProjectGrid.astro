@@ -1,27 +1,28 @@
 ---
 import type { CollectionEntry } from "astro:content";
+import ProjectImage from "./ProjectImage.astro";
 
 interface Props {
   projects: CollectionEntry<"projects">[];
+  headingLevel?: "h2" | "h3";
+  related?: boolean;
 }
 
-const { projects } = Astro.props;
+const { projects, headingLevel: Heading = "h3", related = false } = Astro.props;
 ---
-
 <div class="project-grid">
   {projects.map((project) => (
     <article class="project-card">
-      <a class="project-visual" href={`/work/${project.id}/`} aria-label={`Read about ${project.data.title}`}>
-        <img src={project.data.cover} alt={project.data.coverAlt} loading="lazy" />
+      <a href={`/work/${project.id}/`} data-related-project={related ? project.id : undefined} class:list={["project-visual", project.data.coverSmall && "project-screenshot"]} aria-label={`View the ${project.data.title} case study`}>
+        <ProjectImage project={project} />
       </a>
       <div class="project-body">
-        <div class="project-meta">
-          <span>{project.data.eyebrow}</span>
-          <span>{project.data.projectType}</span>
-        </div>
-        <h3><a href={`/work/${project.id}/`}>{project.data.title}</a></h3>
+        <Heading><a href={`/work/${project.id}/`} data-related-project={related ? project.id : undefined}>{project.data.title}</a></Heading>
+        <p class="project-meta">{project.data.classification} · {project.data.projectType}</p>
         <p class="muted">{project.data.summary}</p>
-        <a class="project-link" href={`/work/${project.id}/`}>Read the project →</a>
+        <a class="project-link text-link" href={`/work/${project.id}/`} data-related-project={related ? project.id : undefined}>
+          View case study<span class="sr-only"> for {project.data.title}</span>
+        </a>
       </div>
     </article>
   ))}

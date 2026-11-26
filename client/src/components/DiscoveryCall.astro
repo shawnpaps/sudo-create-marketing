@@ -1,0 +1,26 @@
+---
+import { discoveryCall, type ProjectType, type ServiceCategory } from "../lib/conversion";
+
+interface Props {
+  placement: string;
+  service?: ServiceCategory;
+  project?: string;
+  inquiryType?: ProjectType;
+  onOrange?: boolean;
+}
+
+const { placement, service, project, inquiryType, onOrange } = Astro.props;
+const params = new URLSearchParams();
+if (service) params.set("service", service);
+if (inquiryType) params.set("project_type", inquiryType);
+const href = params.size ? `${discoveryCall.path}?${params}` : discoveryCall.path;
+---
+<a
+  href={href}
+  referrerpolicy="origin"
+  class:list={["button", "button-primary", onOrange && "button-on-orange"]}
+  data-discovery-call
+  data-placement={placement}
+  data-service={service}
+  data-project={project}
+>{discoveryCall.label}</a>

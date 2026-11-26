@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://sudocreate.studio/sitemap-index.xml
+Sitemap: https://www.sudocreate.studio/sitemap-index.xml

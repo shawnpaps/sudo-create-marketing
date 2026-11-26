@@ -1,4 +1,23 @@
 ---
-const navItems = [{label:"Work",href:"/work"},{label:"Services",href:"/services"},{label:"About",href:"/about"}];
+import DiscoveryCall from "./DiscoveryCall.astro";
+
+const page = Astro.url.pathname.replace(/\/$/, "");
+const navItems = [
+  { label: "Work", href: "/work" },
+  { label: "Services", href: "/services" },
+  { label: "About", href: "/about" },
+];
 ---
-<header class="site-header"><div class="shell nav-row"><a class="brand" href="/" aria-label="Sudo Create home"><img class="brand-logo" src="/sudo_black.png" width="707" height="594" alt=""/></a><nav class="nav-links" aria-label="Main navigation">{navItems.map((item)=><a href={item.href}>{item.label}</a>)}<a class="nav-cta" href="/contact">Start a project&nbsp; →</a></nav></div></header>
+<header class="site-header">
+  <div class="shell nav-row">
+    <a class="brand" href="/" aria-label="Sudo Create home">
+      <img class="brand-logo" src="/sudo_black.png" width="707" height="594" alt="" />
+    </a>
+    <nav class="nav-links" aria-label="Main navigation">
+      {navItems.map(({ label, href }) => (
+        <a href={href} aria-current={page === href ? "page" : page.startsWith(`${href}/`) ? "location" : undefined}>{label}</a>
+      ))}
+    </nav>
+    <DiscoveryCall placement="navigation" />
+  </div>
+</header>

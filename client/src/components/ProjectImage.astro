@@ -1,0 +1,22 @@
+---
+import type { CollectionEntry } from "astro:content";
+
+interface Props {
+  project: CollectionEntry<"projects">;
+  priority?: boolean;
+  wide?: boolean;
+}
+const { project, priority = false, wide = false } = Astro.props;
+const { cover, coverSmall, coverAlt, coverWidth = coverSmall ? 1440 : 1200, coverHeight = coverSmall ? 800 : 675 } = project.data;
+---
+<img
+  src={cover}
+  srcset={coverSmall ? `${coverSmall} 720w, ${cover} ${coverWidth}w` : undefined}
+  sizes={coverSmall ? (wide ? "(max-width: 1228px) calc(100vw - 48px), 1180px" : "(max-width: 820px) 90vw, 620px") : undefined}
+  width={coverWidth}
+  height={coverHeight}
+  alt={coverAlt}
+  loading={priority ? "eager" : "lazy"}
+  fetchpriority={priority ? "high" : undefined}
+  decoding="async"
+/>

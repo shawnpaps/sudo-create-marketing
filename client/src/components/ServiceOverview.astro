@@ -1,0 +1,23 @@
+---
+import DiscoveryCall from "./DiscoveryCall.astro";
+import { services } from "../lib/services";
+---
+<section class="section band" aria-labelledby="services-heading">
+  <div class="shell">
+    <h2 class="display section-title" id="services-heading">Good design. Sturdy code. Real purpose.</h2>
+    <div class="service-ledger">
+      {services.map((service) => (
+        <article class="service-row">
+          <h3>{service.headline}</h3>
+          <div>
+            <p>{service.summary}</p>
+            <div class="inline-actions">
+              <DiscoveryCall placement="home-service" service={service.id} />
+              <a class="text-link" href={`/services#${service.id}`}>Explore {service.name.toLowerCase()}</a>
+            </div>
+          </div>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
