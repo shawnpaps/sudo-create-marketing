@@ -1,0 +1,15 @@
+---
+import { gaId, metaId } from "../lib/analytics-config";
+---
+{(gaId || metaId) && (
+  <details class="tracking-preferences" data-tracking-preferences>
+    <summary>Privacy preferences</summary>
+    <form>
+      <p>Optional tracking is off until you allow it. Your choices don’t affect the contact form.</p>
+      {gaId && <label><input type="checkbox" name="analytics" /> Site measurement (Google Analytics)</label>}
+      {metaId && <label><input type="checkbox" name="marketing" /> Ad measurement (Meta Pixel)</label>}
+      <button type="submit" class="button button-secondary">Save preferences</button>
+      <p role="status" data-preferences-status></p>
+    </form>
+  </details>
+)}

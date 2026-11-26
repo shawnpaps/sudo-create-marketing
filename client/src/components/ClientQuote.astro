@@ -1,0 +1,17 @@
+---
+import { getEntry } from "astro:content";
+interface Props {
+  id: string;
+  full?: boolean;
+}
+const { id, full = false } = Astro.props;
+const review = await getEntry("testimonials", id);
+const body = review?.body?.trim();
+const quote = full ? body : body?.match(/^.*?[.!?](?:\s|$)/)?.[0].trim();
+---
+{review && quote && (
+  <figure class="client-quote">
+    <blockquote><p>“{quote}”</p></blockquote>
+    <figcaption><strong>{review.data.displayName}</strong>{review.data.company && `, ${review.data.company}`}</figcaption>
+  </figure>
+)}

@@ -1,12 +1,36 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-const services=[
-  {id:"apps",code:"01 / APP",title:"Custom apps",intro:"Software shaped around a specific idea, team, or way of working.",items:["Product strategy and scoping","Web and mobile applications","Internal tools and portals","Rapid prototypes and MVPs","Ongoing product development"]},
-  {id:"websites",code:"02 / WEB",title:"Websites",intro:"A digital home that sounds like you, works hard, and stays easy to own.",items:["Strategy and information architecture","Visual design systems","Astro, React, and modern CMS builds","Content modeling and migration","Performance and accessibility"]},
-  {id:"commerce",code:"03 / SHOP",title:"E-commerce",intro:"Storefronts that make buying feel natural without sanding off the brand.",items:["Store strategy and architecture","Custom storefront design","Shopify and headless commerce","Product and collection systems","Launch support and iteration"]},
-];
+import ClientQuote from "../components/ClientQuote.astro";
+import DiscoveryCall from "../components/DiscoveryCall.astro";
+import { services } from "../lib/services";
 ---
-<BaseLayout title="Services | Sudo Create" description="Custom apps, websites, and e-commerce development for creative businesses and creative people.">
-  <header class="page-hero"><div class="shell"><h1 class="display">Software with<br/>its sleeves rolled up.</h1><p>From the first sketch to the production release, Sudo Create combines product thinking, design, and development in one close working relationship.</p></div></header>
-  {services.map((service,index)=><section class:list={["section",index%2===1&&"band"]} id={service.id}><div class="shell content-grid"><div><h2 class="display" style="margin-top:1rem">{service.title}</h2></div><div><p style="font-size:1.35rem">{service.intro}</p><ul class="list-plain">{service.items.map(item=><li>{item}</li>)}</ul><a class="button button-primary" style="margin-top:2rem" href={`/contact?service=${service.id}`}>Talk about this →</a></div></div></section>)}
+
+<BaseLayout title="Website Design, Custom Apps & E-commerce | Sudo Create" description="Custom websites, applications, and Shopify storefronts designed and built by an independent Tampa Bay studio.">
+  <header class="page-hero">
+    <div class="shell">
+      <h1 class="display">Websites, apps, and online stores.</h1>
+      <p>Get a site that helps customers take the next step, or a tool that’s built around how your business works. You’ll work directly with Shawn from the first sketch through launch.</p>
+    </div>
+  </header>
+  {services.map((service) => (
+    <section class="section service-detail" id={service.id} data-service-view={service.id}>
+      <div class="shell content-grid">
+        <div>
+          <h2 class="display">{service.headline}</h2>
+          <p class="service-name">{service.name}</p>
+        </div>
+        <div>
+          <p class="service-intro">{service.summary}</p>
+          <ul class="list-plain" role="list">{service.capabilities.map((item) => <li>{item}</li>)}</ul>
+          {service.projects.length > 0 && (
+            <p class="related-work">See the work in {service.projects.map(({ id, name }, index) => (<>
+              {index > 0 && (index === service.projects.length - 1 ? (index > 1 ? ", and " : " and ") : ", ")}<a class="text-link" href={`/work/${id}/`}>{name}</a>
+            </>))}.</p>
+          )}
+          <DiscoveryCall placement="service-detail" service={service.id} />
+          {service.id === "websites" && <ClientQuote id="kristen-m" />}
+        </div>
+      </div>
+    </section>
+  ))}
 </BaseLayout>

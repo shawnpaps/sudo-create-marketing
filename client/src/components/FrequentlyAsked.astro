@@ -1,0 +1,33 @@
+---
+interface Props {
+  heading?: string;
+  questions?: readonly (readonly [string, string])[];
+}
+
+const defaultQuestions = [
+  ["How much does a website cost?", "Pricing depends on the size of the site, the features and content it needs, and what you want it to accomplish. The first conversation helps us work out what belongs in the scope."],
+  ["How much does a custom application cost?", "Pricing depends on the features, integrations, and complexity of the application. Whether you need an MVP or an established product, we’ll work through the requirements together before setting a scope."],
+  ["How long does a project take?", "Timing depends on the scope, when content is ready, and how quickly feedback comes in. We’ll establish a timeline once we understand what needs to be built."],
+  ["Do I need to have everything figured out before reaching out?", "A rough idea or a problem you want to solve is enough. We can use the first conversation to work out the best next step."],
+  ["Do you work with businesses outside Tampa Bay?", "Yes. Sudo Create is based in Tampa Bay, Florida, and works remotely with businesses and founders in other locations."],
+  ["Can you redesign my existing website?", "Yes. We can look at what’s working on your current site, where it falls short, and what would make it more useful for your business and your customers."],
+  ["Will I be able to manage my website after launch?", "If your project calls for it, we can build in a content management system so you can update the parts of the site you use regularly without editing code."],
+  ["Do you provide ongoing maintenance and support?", "We can discuss support when we scope the project and decide what level of continued involvement makes sense for your website or application."],
+  ["What happens during a discovery call?", "We’ll talk about your business, your goals, and what you’re looking to build. Bring any questions you have. It’s a chance to see whether we’d work well together."],
+] as const;
+
+const { heading = "A few things you might be wondering.", questions = defaultQuestions } = Astro.props;
+---
+<section class="section faq" aria-labelledby="faq-heading">
+  <div class="shell content-grid">
+    <h2 class="display" id="faq-heading">{heading}</h2>
+    <div class="faq-list">
+      {questions.map(([question, answer]) => (
+        <details>
+          <summary>{question}</summary>
+          <p>{answer}</p>
+        </details>
+      ))}
+    </div>
+  </div>
+</section>

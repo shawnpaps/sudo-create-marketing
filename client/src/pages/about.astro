@@ -1,8 +1,28 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import FounderPortrait from "../components/FounderPortrait.astro";
+import InquirySection from "../components/InquirySection.astro";
 ---
-<BaseLayout title="About | Sudo Create" description="Sudo Create is an independent software development studio for creative businesses and creative people.">
-  <header class="page-hero"><div class="shell"><h1 class="display">Creative instincts.<br/>Working-class follow-through.</h1><p>Sudo Create is a small software studio for people who care about how things work and how they feel.</p></div></header>
-  <section class="section"><div class="shell founder-grid"><div class="portrait-frame"><img src="/headshot.jpg" width="1280" height="853" loading="lazy" decoding="async" alt="Shawn Papineau working at his desk in the Sudo Create studio"/></div><div class="founder-copy"><h2 class="display">Consider me your neighbor in software.</h2><p>I started Sudo Create to give creative founders and teams the kind of technical partnership I always wanted: plainspoken, curious, and personally invested in the outcome.</p><p>My background crosses music, media, design, and software. That mix helps me translate between the idea in someone’s head and the system that can make it real. The studio stays intentionally small so the person you meet is the person thinking through and building the work.</p><p>“Midwest hospitality” is more than a tone here. It means showing up prepared, making the complicated understandable, and treating your project like something entrusted—not processed.</p></div></div></section>
-  <section class="section band"><div class="shell content-grid"><h2 class="display">The house rules.</h2><div><ul class="list-plain"><li>Listen before prescribing.</li><li>Make the work understandable.</li><li>Design for the people who will actually use it.</li><li>Build a sturdy foundation.</li><li>Leave things better than we found them.</li></ul></div></div></section>
+<BaseLayout title="Meet Shawn Papineau | Sudo Create" description="Meet Shawn Papineau, founder of Sudo Create, an independent Tampa Bay website design and custom application development studio.">
+  <header class="page-hero">
+    <div class="shell">
+      <h1 class="display">Creative instincts. Working-class follow-through.</h1>
+      <p>Sudo Create is an independent design and development studio for people who care about how things work and how they feel.</p>
+    </div>
+  </header>
+  <section class="section">
+    <div class="shell founder-grid">
+      <FounderPortrait />
+      <div class="founder-copy">
+        <h2 class="display">Consider me your neighbor in software.</h2>
+        <p>I’m Shawn. I started Sudo Create to give businesses and founders the kind of technical partnership I always wanted. Someone who listens, explains the work clearly, and takes responsibility for how it turns out.</p>
+        <p>My background spans music, media, design, and software engineering. That mix helps me translate an idea into a website or application that people can actually use. When you work with the studio, you work directly with me from the first conversation through launch.</p>
+        <p>I bring a little Midwest hospitality to my work in Tampa Bay. I show up prepared, make the complicated understandable, and take care of the details you’ve entrusted to me.</p>
+        <a class="button button-secondary" href="/services">Explore our services</a>
+      </div>
+    </div>
+  </section>
+  <InquirySection heading="Let’s talk about what you’re building." placement="about-final">
+    <p>Tell me where you’re starting and what you’d like to make possible. We can figure out the next step together.</p>
+  </InquirySection>
 </BaseLayout>

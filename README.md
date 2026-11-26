@@ -1,6 +1,6 @@
 # Sudo Create
 
-Sudo Create is an independent software development studio building apps, websites, and e-commerce for creative businesses and creative people.
+Sudo Create is an independent Tampa Bay design and development studio building custom websites, applications, and storefronts for businesses and founders.
 
 This repository contains the public Astro site in `client/`. Project case studies live alongside the code as Markdown content and are validated by an Astro content collection.
 
@@ -20,7 +20,7 @@ The site runs at `http://localhost:4321`.
 
 1. Add the project cover to `client/public/project-covers/`.
 2. Create a Markdown file in `client/src/content/projects/`.
-3. Fill in the validated frontmatter and write the case study below it.
+3. Fill in the validated frontmatter and write the case study below it. Use `classification` for client work or studio products, and set `service` when a case study maps to an inquiry category. The optional `coverSmall` field pairs a 720w screenshot with the 1440w cover. Use `socialImage` for an approved project-specific sharing image.
 
 The homepage and work index are generated from the collection automatically. The project filename becomes its URL: `boardstate.md` becomes `/work/boardstate/`.
 
@@ -36,8 +36,8 @@ Create one Vercel project from this repository.
 ## Before production deploy
 
 1. Confirm the four project pages and their live-site links.
-2. Submit the contact form once and activate the FormSubmit destination from the email sent to `hello@sudocreate.studio`.
-3. Verify the homepage, project index, one project detail page, and the complete contact-to-thanks flow on mobile and desktop.
+2. Run an approved FormSubmit submission with the intended destination and confirm the email arrives from that environment. Activate the destination if FormSubmit requires it.
+3. Verify the homepage, project index, one project detail page, and inline inquiry confirmation on mobile and desktop. See [conversion and verification notes](docs/conversion-refinement.md) for optional analytics configuration and release checks.
 
 ## Customer references
 

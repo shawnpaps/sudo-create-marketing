@@ -1,52 +1,123 @@
 ---
-import { getCollection, render } from "astro:content";
+import { getCollection, render, type CollectionEntry } from "astro:content";
+import ClientQuote from "../../components/ClientQuote.astro";
+import InquirySection from "../../components/InquirySection.astro";
+import ProjectGrid from "../../components/ProjectGrid.astro";
+import ProjectImage from "../../components/ProjectImage.astro";
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import { services } from "../../lib/services";
 
 export async function getStaticPaths() {
   const projects = await getCollection("projects");
-  return projects.map((project) => ({ params: { id: project.id }, props: { project } }));
+  const byId = new Map(projects.map((project) => [project.id, project]));
+  return projects.map((project) => ({
+    params: { id: project.id },
+    props: {
+      project,
+      related: project.data.related
+        .map((id) => byId.get(id))
+        .filter((entry): entry is CollectionEntry<"projects"> => entry !== undefined),
+    },
+  }));
 }
 
-const { project } = Astro.props;
+const { project, related } = Astro.props;
 const { Content } = await render(project);
+const data = project.data;
+const service = services.find(({ id }) => id === data.service);
+const wide = data.heroLayout === "wide";
+const conversionHeading = data.conversion?.heading ?? (data.service === "apps"
+  ? "Have an application in mind?"
+  : "Need a website built around your business?");
 ---
-
 <BaseLayout
-  title={`${project.data.title} | Sudo Create`}
-  description={project.data.summary}
-  ogImage={project.data.cover}
+  title={data.seo?.title ?? `${data.title} Case Study | Sudo Create`}
+  description={data.seo?.description ?? data.summary}
+  ogImage={data.socialImage}
+  project={project.id}
+  classification={data.classification}
+  service={data.service}
 >
-  <header class="project-hero">
+  <header class:list={["project-hero", wide && "project-hero-wide", data.headline && "project-hero-editorial"]}>
     <div class="shell project-hero-grid">
-      <div>
-        <a class="back-link" href="/work">← All work</a>
-        <h1 class="display">{project.data.title}</h1>
-        <p class="project-deck">{project.data.summary}</p>
-        <a class="button button-primary" href={project.data.liveURL} target="_blank" rel="noreferrer">Visit the live project ↗</a>
+      <div class="project-opening">
+        <h1 class="display">{data.headline ?? data.title}</h1>
+        {data.headline && <p class="project-name">{data.projectName ?? data.title}</p>}
+        <div class="project-deck">
+          {(data.introduction ?? [data.summary]).map((paragraph) => <p>{paragraph}</p>)}
+        </div>
+        <div class="inline-actions">
+          <a class="text-link" href={data.liveURL} target="_blank" rel="noreferrer" data-live-project={project.id} data-service={data.service} data-placement="case-study-website">
+            {data.applicationURL ? "Visit the website" : "Visit the live project"}
+          </a>
+          {data.applicationURL && (
+            <a class="text-link" href={data.applicationURL} target="_blank" rel="noreferrer" data-live-project={project.id} data-service={data.service} data-placement="case-study-app">Open the app</a>
+          )}
+          <a class="text-link" href="/work">All work</a>
+        </div>
       </div>
-      <div class="project-hero-visual">
-        <img src={project.data.cover} alt={project.data.coverAlt} />
+      <div class:list={["project-hero-visual", data.coverSmall && "project-screenshot"]}>
+        <ProjectImage project={project} priority wide={wide} />
       </div>
     </div>
   </header>
-
-  <section class="section">
+  <section class="section project-story">
     <div class="shell project-story-grid">
-      <aside class="project-facts">
+      <aside class="project-facts" aria-label="Project details">
         <dl>
-          <div><dt>Project</dt><dd>{project.data.projectType}</dd></div>
-          {project.data.stack.length > 0 && <div><dt>Built with</dt><dd>{project.data.stack.join(" · ")}</dd></div>}
-          <div><dt>Status</dt><dd>Live</dd></div>
+          <div><dt>Classification</dt><dd>{data.classification}</dd></div>
+          {data.industry ? <div><dt>Industry</dt><dd>{data.industry}</dd></div> : <div><dt>Project</dt><dd>{data.projectType}</dd></div>}
+          {data.services.length > 0 && <div><dt>Services</dt><dd>{data.services.join(" · ")}</dd></div>}
+          {data.stack.length > 0 && <div><dt>Built with</dt><dd>{data.stack.join(" · ")}</dd></div>}
+          {service && <div><dt>Related service</dt><dd><a class="text-link" href={`/services#${service.id}`}>{service.name}</a></dd></div>}
         </dl>
       </aside>
-      <article class="project-prose"><Content /></article>
+      <article class="project-prose" aria-label={`${data.title} project story`}>
+        <Content />
+        {!data.outcome && data.testimonial && <ClientQuote id={data.testimonial} full />}
+      </article>
     </div>
   </section>
-
-  <section class="section band">
-    <div class="shell content-grid">
-      <h2 class="display">Have something useful in mind?</h2>
-      <div><p>Bring us the idea, the stubborn problem, or the half-finished plan. We’ll help find the right shape for it.</p><a class="button button-primary" href="/contact">Start a project →</a></div>
-    </div>
-  </section>
+  {data.gallery.length > 0 && (
+    <section class="section project-evidence" aria-labelledby="project-evidence">
+      <div class="shell">
+        <h2 class="display section-title" id="project-evidence">A closer look.</h2>
+        <div class:list={["project-gallery", data.gallery.length === 1 && "project-gallery-single"]}>
+          {data.gallery.map((image) => (
+            <figure class:list={["project-figure", image.width < image.height && "project-figure-portrait"]}>
+              <img src={image.src} width={image.width} height={image.height} alt={image.alt} loading="lazy" decoding="async" />
+              <figcaption>{image.caption}</figcaption>
+            </figure>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+  {data.outcome && (
+    <section class="section project-outcome">
+      <div class="shell content-grid">
+        <h2 class="display">The outcome.</h2>
+        <div class="project-prose">
+          {data.outcome.map((paragraph) => <p>{paragraph}</p>)}
+          {data.results?.length ? (
+            <dl class="project-results">
+              {data.results.map(({ label, value, context }) => <div><dt>{label}</dt><dd><strong>{value}</strong> {context}</dd></div>)}
+            </dl>
+          ) : null}
+          {data.testimonial && <ClientQuote id={data.testimonial} full />}
+        </div>
+      </div>
+    </section>
+  )}
+  <InquirySection heading={conversionHeading} placement="case-study" service={data.service} project={project.id} inquiryType={data.inquiryType}>
+    <p>{data.conversion?.copy ?? "Tell me what you want to make possible. We’ll talk through the project and find a good place to start."}</p>
+  </InquirySection>
+  {related.length > 0 && (
+    <section class="section" aria-labelledby="related-work">
+      <div class="shell">
+        <h2 class="display section-title" id="related-work">Related work.</h2>
+        <ProjectGrid projects={related} related />
+      </div>
+    </section>
+  )}
 </BaseLayout>
